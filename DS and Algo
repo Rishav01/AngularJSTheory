@@ -1,0 +1,53 @@
+Data Structure and Algorithms
+I always wondered why every big company stresses on the knowledge of Data Structure and Algorithms? Finally, When I am starting to understand these two concepts, I have the answer. As the numbers of users of software applications is increasing, the management of data has become the most crucial factor for efficient working of any enterprise application. A plethora of data needs to be managed by an enterprise application while millions of user using the application simultaneously. Therefore, the way data is stored and used should be handled with at-most care. Data Structure is all about arranging the data in System’s memory while algorithm is the way of using or manipulating the same data. Therefore, strong knowledge on DS and algorithm is very important for building an efficient enterprise application.
+
+Data Structure Overview
+Data Structure is the way the data is stored or organized in the computer’s memory. Every DS has an interface which represent the set of operations that can be performed on the particular DS. Along with the operations supported by the DS, interface also tells about the parameter type and return type for carrying out the operation. DS also has implementation classes which gives the internal representation of the DS. Implementation also gives the definition of the algorithms which are used in the operations of the DS. 
+Data Structure Characteristics:
+1.	Correctness – The DS should be implemented correctly. 
+2.	Time Complexity – The DS should use time as less as possible for executing an operation. 
+3.	Space Complexity – The DS should use memory as less as possible for executing any operation. 
+Execution Time Cases: 
+1.	Worst Case: The worst case is the maximum time taken for the execution of any algorithm. Algorithm cannot take time more than this for its operation. 
+2.	Average Case: This is the average operation time for the execution of any operation of DS. M number of same operation will take m*average time.
+3.	Best Case: The best case gives the minimum time for completion of an operation.   
+Basic Terminology:
+1.	Data: Data are values or set of values. 
+2.	Data Item: Data item refers to the single unit of data.
+3.	Group Item: When data Item is further divided then we get a group item.
+4.	Elementary Item: When data item cannot be further divided then that data item itself is Elementary item. 
+5.	Entity and Attribute: Entity is just like an element which has attribute. This attribute can have value. Entity of similar attribute is called as entity set. 
+6.	 Field, Record and file: Field is a single information given by attribute of an entity while a group of field is called as record. File is a collection of record. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Roughly the below is the object of hunt.
+Data Structure -  
+Basics: Stack, Queues, Linkedin List, Trees, Hashing, Heaps, Graphs.
+Advance Data Structure: Binomial Heaps, Fibonacci Heaps, Skip List, Red-black Tree, Tries, Ternary Search Tree, Segment Tree, Splay Tree, Interval Tree, Binary Index Tree, B tree and B+ Tree.
+Algorithms – 
+Analysis, sorting and searching techniques, Divide and conquer, Greedy, Backtracking, Dynamic Programming and complexity Classes.   
