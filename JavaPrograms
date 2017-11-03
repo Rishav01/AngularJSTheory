@@ -1,6 +1,15 @@
-1. Print Prime Numbers
-2. Print Random number 
+1. [edit] check whether a number is prime number or not? - Done
+2. Print Random number - Done
 3. Array of objects
-4. Print Factorial
-5. int to String
-6. Max Two numbers from array
+4. Print Factorial - Done
+5. int to String and vice versa - Done
+6. Max Two numbers from array - Done [Tip- Do not use single quotes in int inside int array.]
+7. Remove all vowel appearing in an String with nothing or remove the vowels. - Done
+8. To Reverse the vowel in a String. 
+9. Check weather a number is palindrome?
+10. Check the missing number(s) in a int array provided given how many numbers are missing. 
+
+
+
+New
+1. Print all print number upto given number from 1. 
