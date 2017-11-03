@@ -1,0 +1,2519 @@
+
+
+Data
+Structure and Algorithms Interview questions
+
+Source 1 : http://www.geeksforgeeks.org/commonly-asked-data-structure-interview-questions-set-1/
+
+ 
+
+Commonly
+Asked Data Structure Interview Questions | Set 1
+
+2.6
+
+What is a Data Structure?
+A data structure is a way of organizing the data so that the data can be used
+efficiently. Different kinds of data structures are suited to different kinds
+of applications, and some are highly specialized to specific tasks. For
+example, B-trees are particularly well-suited for implementation of databases,
+while compiler implementations usually use hash tables to look up identifiers.
+(Source:Wiki Page)
+
+ 
+
+What are linear and non linear data
+Structures?
+
+Linear: A data structure is said to be linear if
+its elements form a sequence or a linear list. Examples: Array. Linked List,
+Stacks and QueuesNon-Linear: A data structure is said to be non-linear
+if traversal of nodes is nonlinear in nature. Example: Graph and Trees.
+
+
+
+ 
+
+What are the various operations that can be
+performed on different Data Structures?
+
+Insertion − Add a new data item in the given
+collection of data items.Deletion − Delete an existing data item from the
+given collection of data items.Traversal − Access each data item exactly once so
+that it can be processed.Searching − Find out the location of the data item if
+it exists in the given collection of data items.Sorting − Arranging the data items in some order
+i.e. in ascending or descending order in case of numerical data and in
+dictionary order in case of alphanumeric data.
+
+
+
+
+
+
+
+
+
+ 
+
+How is an Array different from Linked
+List?
+
+The size of the arrays is fixed, Linked Lists are Dynamic in size.Inserting and deleting a new element in an array of elements is
+expensive, Whereas both insertion and deletion can easily be done in Linked
+Lists.Random access is not allowed in Linked Listed.Extra memory space for a pointer is required with each element of
+the Linked list.Arrays have better cache locality that can make a pretty big
+difference in performance.
+
+
+
+
+
+
+
+
+
+ 
+
+What is Stack and where it can be used?
+
+Stack is a linear data structure which the order LIFO(Last In
+First Out) or FILO(First In Last Out) for accessing elements. Basic operations
+of stack are : Push, Pop , Peek
+
+Applications
+of Stack:
+
+1.    
+Infix
+to Postfix Conversion using Stack
+
+2.    
+Evaluation of Postfix Expression
+
+3.    
+Reverse a String using Stack
+
+4.    
+Implement two stacks in an
+array
+
+5.    
+Check for balanced parentheses
+in an expression
+
+ 
+
+What is a Queue, how it is different from
+stack and how is it implemented?
+
+Queue is a
+linear structure which follows the order is First In First Out
+(FIFO) to access elements. Mainly the following are basic operations on queue: Enqueue, Dequeue, Front, Rear 
+The difference between stacks and queues is in removing. In a stack we remove
+the item the most recently added; in a queue, we remove the item the least
+recently added. Both Queues and Stacks can be implemented using Arrays and
+Linked Lists.
+
+ 
+
+What are Infix, prefix, Postfix notations?
+
+Infix notation: X + Y – Operators are written in-between their
+operands. This is the usual way we write expressions. An expression such as
+
+   A * ( B + C ) / D
+
+Postfix notation (also known as
+“Reverse Polish notation”): X Y + Operators are written after their operands.
+The infix expression given above is equivalent to
+
+   A B C + * D/
+
+Prefix notation (also known as
+“Polish notation”): + X Y Operators are written before their
+operands. The expressions given above are equivalent to
+
+   / * A + B C D
+
+Converting between these notations: Click
+here
+
+ 
+
+What is a Linked List and What are its types?
+
+A
+linked list is a linear data structure (like arrays) where each element is a
+separate object. Each element (that is node) of a list is comprising of two
+items – the data and a reference to the next node.Types of Linked List :
+
+1.    
+Singly Linked List : In this type of linked list, every node
+stores address or reference of next node in list and the last node has next
+address or reference as NULL. For example 1->2->3->4->NULL
+
+2.    
+Doubly Linked List : Here, here are two references associated with
+each node, One of the reference points to the next node and one to the previous
+node. Eg. NULL<-1<->2<->3->NULL
+
+3.    
+Circular Linked List : Circular linked list is a linked list where
+all nodes are connected to form a circle. There is no NULL at the end. A
+circular linked list can be a singly circular linked list or doubly circular
+linked list. Eg. 1->2->3->1 [The next pointer of last node is pointing
+to the first]
+
+ 
+
+Which data structures are used for BFS and DFS
+of a graph?
+
+Queue is used for BFSStack is used for DFS. DFS can also be implemented using recursion (Note that recursion also uses function
+call stack).
+
+
+
+ 
+
+Can doubly linked be implemented using a
+single pointer variable in every node?
+Doubly linked list can be implemented using a single pointer. See XOR Linked List – A Memory Efficient Doubly Linked List
+
+ 
+
+How to implement a stack using queue?
+
+A stack
+can be implemented using two queues. Let stack to be implemented be ‘s’ and
+queues used to implement be ‘q1’ and ‘q2’. Stack ‘s’ can be implemented in two
+ways:
+
+Method 1 (By making push operation costly)Method 2 (By making pop operation costly) See Implement
+Stack using Queues
+
+
+
+ 
+
+How to implement a queue using stack?
+
+A queue
+can be implemented using two stacks. Let queue to be implemented be q and
+stacks used to implement q be stack1 and stack2. q can be implemented in two
+ways:
+
+Method 1 (By making enQueue operation costly)Method 2 (By making deQueue operation costly) See Implement
+Queue using Stacks
+
+
+
+ 
+
+Which Data Structure Should be used for
+implementiong LRU cache?
+
+We use two data structures to implement an LRU Cache.
+
+1.    
+Queue which is implemented using a doubly linked
+list. The maximum size of the queue will be equal to the total number of frames
+available (cache size).The most recently used pages will be near front end and
+least recently pages will be near rear end.
+
+2.    
+A Hash with page number as key and address of the
+corresponding queue node as value. See How
+to implement LRU caching scheme? What data structures should be used?
+
+ 
+
+How to check if a given Binary Tree is BST or
+not?
+If inorder traversal of a binary tree is sorted, then the binary tree is BST.
+The idea is to simply do inorder traversal and while traversing keep track of
+previous key value. If current key value is greater, then continue, else return
+false. See A program to check if a binary tree is BST or not for more details.
+
+ 
+
+Linked List Questions
+
+Linked List InsertionLinked
+List Deletionmiddle
+of a given linked listNth
+node from the end of a Linked List
+
+
+
+
+
+
+
+ 
+
+Tree Traversal Questions
+
+InorderPreorder and Postoder TraversalsLevel
+order traversalHeight of Binary Tree
+
+
+
+
+
+
+
+ 
+
+Convert a DLL to Binary Tree in-place
+See In-place conversion of Sorted DLL to Balanced BST
+
+ 
+
+Convert Binary Tree to DLL in-place
+See Convert a given Binary Tree to Doubly Linked List | Set 1, Convert a given Binary Tree to Doubly Linked List | Set 2
+
+ 
+
+Delete a given node in a singly linked list
+Given
+only a pointer to a node to be deleted in a singly linked list, how do you
+delete it?
+
+ 
+
+Reverse a Linked List
+Write
+a function to reverse a linked list
+
+ 
+
+Detect Loop in a Linked List
+Write
+a C function to detect loop in a linked list.
+
+ 
+
+Which data structure is used for dictionary
+and spell checker?
+Data Structure for Dictionary and Spell Checker?
+
+ 
+
+ 
+
+Source 2: https://www.tutorialspoint.com/data_structures_algorithms/data_structures_algorithms_interview_questions.htm
+
+ 
+
+What is data-structure?What are
+various data-structures available?What is algorithm?Why we need to do algorithm
+analysis?What are the criteria of algorithm analysis?What is asymptotic
+analysis of an algorithm?What are asymptotic notations?What is linear data
+structure?What are common operations that can be performed on a
+data-structure?Briefly explain the approaches to develop algorithms.Give some
+examples greedy algorithms.What are some examples of divide and conquer
+algorithms?What are some examples of dynamic programming algorithms?What is a
+linked-list?What is stack?Why do we use stacks?What operations can be performed
+on stacks?What is a queue in data-structure?Why do we use queues?What
+operations can be performed on Queues?What is linear searching?What is binary
+search?What is bubble sort and how bubble sort works?Tell me something about
+'insertion sort'?What is selection sort?How insertion sort and selection sorts
+are different?What is merge sort and how it works?What is shell sort?How quick
+sort works?What is a graph?How depth first traversal works?How breadth first
+traversal works?What is a tree?What is a binary tree?What is a binary search
+tree?What is tree traversal?See the below image of a binary search tree, and
+traverse it using all available methods −
+ 
+ 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ 
+ 
+ 
+
+ 
+What is an AVL Tree?What is a spanning tree?How many spanning
+trees can a graph has?
+
+It depends on how connected the graph is. A
+complete undirected graph can have maximum nn-1 number of
+spanning trees, where n is number of nodes.
+
+How
+Kruskal's algorithm works?How Prim's algorithm finds spanning tree?What is a
+minimum spanning tree (MST) ?What is a heap in data structure?What is a
+recursive function?What is tower of hanoi?What is fibonacci series?What is
+hashing?What is interpolation search technique?What is the prefix and post fix
+notation of (a + b) * (c + d) ?
+
+ 
+
+Source 3: https://www.indiabix.com/technical/data-structures/
+
+ 
+
+1.   
+What
+is data structure?
+
+A data structure is a way of organizing data
+that considers not only the items stored, but also their relationship to each other.
+Advance knowledge about the relationship between data items allows designing of
+efficient algorithms for the manipulation of data.
+
+2.   
+List
+out the areas in which data structures are applied extensively?
+
+1.    Compiler Design,
+
+2.    Operating System,
+
+3.    Database Management System,
+
+4.    Statistical analysis package,
+
+5.    Numerical Analysis,
+
+6.    Graphics,
+
+7.    Artificial Intelligence,
+
+8.   
+Simulation
+
+3.   
+What
+are the major data structures used in the following areas : RDBMS, Network data
+model and Hierarchical data model.
+
+1.    RDBMS = Array (i.e. Array of structures)
+
+2.    Network data model = Graph
+
+3.   
+Hierarchical data
+model = Trees
+
+4.   
+If
+you are using C language to implement the heterogeneous linked list, what
+pointer type will you use?
+
+The heterogeneous linked list contains
+different data types in its nodes and we need a link, pointer to connect them.
+It is not possible to use ordinary pointers for this. So we go for void
+pointer. Void pointer is capable of storing pointer to any type as it is a
+generic pointer type.
+
+5.   
+Minimum
+number of queues needed to implement the priority queue?
+
+Two. One queue is used for actual storing of
+data and another for storing priorities.
+
+6.   
+What
+is the data structures used to perform recursion?
+
+Stack. Because of its LIFO (Last In First Out)
+property it remembers its 'caller' so knows whom to return when the function
+has to return. Recursion makes use of system stack for storing the return
+addresses of the function calls.
+
+Every recursive function has its equivalent
+iterative (non-recursive) function. Even when such equivalent iterative
+procedures are written, explicit stack is to be used.
+
+What
+are the notations used in Evaluation of Arithmetic Expressions using prefix and
+postfix forms?Polish and Reverse Polish notations.Convert
+the expression ((A + B) * C - (D - E) ^ (F + G)) to equivalent Prefix and
+Postfix notations.
+
+
+
+
+
+1.    Prefix Notation: - * +ABC ^ - DE + FG
+
+2.   
+Postfix
+Notation: AB + C * DE - FG
++ ^ -
+
+Sorting
+is not possible by using which of the following methods? (Insertion, Selection,
+Exchange, Deletion)Sorting is not possible in Deletion. Using insertion we can perform insertion
+sort, using selection we can perform selection sort, using exchange we can
+perform the bubble sort (and other similar sorting methods). But no sorting
+method can be done just using deletion.What
+are the methods available in storing sequential files ?
+
+
+
+
+
+1.    Straight merging,
+
+2.    Natural merging,
+
+3.    Polyphase sort,
+
+4.   
+Distribution of
+Initial runs.
+
+List
+out few of the Application of tree data-structure?
+
+1.    The manipulation of Arithmetic expression,
+
+2.    Symbol Table construction,
+
+3.   
+Syntax analysis.
+
+List
+out few of the applications that make use of Multilinked Structures?
+
+1.    Sparse matrix,
+
+2.   
+Index generation.
+
+
+ In
+     tree construction which is the suitable efficient data structure? (Array,
+     Linked list, Stack, Queue)
+
+
+Linked list is the suitable efficient data
+structure.
+
+
+ What
+     is the type of the algorithm used in solving the 8 Queens problem?
+
+
+Backtracking.
+
+
+ In
+     an AVL tree, at what condition the balancing is to be done?
+
+
+If the 'pivotal value' (or the 'Height
+factor') is greater than 1 or less than -1.
+
+
+ What
+     is the bucket size, when the overlapping and collision occur at same time?
+
+
+One. If there is only one entry possible in
+the bucket, when the collision occurs, there is no way to accommodate the
+colliding value. This results in the overlapping of values.
+
+
+ Classify
+     the Hashing Functions based on the various methods by which the key value
+     is found.
+ 
+  Direct method,
+  Subtraction method,
+  Modulo-Division method,
+  Digit-Extraction method,
+  Mid-Square method,
+  Folding method,
+  Pseudo-random
+      method.
+ 
+ What
+     are the types of Collision Resolution Techniques and the methods used in
+     each of the type?
+ 
+  Open addressing (closed
+      hashing), The methods used include:
+      Overflow block.
+  Closed
+      addressing (open hashing), The
+      methods used include: Linked list, Binary tree.
+ 
+
+
+·  In RDBMS, what is the efficient data structure
+used in the internal storage representation?B+ tree. Because in B+ tree, all the data is
+stored only in leaf nodes, that makes searching easier. This corresponds to the
+records that shall be stored in leaf nodes.·  What is a spanning Tree?A spanning tree is a tree associated with a
+network. All the nodes of the graph appear on the tree once. A minimum spanning
+tree is a spanning tree organized so that the total edge weight between nodes
+is minimized.·  Does the minimum spanning tree of a graph give
+the shortest distance between any 2 specified nodes?No. The Minimal spanning tree assures that the
+total weight of the tree is kept at its minimum. But it doesn't mean that the
+distance between any two nodes involved in the minimum-spanning tree is
+minimum.·  Which is the simplest file structure?
+(Sequential, Indexed, Random)Sequential is the simplest file structure.·  Whether Linked List is linear or Non-linear
+data structure?According to Access strategies Linked list is
+a linear one. 
+According to Storage Linked List is a Non-linear one.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+Source 4: https://career.guru99.com/top-50-data-structure-interview-questions/
+
+1) What is data structure?
+
+Data structures refers
+to the way data is organized and manipulated. It seeks to find ways to make
+data access more efficient. When dealing with data structure, we not only focus
+on one piece of data, but rather different set of data and how they can relate
+to one another in an organized manner.
+
+2) Differentiate file structure
+from storage structure.
+
+Basically, the key
+difference is the memory area that is being accessed. When dealing with the
+structure that resides the main memory of the computer system, this is referred
+to as storage structure. When dealing with an auxiliary structure, we refer to
+it as file structures.
+
+3) When is a binary search best
+applied?
+
+A binary search is an
+algorithm that is best applied to search a list when the elements are already
+in order or sorted. The list is search starting in the middle, such that if
+that middle value is not the target search key, it will check to see if it will
+continue the search on the lower half of the list or the higher half. The split
+and search will then continue in the same manner.
+
+4) What is a linked list?
+
+A linked list is a
+sequence of nodes in which each node is connected to the node following it.
+This forms a chain-like link of data storage.
+
+5) How do you reference all the
+elements in a one-dimension array?
+
+To do this, an indexed
+loop is used, such that the counter runs from 0 to the array size minus one. In
+this manner, we are able to reference all the elements in sequence by using the
+loop counter as the array subscript.
+
+6) In what areas do data
+structures applied?
+
+Data structures is
+important in almost every aspect where data is involved. In general, algorithms
+that involve efficient data structure is applied in the following areas:
+numerical analysis, operating system, A.I., compiler design, database
+management, graphics, and statistical analysis, to name a few.
+
+7) What is LIFO?
+
+LIFO is short for Last
+In First Out, and refers to how data is accessed, stored and retrieved. Using
+this scheme, data that was stored last , should be the one to be extracted
+first. This also means that in order to gain access to the first data, all the
+other data that was stored before this first data must first be retrieved and
+extracted.
+
+8 ) What is a queue?
+
+
+
+
+A queue is a data
+structures that can simulates a list or stream of data. In this structure, new
+elements are inserted at one end and existing elements are removed from the
+other end.
+
+9) What are binary trees?
+
+A binary tree is one
+type of data structure that has two nodes, a left node and a right node. In
+programming, binary trees are actually an extension of the linked list
+structures.
+
+10) Which data structures is
+applied when dealing with a recursive function?
+
+Recursion, which is
+basically a function that calls itself based on a terminating condition, makes
+use of the stack. Using LIFO, a call to a recursive function saves the return
+address so that it knows how to return to the calling function after the call
+terminates.
+
+11) What is a stack?
+
+A stack is a data
+structure in which only the top element can be accessed. As data is stored in
+the stack, each data is pushed downward, leaving the most recently added data
+on top.
+
+12) Explain Binary Search Tree
+
+A binary search tree
+stores data in such a way that they can be retrieved very efficiently. The left
+subtree contains nodes whose keys are less than the node’s key value, while the
+right subtree contains nodes whose keys are greater than or equal to the node’s
+key value. Moreover, both subtrees are also binary search trees.
+
+13) What are multidimensional
+arrays?
+
+Multidimensional
+arrays make use of multiple indexes to store data. It is useful when storing
+data that cannot be represented using a single dimensional indexing, such as
+data representation in a board game, tables with data stored in more than one
+column.
+
+14) Are linked lists considered
+linear or non-linear data structures?
+
+It actually depends on
+where you intend to apply linked lists. If you based it on storage, a linked
+list is considered non-linear. On the other hand, if you based it on access
+strategies, then a linked list is considered linear.
+
+15) How does dynamic memory
+allocation help in managing data?
+
+Aside from being able
+to store simple structured data types, dynamic memory allocation can combine
+separately allocated structured blocks to form composite structures that expand
+and contract as needed.
+
+16) What is FIFO?
+
+FIFO is short for
+First-in, First-out, and is used to represent how data is accessed in a queue.
+Data has been inserted into the queue list the longest is the one that is
+removed first.
+
+17) What is an ordered list?
+
+An ordered list is a
+list in which each node’s position in the list is determined by the value of
+its key component, so that the key values form an increasing sequence, as the
+list is traversed.
+
+18) What is merge sort?
+
+Merge sort takes a
+divide-and-conquer approach to sorting data. In a sequence of data, adjacent
+ones are merged and sorted to create bigger sorted lists. These sorted lists
+are then merged again to form an even bigger sorted list, which continuous
+until you have one single sorted list.
+
+19) Differentiate NULL and
+VOID.
+
+Null is actually a
+value, whereas Void is a data type identifier. A variable that is given a Null
+value simply indicates an empty value. Void is used to identify pointers as having
+no initial size.
+
+20) What is the primary
+advantage of a linked list?
+
+A linked list is a
+very ideal data structure because it can be modified easily. This means that
+modifying a linked list works regardless of how many elements are in the list.
+
+21) What is the difference
+between a PUSH and a POP?
+
+Pushing and popping
+applies to the way data is stored and retrieved in a stack. A push denotes data
+being added to it, meaning data is being “pushed” into the stack. On the other
+hand, a pop denotes data retrieval, and in particular refers to the topmost
+data being accessed.
+
+22) What is a linear search?
+
+A linear search refers
+to the way a target key is being searched in a sequential data structure. Using
+this method, each element in the list is checked and compared against the
+target key, and is repeated until found or if the end of the list has been
+reached.
+
+23) How does variable
+declaration affect memory allocation?
+
+The amount of memory
+to be allocated or reserved would depend on the data type of the variable being
+declared. For example, if a variable is declared to be of integer type, then 32
+bits of memory storage will be reserved for that variable.
+
+24) What is the advantage of
+the heap over a stack?
+
+Basically, the heap is
+more flexible than the stack. That’s because memory space for the heap can be
+dynamically allocated and de-allocated as needed. However, memory of the heap
+can at times be slower when compared to that stack.
+
+25) What is a postfix
+expression?
+
+A postfix expression
+is an expression in which each operator follows its operands. The advantage of
+this form is that there is no need to group sub-expressions in parentheses or
+to consider operator precedence.
+
+26) What is Data abstraction?
+
+Data abstraction is a
+powerful tool for breaking down complex data problems into manageable chunks.
+This is applied by initially specifying the data objects involved and the
+operations to be performed on these data objects without being overly concerned
+with how the data objects will be represented and stored in memory.
+
+27) How do you insert a new
+item in a binary search tree?
+
+Assuming that the data
+to be inserted is a unique value (that is, not an existing entry in the tree),
+check first if the tree is empty. If it’s empty, just insert the new item in
+the root node. If it’s not empty, refer to the new item’s key. If it’s smaller
+than the root’s key, insert it into the root’s left subtree, otherwise, insert
+it into the root’s right subtree.
+
+28) How does a selection sort
+work for an array?
+
+The selection sort is
+a fairly intuitive sorting algorithm,, though not necessarily efficient. To
+perform this, the smallest element is first located and switched with the
+element at subscript zero, thereby placing the smallest element in the first
+position. The smallest element remaining in the subarray is then located next
+with subscripts 1 through n-1 and switched with the element at subscript 1,
+thereby placing the second smallest element in the second position. The steps
+are repeated in the same manner till the last element.
+
+29) How do signed and unsigned
+numbers affect memory?
+
+
+
+
+In the case of signed
+numbers, the first bit is used to indicate whether positive or negative, which
+leaves you with one bit short. With unsigned numbers, you have all bits
+available for that number. The effect is best seen in the number range
+(unsigned 8 bit number has a range 0-255, while 8-bit signed number has a range
+-128 to +127.
+
+30) What is the minimum number
+of nodes that a binary tree can have?
+
+A binary tree can have
+a minimum of zero nodes, which occurs when the nodes have NULL values.
+Furthermore, a binary tree can also have 1 or 2 nodes.
+
+31) What are dynamic data
+structures?
+
+Dynamic data
+structures are structures that expand and contract as a program runs. It
+provides a flexible means of manipulating data because it can adjust according
+to the size of the data.
+
+32) In what data structures are
+pointers applied?
+
+Pointers that are used
+in linked list have various applications in data structure. Data structures
+that make use of this concept include the Stack, Queue, Linked List and Binary
+Tree.
+
+33) Do all declaration
+statements result in a fixed reservation in memory?
+
+Most declarations do,
+with the exemption of pointers. Pointer declaration does not allocate memory
+for data, but for the address of the pointer variable. Actual memory allocation
+for the data comes during run-time.
+
+34) What are ARRAYs?
+
+When dealing with
+arrays, data is stored and retrieved using an index that actually refers to the
+element number in the data sequence. This means that data can be accessed in
+any order. In programming, an array is declared as a variable having a number
+of indexed elements.
+
+35) What is the minimum number
+of queues needed when implementing a priority queue?
+
+The minimum number of
+queues needed in this case is two. One queue is intended for sorting priorities
+while the other queue is intended for actual storage of data.
+
+36) Which sorting algorithm is
+considered the fastest?
+
+There are many types
+of sorting algorithms: quick sort, bubble sort, balloon sort, radix sort, merge
+sort, etc. Not one can be considered the fastest because each algorithm is
+designed for a particular data structure and data set. It would depend on the
+data set that you would want to sort.
+
+37) Differentiate STACK from
+ARRAY.
+
+Data that is stored in
+a stack follows a LIFO pattern. This means that data access follows a sequence
+wherein the last data to be stored will the first one to be extracted. Arrays,
+on the other hand, does not follow a particular order and instead can be
+accessed by referring to the indexed element within the array.
+
+38) Give a basic algorithm for
+searching a binary search tree.
+
+1.  
+if the tree is empty, then the target is not in the tree, end
+search
+2. if the tree is not empty, the target is in the tree
+3. check if the target is in the root item
+4. if target is not in the root item, check if target is smaller than the
+root’s value
+5. if target is smaller than the root’s value, search the left subtree
+6. else, search the right subtree
+
+39) What is a dequeue?
+
+A dequeue is a
+double-ended queue. This is a structure wherein elements can be inserted or
+removed from either end.
+
+40) What is a bubble sort and
+how do you perform it?
+
+A bubble sort is one
+sorting technique that can be applied to data structures such as an array. It
+works by comparing adjacent elements and exchanges their values if they are out
+of order. This method lets the smaller values “bubble” to the top of the list,
+while the larger value sinks to the bottom.
+
+41) What are the parts of a
+linked list?
+
+A linked list
+typically has two parts: the head and the tail. Between the head and tail lie
+the actual nodes, with each node being linked in a sequential manner.
+
+42) How does selection sort
+work?
+
+Selection sort works
+by picking the smallest number from the list and placing it at the front. This
+process is repeated for the second position towards the end of the list. It is
+the simplest sort algorithm.
+
+43) What is a graph?
+
+A graph is one type of
+data structure that contains a set of ordered pairs. These ordered pairs are
+also referred to as edges or arcs, and are used to connect nodes where data can
+be stored and retrieved.
+
+44) Differentiate linear from
+non linear data structure.
+
+Linear data structure
+is a structure wherein data elements are adjacent to each other. Examples of
+linear data structure include arrays, linked lists, stacks and queues. On the
+other hand, non-linear data structure is a structure wherein each data element
+can connect to more than two adjacent data elements. Examples of non linear
+data structure include trees and graphs.
+
+45) What is an AVL tree?
+
+An AVL tree is a type
+of binary search tree that is always in a state of partially balanced. The
+balance is measured as a difference between the heights of the subtrees from
+the root. This self-balancing tree was known to be the first data structure to
+be designed as such.
+
+46) What are doubly linked
+lists?
+
+Doubly linked lists
+are a special type of linked list wherein traversal across the data elements
+can be done in both directions. This is made possible by having two links in
+every node, one that links to the next node and other one that links to the
+previous node.
+
+47) What is Huffman’s
+algorithm?
+
+Huffman’s algorithm is
+associated in creating extended binary trees that has minimum weighted path
+lengths from the given weights. It makes use of a table that contains frequency
+of occurrence for each data element.
+
+48) What is Fibonacci search?
+
+Fibonacci search is a
+search algorithm that applies to a sorted array. It makes use of a
+divide-and-conquer approach that can greatly reduce the time needed in order to
+reach the target element.
+
+49) Briefly explain recursive
+algorithm.
+
+Recursive algorithm
+targets a problem by dividing it into smaller, manageable sub-problems. The
+output of one recursion after processing one sub-problem becomes the input to
+the next recursive process.
+
+50) How do you search for a
+target key in a linked list?
+
+To find the target key
+in a linked list, you have to apply sequential search. Each node is traversed
+and compared with the target key, and if it is different, then it follows the
+link to the next node. This traversal continues until either the target key is
+found or if the last node is reached.
+
+ 
+
+Source 5: http://placement.freshersworld.com/data-structure-interview-questions/33121964
+
+ 
+
+1.What is data structure?
+
+A data structure is a way of organizing data that considers not
+only the items stored, but also their relationship to each other. Advance knowledge
+about the relationship between data items allows designing of efficient
+algorithms for the manipulation of data.
+
+
+
+2.Minimum number of queues needed to implement the priority queue?
+
+Two. One queue is used for actual storing of data and another for
+storing priorities.
+
+
+
+3.What are the notations used in Evaluation of Arithmetic Expressions using
+prefix and postfix forms?
+
+Polish and Reverse Polish notations.
+
+
+4.List out few of the Application of tree data-structure?
+
+i)The manipulation of Arithmetic expression
+ii)Symbol Table construction
+iii)Syntax analysis.
+
+
+5.What is the type of the algorithm used in solving the 8 Queens problem?
+
+Backtracking
+
+
+6.In RDBMS, what is the efficient data structure used in the internal
+storage representation?
+B+ tree. Because in B+ tree, all the data is stored only in leaf nodes, that
+makes searching easier. This corresponds to the records that shall be stored in
+leaf nodes.
+
+
+
+7. What is a spanning Tree?
+
+A spanning tree is a tree associated with a network. All the
+nodes of the graph appear on the tree once. A minimum spanning tree is a
+spanning tree organized so that the total edge weight between nodes is
+minimized.
+
+
+
+8. List out the areas in which data structures are applied extensively?
+
+Compiler Design, Operating System, Database Management System,
+Statistical
+analysis package, Numerical Analysis, Graphics, Artificial Intelligence,
+Simulation
+
+
+
+9. Translate infix expression into its equivalent post fix expression:
+(A-B)*(D/E)
+
+(A-B)*(D/E) = [AB-]*[DE/] = AB-DE/*
+
+
+
+10. What are priority queues?
+
+A priority queue is a collection of elements such that each
+element has been assigned a priority.
+
+
+
+11. What is a string?
+
+A sequential array of characters is called a string.
+
+ 
+
+12. What is Brute Force algorithm?
+
+Algorithm used to search the contents by comparing each element
+of array is called Brute Force algorithm.
+
+ 
+
+13. What are the limitations of arrays?
+
+i)Arrays are of fixed size.
+ii)Data elements are stored in continuous memory locations which may not be
+available always.
+iii)Adding and removing of elements is problematic because of shifting the
+locations.
+
+
+14. How can you overcome the limitations of arrays?
+
+Limitations of arrays can be solved by using the linked list.
+
+
+
+15. What is a linked list?
+
+Linked list is a data structure which store same kind of data
+elements but not in continuous memory locations and size is not fixed. The
+linked lists are related logically.
+
+
+
+16. What is a node?
+
+The data element of a linked list is called a node.
+
+
+
+17. What does node consist of?
+
+Node consists of two fields:data field to store the element and
+link field to store the address of the next node.
+
+
+
+18. What is a queue ?
+
+A Queue is a sequential organization of data. A queue is a first
+in first out type of data structure. An element is inserted at the last
+position and an element is always taken out from the first position.
+
+
+
+19. What are the types of Collision Resolution Techniques and the methods
+used in each of the type?
+
+Open addressing (closed hashing),The methods used
+include:Overflow block
+Closed addressing (open hashing),The methods used include:Linked list,Binary
+tree
+
+
+
+20. What are the methods available in storing sequential files ?
+
+Straight merging, Natural merging, Polyphase sort, Distribution
+of Initial runs.
+
+
+
+21. Mention some of the problem solving strategies?
+
+The most widely strategies are listed below
+i)Divide and conquer
+ii)Binary doubling strategy
+iii)Dynamic programming 
+
+
+
+22. What is divide and conquer method?
+
+The basic idea is to divide the problem into several sub
+problems beyond which cannot be further subdivided. Then solve the sub problems
+efficiently and join then together to get the solution for the main problem.
+
+
+
+23. What is the need for the header?
+Header of the linked list is the first element in the list and it stores the
+number of elements in the list. It points to the first data element of the
+list.
+
+
+
+24. Define leaf?
+In a directed tree any node which has out degree o is called a terminal node or
+a leaf.
+
+
+
+25. What are the applications of binary tree?
+
+Binary tree is used in data processing.
+
+
+
+26. What are the different types of traversing?
+
+The different types of traversing are
+i)Pre-order traversal-yields prefix from of expression.
+ii)In-order traversal-yields infix form of expression.
+iii)Post-order traversal-yields postfix from of expression.
+
+
+
+27. Define pre-order traversal?
+
+i)Process the root node
+ii)Process the left subtree
+iii)Process the right subtree
+
+
+
+28. Define post-order traversal?
+
+i)Process the left subtree
+ii)Process the right subtree
+iii)Process the root node
+
+
+
+29. Define in -order traversal?
+
+i)Process the left subtree
+ii)Process the root node
+iii)Process the right subtree
+
+
+
+30. What is meant by sorting?
+
+Ordering the data in an increasing or decreasing fashion
+according to some relationship among the data item is called sorting.
+
+
+
+31. What's the major distinction in between Storage structure and file
+structure and how?
+
+The expression of an specific data structure inside memory of a
+computer system is termed storage structure in contrast to a storage structure
+expression in auxiliary memory is normally known as a file structure.
+
+
+
+32. Stack can be described as a pointer. Explain?
+
+Because stack will contain a head pointer which will always
+point to the top of the Stack.All Stack Operations are done using Head Pointer.
+Hence Stack ca be Described as a Pointer
+
+
+
+33. What do you mean by: Syntax Error, Logical Error, Run time Error? 
+
+Syntax Error-Syntax Error is due to lack of knowledge in a
+specific language. It is due to somebody does not know how to use the features
+of a language.We can know the errors at the time of compilation.
+logical Error-It is due to the poor understanding of the requirement or
+problem.
+Run time Error-The exceptions like divide a number by 0,overflow and underflow
+comes under this.
+
+
+
+34. What is mean by d-queue?
+
+D-queue stands for double ended queue. It is a abstract data
+structure that implements a queue for which elements can be added to front or
+rear and the elements can be removed from the rear or front. It is also called
+head-tail linked list
+
+
+
+35. What is AVL tree?
+
+Avl tree is self binary tree in which balancing factor lie
+between the -1 to 1.It is also known as self balancing tree.
+
+
+
+36. what is binary tree?
+
+Binary tree is a tree which has maximum no. of childrens either
+0 or 1 or 2. i.e., there is at the most 2 branches in every node.
+
+
+
+37. What is the difference between a stack and a Queue?
+
+Stack – Represents the collection of elements in Last In First
+Out order. Operations includes testing null stack, finding the top element in
+the stack, removal of top most element and adding elements on the top of the
+stack.
+Queue - Represents the collection of elements in First In First Out
+order.Operations include testing null queue, finding the next element, removal
+of elements and inserting the elements from the queue. 
+Insertion of elements is at the end of the queue.Deletion of elements is from
+the beginning of the queue
+
+
+
+38. What actions are performed when a function is called?
+
+i)arguments are passed
+ii)local variables are allocated and initialized
+iii)transferring control to the function
+
+
+
+39. What is precision?
+
+Precision refers the accuracy of the decimal portion of a value.
+Precision is the number of digits allowed after the decimal point.
+
+
+
+40. What do you mean by overflow and underflow? 
+
+When new data is to be inserted into the data structure but
+there is no available space i.e.free storage list is empty this situation is
+called overflow.When we want to delete data from a data structure that is empty
+this situation is called underflow.
+
+ 
+
+Source 6: https://www.javatpoint.com/data-structure-interview-questions
+
+ 
+
+)
+What is Data Structure? Explain.
+
+Data
+structure is a way that specifies how to organize and manipulate the data. It
+also specifies the relationship between them. It provides some algorithms to
+make data access more efficient and easy.
+
+
+
+
+
+
+
+2) In
+which areas data structures are applied extensively?
+
+Data
+structures are applied extensively in the following areas of computer science:
+
+
+ Compiler Design,
+ Operating System,
+ Database Management System,
+ Statistical analysis package,
+ Numerical Analysis,
+ Graphics,
+ Artificial Intelligence,
+ Simulation
+
+
+
+
+
+
+
+
+3)
+What is the difference between file structure and storage structure?
+
+Difference
+between file structure and storage structure:
+
+The main
+difference between file structure and storage structure is based on memory area
+that is being accessed.
+
+Storage
+structure: When we
+deal with the structure that resides in the main memory of the computer system,
+known as the storage structure.
+
+File
+structure: When we
+deal with an auxiliary structure then it is referred as file structures.
+
+
+
+
+
+
+
+4)
+Which data structures are used with the following areas: RDBMS, Network data model
+and hierarchical data model?
+
+
+ RDBMS uses Array data structure
+ Network data model uses Graph
+ Hierarchal data model uses Trees
+
+
+
+
+
+
+
+
+5)
+What are Binary trees?
+
+A Binary
+Tree is a type of data structure that has two nodes: A left node and a right
+node. In programming, binary trees are actually an extension of the linked list
+structures.
+
+
+
+
+
+
+
+6)
+What is a Stack?
+
+A stack
+is a data structure in which only the top element can be accessed. As data is
+stored in the stack, each data is pushed downward, leaving the most recently
+added data on top.
+
+
+
+
+
+
+
+7)
+What is a multidimensional array?
+
+A
+multidimensional array stores data in multiple indexes. It is used when the
+storing data that cannot be represented using a single dimensional indexing,
+such as data representation in a board game, tables with data stored in more
+than one column.
+
+
+
+
+
+
+
+8)
+What is a linked list in data structure?
+
+A linked
+list is a sequence of nodes in which each node is connected to the node
+following it. It makes a chain like link of data storage.
+
+
+ 
+
+
+
+
+
+
+
+
+9) If
+you are using C language to implement the heterogeneous linked list, what
+pointer type should be used?
+
+The
+heterogeneous linked list contains different data types, so it is not possible
+to use ordinary pointers for this. For this work, you have to use a generic
+pointer type like void pointer because void pointer is capable of storing
+pointer to any type.
+
+
+
+
+
+
+
+10)
+How many minimum numbers of queues are needed to implement the priority queue?
+
+Two
+queues are needed. One queue is used for actual storing of data and another for
+storing priorities.
+
+
+
+
+
+
+
+11)
+Which data structure is used to perform recursion?
+
+Stack is
+used to perform recursion because of its LIFO (Last In First Out) property. It
+knows whom to return when the function has to return.
+
+
+
+
+
+
+
+12)
+When should you use binary search engine?
+
+A binary
+search algorithm is used to search a list when the elements are already in
+order or sorted. The list starts searching in the middle, if the middle value
+is not the target search key, it will check to see if it will continue the
+search on the lower half of the list or the higher half. The split and search
+will then continue in the same manner.
+
+Example:
+
+
+ 
+
+
+
+
+
+
+
+
+13)
+How to reference all the elements in a one-dimension array?
+
+It can be
+done by using an indexed loop such that the counter runs from 0 to the array
+size minus one. By this manner, you can reference all the elements in sequence
+by using the loop counter as the array subscript.
+
+
+
+
+
+
+
+14)
+Which notations are used in Evaluation of Arithmetic Expressions using prefix
+and postfix forms?
+
+Polish
+and Reverse Polish notations.
+
+
+
+
+
+
+
+15)
+Give some example of the application of Tree-data structure?
+
+Application
+of Tree- data structure:
+
+
+ The manipulation of Arithmetic
+     expression,
+ Symbol Table construction,
+ Syntax analysis
+
+
+
+
+
+
+
+
+16)
+Give the example of some applications that make use of Multilinked Structures?
+
+
+ Sparse matrix,
+ Index generation.
+
+
+
+
+
+
+
+
+17)
+Are linked lists considered linear or non-linear data structures?
+
+A linked
+list is considered both linear and non-linear data structure depending on the
+situation.
+
+
+ On the basis of data storage, it is
+     considered as non-linear data structure.
+ On the basis of access strategy, it is
+     considered as linear data-structure.
+
+
+
+
+
+
+
+
+18)
+What is the difference between NULL and VOID?
+
+
+ Null is actually a value, whereas Void
+     is a data type identifier.
+ A null variable simply indicates an
+     empty value, whereas void is used to identify pointers as having no
+     initial size.
+
+
+
+
+
+
+
+
+19)
+What is the difference between PUSH and POP?
+
+PUSH and
+POP operations specify how data is stored and retrieved in a stack.
+
+PUSH: PUSH specifies that data is being
+"pushed" into the stack.
+
+POP: POP specifies data retrieval, and in
+particular refers to the topmost data being accessed.
+
+
+
+
+
+
+
+20)
+What is a postfix expression?
+
+An
+expression which each operator follows its operand is known as postfix
+expression. The main benefit of this form is that there is no need to group
+sub-expressions in parentheses or to consider operator precedence.
+
+ 
+
+Algorithms Interview Questions
+
+Source 1: http://www.geeksforgeeks.org/top-10-algorithms-in-interview-questions/
+
+3.3
+
+In this
+post “Top 10 coding problems of important  topics with their
+solutions ” are written. If you are preparing for a coding interview, going
+through these problems is a must.
+
+Topics : 
+1. Graph
+2. Linked
+List
+3. Dynamic
+Programming
+4. Sorting
+And Searching
+5. Tree
+/ Binary Search Tree
+6. Number
+Theory
+7. BIT
+Manipulation
+8. String
+/ Array
+
+Graph
+
+1. Breadth
+First Search (BFS)
+2. Depth
+First Search (DFS)
+3. Shortest
+Path from source to all vertices **Dijkstra** 
+4. Shortest
+Path from every vertex to every other vertex **Floyd Warshall**
+5. To detect cycle in a Graph
+**Union Find**
+6. Minimum
+Spanning tree **Prim** 
+7. Minimum
+Spanning tree **Kruskal** 
+8. Topological
+Sort
+9. Boggle
+(Find all possible words in a board of characters)
+10. Bridges in a Graph
+
+Linked
+List
+
+1. Insertion
+of a node in Linked List (On the basis of some constraints)
+2. Delete
+a given node in Linked List (under given constraints)
+3. Compare
+two strings represented as linked lists
+4. Add
+Two Numbers Represented By Linked Lists
+5. Merge
+A Linked List Into Another Linked List At Alternate Positions
+6. Reverse
+A List In Groups Of Given Size
+7. Union
+And Intersection Of 2 Linked Lists
+8. Detect
+And Remove Loop In A Linked List
+9. Merge
+Sort For Linked Lists
+10. Select
+A Random Node from A Singly Linked List
+
+Dynamic
+Programming
+
+1. Longest
+Common Subsequence
+2. Longest
+Increasing Subsequence
+3. Edit
+Distance
+4. Minimum
+Partition
+5. Ways
+to Cover a Distance
+6. Longest
+Path In Matrix
+7. Subset
+Sum Problem
+8. Optimal
+Strategy for a Game
+9. 0-1
+Knapsack Problem
+10. Boolean
+Parenthesization Problem
+
+Sorting
+And Searching
+
+1. Binary Search
+2. Search
+an element in a sorted and rotated array
+3. Bubble Sort
+4. Insertion Sort
+5. Merge Sort
+6. Heap Sort (Binary Heap)
+7. Quick Sort
+8. Interpolation
+Search
+9. Find
+Kth Smallest/Largest Element In Unsorted Array
+10. Given
+a sorted array and a number x, find the pair in array whose sum is closest to x
+
+Tree
+/ Binary Search Tree
+
+1. Find
+Minimum Depth of a Binary Tree
+2. Maximum
+Path Sum in a Binary Tree
+3. Check
+if a given array can represent Preorder Traversal of Binary Search Tree
+4. Check
+whether a binary tree is a full binary tree or not
+5. Bottom
+View Binary Tree
+6. Print
+Nodes in Top View of Binary Tree
+7. Remove
+nodes on root to leaf paths of length < K
+8. Lowest
+Common Ancestor in a Binary Search Tree
+9. Check
+if a binary tree is subtree of another binary tree
+10. Reverse
+alternate levels of a perfect binary tree
+
+Number
+Theory
+
+1. Modular
+Exponentiation
+2. Modular
+multiplicative inverse
+3. Primality Test | Set 2 (Fermat Method)
+4. Euler’s
+Totient Function
+5. Sieve
+of Eratosthenes
+6. Convex
+Hull
+7. Basic
+and Extended Euclidean algorithms
+8. Segmented Sieve
+9. Chinese
+remainder theorem
+10. Lucas
+Theorem
+
+BIT
+Manipulation
+
+1. Maximum
+Subarray XOR
+2. Magic
+Number
+3. Sum
+of bit differences among all pairs
+4. Swap
+All Odds And Even Bits
+5. Find
+the element that appears once
+6. Binary
+representation of a given number
+7. Count
+total set bits in all numbers from 1 to n
+8. Rotate
+bits of a number
+9. Count
+number of bits to be flipped to convert A to B
+10. Find
+Next Sparse Number
+
+String
+/ Array
+
+1. Reverse
+an array without affecting special characters
+2. All
+Possible Palindromic Partitions
+3. Count
+triplets with sum smaller than a given value
+4. Convert
+array into Zig-Zag fashion
+5. Generate
+all possible sorted arrays from alternate elements of two given sorted arrays
+6. Pythagorean
+Triplet in an array
+7. Length
+of the largest subarray with contiguous elements
+8. Find
+the smallest positive integer value that cannot be represented as sum of any
+subset of a given array
+9. Smallest
+subarray with sum greater than a given value
+10. Stock Buy Sell to Maximize
+Profit
+
+ 
+
+ 
+
+Source 2: http://www.geeksforgeeks.org/commonly-asked-algorithm-interview-questions-set-1/
+
+Commonly
+Asked Algorithm Interview Questions | Set 1
+
+3.7
+
+What is an algorithm?
+Informally, an algorithm is any well-defined computational procedure that takes
+some value, or set of values, as input and produces some value, or set of
+values, as output. An algorithm is thus a sequence of computational steps that
+transform the input into the output. (Source:Introduction to Algorithms 3rd
+Edition by CLRS)
+
+What is time complexity of Binary Search?
+Time complexity of binary search is O(Logn). See Binary
+Search for more details.
+
+Can Binary Search be used for linked lists?
+Since random access is not allowed in linked list, we cannot reach the middle
+element in O(1) time. Therefore Binary Search is not possible for linked lists.
+There are other ways though, refer Skip
+Listfor example.
+
+How to find if two given rectangles overlap?
+Two rectangles do not overlap if one of the following conditions is true.
+1) One rectangle is above top edge of other rectangle.
+2) One rectangle is on left side of left edge of other rectangle.
+See Find
+if two rectangles overlap for
+more details.
+
+How to find angle between hour and minute
+hands at a given time?
+The idea is to take a reference point as 12. Find the angle moved by hour and
+minute hands, subtract the two angles to find the angle between them. See angle between hour hand and minute hand for more details
+
+When does the worst case of QuickSort occur?
+In quickSort, we
+select a pivot element, then partition the given array around the pivot element
+by placing pivot element at its correct position in sorted array.
+The worst case of quickSort occurs when one part after partition contains all
+elements and other part is empty. For example, if the input array is sorted and
+if last or first element is chosen as a pivot, then the worst occurs. See http://quiz.geeksforgeeks.org/quick-sort/ for more details.
+
+A sorted array is rotated at some unknown point, how to
+efficiently search an element in it. 
+A simple approach is linear search, but we can search in O(Logn) time using Binary
+Search. SeeSearch an element in a sorted and pivoted array for more details.
+Other variations of this problem like find the minimum element or maximum element in a sorted and
+rotated array.
+
+Given a big string of characters, how to efficiently find the
+first unique character in it?
+The efficient solution is to use character as an index in a count array.
+Traverse the given string and store index of first occurrence of every
+character, also store count of occurrences. Then traverse the count array and
+find the smallest index with count as 1. See find the first unique character for more details.
+
+How to count inversions in a sorted array?
+Two elements arr[i] and arr[j] in an array arr[] form an inversion if a[i] >
+a[j] and i < j. How to count all inversions in an unsorted array. See Count
+Inversions in an array for all
+approaches.
+
+Given a big array, how to efficiently find
+k’th largest element in it?
+There can be many solutions for this. The best solution is to use min heap. We
+Build a Min Heap MH of the first k elements. For each element, after the kth
+element (arr[k] to arr[n-1]), compare it with root of MH, if the element is greater
+than the root then make it root and call heapify for MH, Else ignore it.
+Finally, MH has k largest elements and root of the MH is the kth largest
+element. See k largest(or smallest) elements for more details.
+
+Given an array of size n with range of numbers from 1 to n+1. The
+array doesn’t contain any duplicate, one number is missing, find the missing
+number.
+There can be many ways to solve it. The best among is to use XOR. See Find
+the missing numberfor details. There are many variations of this problem like find the two repeating numbers, find a missing and a repeating number, etc.
+
+How to write an efficient method to calculate x raise to the power
+n?
+The idea is to use divide an conquer here to
+do it in O(Logn) time. See Write a C program to calculate pow(x,n) for more details.
+
+Given an input string and a dictionary of words, find out if the
+input string can be segmented into a space-separated sequence of dictionary
+words.
+The idea is to use Dynamic Programming. See Word Break Problem for
+more details.
+
+Given a row of n coins of values v1 . . . vn, where n is even. We
+play a game against an opponent by alternating turns. In each turn, a player
+selects either the first or last coin from the row, removes it from the row
+permanently, and receives the value of the coin. Determine the maximum possible
+amount of money we can definitely win if we move first.
+This is also a Dynamic Programming Question. See Optimal Strategy for a Game for
+more details.
+
+You are given an array of sorted words in an
+arbitrary language, you need to find order (or precedence of characters) in the
+language. For
+example if the given arrays is {“baa”, “abcd”, “abca”, “cab”, “cad”}, then
+order of characters is ‘b’, ‘d’, ‘a’, ‘c’. Note that words are sorted and in
+the given language “baa” comes before “abcd”, therefore ‘b’ is before ‘a’ in
+output. Similarly we can find other orders.
+This can be solved using two steps: First create a graph by processing given
+set of words, then dotopological
+sorting of the created graph,
+See this for
+more details.
+
+ 
+
+ 
+
+Source 3: https://www.toptal.com/algorithms/interview-questions
+
+What are Divide and Conquer
+algorithms? Describe how they work. Can you give any common examples of the
+types of problems where this approach might be used?
+
+View the answer →
+
+
+ 
+
+
+How would you optimally calculate
+p^k, where k is a non-negative integer? What is the complexity of the solution?
+
+View the answer →
+
+
+ 
+
+
+How do Insertion sort, Heapsort,
+Quicksort, and Merge sort work?
+
+View the answer →
+
+Find top algorithm developers today. Toptal can match you with the best engineers
+to finish your project.
+
+HIRE TOPTAL’S ALGORITHM DEVELOPERS
+
+
+ 
+
+
+What are the key advantages of
+Insertion Sort, Quicksort, Heapsort and Mergesort? Discuss best, average, and
+worst case time and memory complexity.
+
+View the answer →
+
+
+ 
+
+
+What is a Hash Table, and what is
+the average case and worst case time for each of its operations? How can we use
+this structure to find all anagrams in a dictionary?
+
+View the answer →
+
+
+ 
+
+
+A numeric array of length N is
+given. We need to design a function that finds all positive numbers in the
+array that have their opposites in it as well. Describe approaches for solving
+optimal worst case and optimal average case performance, respectively.
+
+View the answer →
+
+
+ 
+
+
+How would you, in general terms,
+describe dynamic programming? As an example, how would you find the length of
+the longest common subsequence of elements in two arrays by using this method?
+
+View the answer →
+
+
+ 
+
+
+Design an algorithm that finds
+the number of ways in which you can traverse N meters by doing jumps of 1, 2,
+3, 4, or 5 meter lengths. Assume that N can be a very large number. What is the
+resulting complexity?
+
+View the answer →
+
+
+ 
+
+
+What are Red-Black Trees and
+B-Trees? What is the best use case for each of them?
+
+View the answer →
+
+
+ 
+
+
+What are the Dijkstra and Prim
+algorithms, and how are they implemented? How does the Fibonacci heap relate to
+them?
+
+View the answer →
+
+
+ 
+
+
+What is the Bellman-Ford
+algorithm for finding single source shortest paths? What are its main
+advantages over Dijkstra?
+
+View the answer →
+
+
+ 
+
+
+What is A*, what are its
+implementation details, and what are its advantages and drawbacks in regard to
+traversing graphs towards a target?
+
+View the answer →
+
+
+ 
+
+
+We are given an array of numbers.
+How would we find the sum of a certain subarray? How could we query an
+arbitrary number of times for the sum of any subarray? If we wanted to be able
+to update the array in between sum queries, what would be the optimal solution
+then? What’s the preprocessing and query complexity for each solution.
+
+View the answer →
+
+
+ 
+
+
+You need to design a scheduler
+that to schedule a set of tasks. A number of the tasks need to wait for some
+other tasks to complete prior to running themselves. What algorithm could we
+use to design the schedule and how would we implement it?
+
+View the answer →
+
+
+ 
+
+
+You are given a matrix of MxN
+boolean values representing a board of free (True) or occupied (False) fields.
+Find the size of the largest square of free fields.
+
+View the answer →
+
+
+ 
+
+
+You are given the task of
+choosing the optimal route to connect a master server to a network of N
+routers. The routers are connected with the minimum required N-1 wires into a
+tree structure, and for each router we know the data rate at which devices
+(that are not routers) that are connected to it will require information. That
+information requirement represents the load on each router if that router is
+not chosen to host the master. Determine which router we need to connect the
+master to in order to minimize congestion along individual lines.
+
+View the answer →
+
+
+ 
+
+
+A significantly large static set
+of string keys has been given, together with data for each of those keys. We
+need to create a data structure that allows us to update and access that data
+quickly, with constant time even in worst cases. How can we solve this problem?
+
+View the answer →
+
+
+ 
+
+
+Determine
+if two rectangles intersect.
+
+1. 
+Give an algorithm to solve this problem when rectangles are
+defined by their width, height, and (x, y) coordinates of their top-left
+corners.
+
+2. 
+Give another algorithm where rectangles are defined by their
+width, height, and (x, y) coordinates of their centers.
+
+What are the behaviors of your
+algorithms for edge cases?
+
+View the answer →
+
+
+ 
+
+
+You have
+a set of date intervals represented by StartDate and EndDate. How would you
+efficiently calculate the longest timespan covered by them?
+
+What will be the time complexity?
+
+ 
+
+ 
+
+Source 4: https://www.programcreek.com/2012/11/top-10-algorithms-for-coding-interview/
+
+ 
+
+Classic problems:
+--Two Pointers--
+1)
+Rotate Array, Reverse Words in a String
+2) Evaluate Reverse Polish Notation (Stack)
+3) Isomorphic Strings
+4) Word Ladder (BFS), Word
+Ladder II (BFS)
+5) Median of Two Sorted Arrays
+5) Kth Largest Element in an Array
+6) Wildcard Matching, Regular Expression Matching
+7) Merge Intervals, Insert Interval
+9) Two Sum, Two Sum II, Two Sum III, 3Sum, 4Sum
+10) 3Sum Closest
+11) String to Integer
+12) Merge Sorted Array
+13) Valid Parentheses
+13) Longest Valid Parentheses
+14) Implement strStr()
+15) Minimum Size Subarray Sum
+16) Search Insert Position
+17) Longest Consecutive Sequence
+18) Valid Palindrome
+19)
+ZigZag Conversion
+20) Add Binary 
+21) Length of Last Word
+22) Triangle
+24) Contains Duplicate: I, II, III
+25) Remove Duplicates from Sorted Array: I, II, Remove Element , Move Zeroes
+27) Longest Substring Without Repeating
+Characters
+28) Longest Substring that contains 2 unique
+characters [Google]
+28) Substring with Concatenation of All Words
+29)
+Minimum Window Substring
+31) Find Minimum in Rotated Sorted Array: I, II
+32) Search in Rotated Array:I, II
+33) Min
+Stack
+34) Majority Element: I, II
+35) Bulls and Cows 
+36) Largest Rectangle in Histogram
+37) Longest Common Prefix [Google]
+38) Largest Number
+39) Simplify Path
+40) Compare Version Numbers
+41) Gas Station
+44) Pascal's Triangle: I, II
+45) Container With Most Water
+45)
+Candy [Google]
+45)
+Trapping Rain Water
+46) Count and Say
+47) Search for a Range
+48) Basic Calculator, Basic Calculator II
+49)
+Group Anagrams
+50)
+Shortest Palindrome
+51)
+Rectangle Area
+52)
+Summary Ranges
+53) Increasing Triplet Subsequence
+54) Get Target Using Number List And Arithmetic
+Operations 
+55) Reverse Vowels of a String 
+56) Flip Game, Flip Game II
+57) Missing Number, Find the duplicate number, First
+Missing Positive 
+58) Valid Anagram, Group Shifted Strings
+59) Top K Frequent Elements
+60) Find Peak Element
+61) Word Pattern, Word Pattern II
+62) H-Index , H-Index II
+63) Palindrome Pairs
+64) One Edit Distance
+65) Scramble String
+66) First Bad Version
+67) Integer to English Words
+68) Text Justification 
+69) Remove Invalid Parentheses
+70) Intersection of Two Arrays, Intersection of Two Arrays II
+71) Sliding Window Maximum, Moving Average from Data Stream
+72) Guess Number Higher or Lower
+
+ 
+
+Note: There are more. Can complete later. 
+
+ 
+
+Source 5: https://career.guru99.com/top-18-algorithm-interview-questions/
+
+ 
+
+1) Explain what is an algorithm
+in computing?
+
+An algorithm is a
+well-defined computational procedure that take some value as input and generate
+some value as output. In simple words, it’s a sequence of computational steps
+that converts input into the output.
+
+2) Explain what is Quick Sort
+algorithm?
+
+Quick Sort algorithm
+has the ability to sort list or queries quickly. It is based on the principle
+of partition exchange sort or Divide and conquer. This type of algorithm
+occupies less space, and it segregates the list into three main parts
+
+Elements less than the Pivot elementPivot elementElements greater than the Pivot element3) Explain what is time
+complexity of Algorithm?Time complexity of an algorithm indicates the total time needed
+by the program to run to completion.  It is usually expressed by using
+the big O notation.4) Mention what are the types
+of Notation used for Time Complexity?The types of Notations
+used for Time Complexity includes
+
+
+
+
+
+
+
+
+
+
+
+
+
+Big Oh: It indicates “fewer than or the same as”
+<expression>iterationsBig Omega: It indicates “more than or same as”
+<expression>iterationsBig Theta: It indicates “the same
+as”<expression>iterationsLittle Oh: It indicates “fewer than”
+<expression>iterationsLittle Omega: It indicates “more than”
+<expression>iterations5) Explain how binary search
+works?In binary search, we
+compare the key with the item in the middle position of the array.  If the
+key is less than the item searched then it must lie in the lower half of the
+array, if the key is greater than the item searched than it should be in upper
+half of the array.
+ 
+ 
+6) Explain whether it is
+possible to use binary search for linked lists?Since random access is
+not acceptable in linked list, it is impossible to reach the middle element of
+O(1) time. Thus, binary search is not possible for linked list.7) Explain what is heap sort?Heap-sort can be
+defined as a comparison based sorting algorithm.  It divides its input
+into the unsorted and sorted region, until it shrinks the unsorted region by
+eliminating the smallest element and moving that to the sorted region.
+8) Explain what is Skip list?
+Skip list the method
+for data structuring, where it allows the algorithm to search, delete and
+insert elements in a symbol table or dictionary.  In a skip list, each
+element is represented by a node.  The search function returns the content
+of the value related to key. The insert operation associates a specified key
+with a new value, while the delete function deletes the specified key.9) Explain what is Space
+complexity of insertion sort algorithm?Insertion sort is an
+in-place sorting algorithm which means that it requires no extra or
+little.  storage. For insertion sort, it requires only single list
+elements to be stored out-side the initial data, making the space-complexity
+0(1).10) Explain what a “Hash
+Algorithm” is and what are they used for?“Hash Algorithm” is a
+hash function that takes a string of any length and decreases it to a unique
+fixed length string.  It is used for password validity, message & data
+integrity and for many other cryptographic systems.11) Explain how to find whether
+the linked list has a loop?To know whether the
+linked list has a loop, we will take two pointer approach.  If we maintain
+two pointers, and we increase one pointer after processing two nodes and other
+after processing every node, we are likely to encounter a situation where both
+the pointer will be pointing to the same node. This will only occur if linked
+list has a loop.12) Explain how encryption
+algorithm works?Encryption is the
+process of converting plaintext into a secret code format referred as
+“Ciphertext”. To convert the text, algorithm uses a string of bits referred as
+“keys” for calculations. The larger the key, the greater the number of
+potential patterns for creating cipher text. Most encryption algorithm use
+codes fixed blocks of input that have length about 64 to 128 bits, while some
+uses stream method.13) List out some of the
+commonly used cryptographic algorithms?Some of the commonly
+used cryptographic algorithms are
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3-wayBlowfishCASTCMEAGOSTDES and Triple DESIDEALOKI and so on14) Explain what is the
+difference between best case scenario and worst case scenario of an algorithm?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Best case scenario: Best case scenario for an
+algorithm is explained as the arrangement of data for which the algorithm
+performs best. For example, we take a binary search, for which the best case
+scenario would be if the target value is at the very center of the data you are
+searching. The best case time complexity would be 0 (1)
+
+Worst case scenario: It is referred for the worst set
+of input for a given algorithm. For example quicksort, which can perform worst
+if you select the largest or smallest element of a sublist for the pivot value.
+It will cause quicksort to degenerate to O (n2).15) Explain what is Radix Sort
+algorithm?Radix sort puts the
+element in order by comparing the digits of the numbers.  It is one of the
+linear sorting algorithms for integers.16) Explain what is a recursive
+algorithm?Recursive algorithm is a method of solving a complicated problem
+by breaking a problem down into smaller and smaller sub-problems until you get
+the problem small enough that it can be solved easily. Usually, it involves a
+functioncalling itself.17) Mention what are the three
+laws of recursion algorithm?All recursive
+algorithm must follow three laws
+
+
+
+
+
+
+
+
+
+
+
+
+
+It should have a base caseA recursive algorithm must call itselfA recursive algorithm must change its state and move towards the
+base case18) Explain what is bubble sort
+algorithm?Bubble sort algorithm
+is also referred as sinking sort. In this type of sorting, the list to be
+sorted out compares the pair of adjacent items. If they are organized in the
+wrong order, it will swap the values and arrange them in the correct order. 
+
+
+
+
+
+
+
+
+
+
+
