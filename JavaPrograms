@@ -6,6 +6,38 @@
 6. Max Two numbers from array - Done [Tip- Do not use single quotes in int inside int array.]
 7. Remove all vowel appearing in an String with nothing or remove the vowels. - Done
 8. To Reverse the vowel in a String. 
+Solution: [incorrect]
+public class MyClass {
+    public static void main(String args[]) {
+        MyClass mc = new MyClass();
+        String input = "Hello";
+        mc.vowelReverse(input);
+    }
+    public void vowelReverse(String input){
+        char[] inputArray = input.toCharArray();
+        char[] vowels = new char[50];
+        int index = 0;
+        char oneChar;
+        for(int i=0; i<inputArray.length; i++){
+            oneChar = inputArray[i];
+            if(oneChar=='a'||oneChar=='e'||oneChar=='i'||oneChar=='o'||oneChar=='u'||oneChar=='A'||
+            oneChar=='E'||oneChar=='I'||oneChar=='O'||oneChar=='U'){
+                vowels[index] = inputArray[i];
+                index++;
+            }
+        }
+        for(int j=0; j<inputArray.length; j++){
+            oneChar = inputArray[j];
+            if(oneChar=='a'||oneChar=='e'||oneChar=='i'||oneChar=='o'||oneChar=='u'||oneChar=='A'||
+                oneChar=='E'||oneChar=='I'||oneChar=='O'||oneChar=='U'){
+                    inputArray[j] = vowels[index];
+                    index--;
+            }
+        }
+        String reverseVowelsString = new String(inputArray);
+        System.out.println(reverseVowelsString);
+     }
+}
 9. Check weather a number is palindrome?
 Solution:
 import java.util.Arrays;
