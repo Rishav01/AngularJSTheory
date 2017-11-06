@@ -7,9 +7,83 @@
 7. Remove all vowel appearing in an String with nothing or remove the vowels. - Done
 8. To Reverse the vowel in a String. 
 9. Check weather a number is palindrome?
+Solution:
+import java.util.Arrays;
+public class MyClass {
+    public static void main(String args[]) {
+        MyClass mc = new MyClass();
+        int[] numbers = {1,2,3,4,5};
+        mc.PalindromeCheck(numbers);
+    }
+    public void PalindromeCheck(int[] numbers){
+        int index=0;
+        String numberString = Arrays.toString(numbers);
+        int[] reverseNumbers = new int[numbers.length];
+        for(int i=numbers.length-1; i>=0; i--){
+            reverseNumbers[index] = numbers[i];
+            index++;
+        }
+        String reverseNumberString = Arrays.toString(reverseNumbers);
+        if(numberString.equals(reverseNumberString)){
+            System.out.println("Number is Palindrome");
+        }
+        else{
+            System.out.println("Number is not palindrome");
+        }
+    }
+    
+}
+Note: Arrays class of util package is used to convert int array to String. We could have simply used "arrayName.toString()". Also, new
+String(arrayName); is used for char array only. 
 10. Check the missing number(s) in a int array provided given how many numbers are missing. 
+Solution: 
+a. If just one number is missing
+public class MyClass {
+    public static void main(String args[]) {
+        MyClass mc = new MyClass();
+        int[] numbers = {1,2,3,5};
+        mc.findNumber(numbers);
+    }
+    public void findNumber(int[] numbers){
+        for(int i=0; i<numbers.length-1; i++){
+            if(numbers[i]!=numbers[i+1]-1){
+                System.out.println(numbers[i]+1+" is the missing number.");
+            }
+        }
+    }
+    
+}
 
+b. If multiple number is missing and given how many are missing. 
+Solution:
+Same as for c.
 
+c. If multiple numbers are missing between two numbers like this {1,2,3,6}.
+Solution: (works for all a, b and c)
+public class MyClass {
+    public static void main(String args[]) {
+        MyClass mc = new MyClass();
+        int[] numbers = {1,2,3,6};
+        int quantity = 2;
+        mc.findNumber(numbers, quantity);
+    }
+    public void findNumber(int[] numbers, int quantity){
+        int[] missingNumber = new int[quantity];
+        int index = 0;
+        for(int i=0; i<numbers.length-1; i++){
+            if(numbers[i]!=numbers[i+1]-1){
+                for(int k=numbers[i]+1; k<numbers[i+1]; k++){
+                    missingNumber[index] = k;
+                    index++;
+                }
+            }
+        }
+        for(int j=0; j<missingNumber.length; j++){
+            System.out.println(missingNumber[j]);
+        }
+    }
+    
+}
 
 New
 1. Print all print number upto given number from 1. 
