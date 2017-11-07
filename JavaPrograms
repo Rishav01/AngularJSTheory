@@ -6,7 +6,7 @@
 6. Max Two numbers from array - Done [Tip- Do not use single quotes in int inside int array.]
 7. Remove all vowel appearing in an String with nothing or remove the vowels. - Done
 8. To Reverse the vowel in a String. 
-Solution: [incorrect]
+Solution:
 public class MyClass {
     public static void main(String args[]) {
         MyClass mc = new MyClass();
@@ -30,7 +30,7 @@ public class MyClass {
             oneChar = inputArray[j];
             if(oneChar=='a'||oneChar=='e'||oneChar=='i'||oneChar=='o'||oneChar=='u'||oneChar=='A'||
                 oneChar=='E'||oneChar=='I'||oneChar=='O'||oneChar=='U'){
-                    inputArray[j] = vowels[index];
+                    inputArray[j] = vowels[index-1];
                     index--;
             }
         }
@@ -65,8 +65,10 @@ public class MyClass {
     }
     
 }
-Note: Arrays class of util package is used to convert int array to String. We could have simply used "arrayName.toString()". Also, new
-String(arrayName); is used for char array only. 
+Note: Ways to convert int array to string. 1) Have a simple loop with empty String. This will print exactly like String in O/P. 
+2) Arrays class of util package is used to convert int array to String OR We could have simply used "arrayName.toString()".
+But both of these ways will print like array only. Also, new String(arrayName); is used for char array only.
+
 10. Check the missing number(s) in a int array provided given how many numbers are missing. 
 Solution: 
 a. If just one number is missing
@@ -117,5 +119,72 @@ public class MyClass {
     
 }
 
+11. Find the longest or shortest palindrome string 
+Logic: Longest palindrome can be of even or odd number of digits. The shortest palindrome could definitely be of at least 1 char. 
+So, We will assume maxlength of palindrome intially as 1. Then, we will check two chars of string at i and i+1 position. If both are same
+then we can check if the adjacent chars are same and further on the same. 
+
+12. Custom Iterator like collections like arraylist. [Collections]
+13. Remove duplicates from array without using collections. [Collections] 
+14. A program to convert from int to binary. 
+Solution: 
+import java.util.Arrays;
+public class MyClass {
+    public static void main(String args[]) {
+        MyClass mc = new MyClass();
+        int input = 10;
+        mc.toBinary(input);
+    }
+    public void toBinary(int input){
+        int[] binary = new int[4];
+        int index=0;
+        while(input>1){
+            binary[index]=input%2;
+            input=input/2;
+            index++;
+            if(input==1){
+                binary[index] = 1;
+                break;
+            }
+        }
+        String binaryString="";
+        for(int i=0; i<binary.length; i++){
+            binaryString=binaryString+binary[i];
+        }
+        System.out.println(binaryString);
+    }
+}
+15. A program to convert from binary to int. 
+Solution:
+import java.lang.Math;
+public class MyClass {
+    public static void main(String args[]) {
+        MyClass mc = new MyClass();
+        int[] binary = {1,0,1,0};
+        mc.toInt(binary);
+    }
+    public void toInt(int[] input){
+        int outputInt=0;
+        int power=0;
+        for(int i=input.length-1; i>=0; i--){
+            outputInt = outputInt+input[i]*((int)Math.pow(2,power));
+            power++;
+        }
+        System.out.println(outputInt);
+    }
+}
+
+16. Check wether the number given is binary or not?
+17. Swap two numbers.
+18. Find the sum of all the digits of a number. 
+19. Reverse the string without using String API.
+20. Sort element of arraylist and related program. 
+
 New
 1. Print all print number upto given number from 1. 
+
+
+
+Oracle details:
+PRACTICEORACLE1
+TrailSchema1
