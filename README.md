@@ -50,3 +50,61 @@ public class MyClass implements Runnable {
 Note: Without sleep method, one thread works on the task at a time. However, sleep() method keeps the currently running thread to sleep for the specified time and control goes to the other thread. 
 3.	Two task by two threads or multiple task by multiple threads. [home]
 4.	
+
+
+Date 9th November, 2017
+5. 
+Solution:
+import java.util.*;
+public class MyClass {
+    public static void main(String args[]) {
+        ArrayList ar = new ArrayList();
+        ar.add("a");
+        ar.add("d");
+        ar.add("c");
+        ar.add("b");
+        
+        Collections.sort(ar);
+        
+        Iterator it = ar.iterator();
+        while(it.hasNext()){
+            System.out.println(it.next());
+        }
+    }
+}
+Note: it sort the number in increasing order as well. 
+
+6. Same as above
+7. ar.set(index, Element);
+8. ar.contains(Element);
+9. ar.remove(index);
+10. 
+Solutiion:
+import java.util.*;
+public class MyClass {
+    public static void main(String args[]) {
+        ArrayList ar = new ArrayList();
+        ar.add("2");
+        ar.add("2");
+        ar.add("3");
+        ar.add("1");
+        ar.add("4");
+        ar.add("4");
+        for(int i=0; i<ar.size(); i++){
+            for(int j=i+1; j<ar.size(); j++){
+                if(ar.get(i)==ar.get(j)){
+                    ar.remove(i);
+                    break;
+                } 
+            }
+        }
+        Iterator i = ar.iterator();
+        while(i.hasNext()){
+            System.out.println(i.next());
+        }
+    }
+}
+Note: length of arraylist is found by mention size(). LinkedList and Vector works exactly same as ArrayList. 
+
+
+
