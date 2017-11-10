@@ -53,6 +53,51 @@ Note: Without sleep method, one thread works on the task at a time. However, sle
 
 
 Date 9th November, 2017
+public class MyArrayList {
+    Object[] array;
+    int actualSize=0;
+    public MyArrayList(){
+        array = new Object[10];
+    }
+    public static void main(String args[]) {
+        MyArrayList arrayList = new MyArrayList();
+        arrayList.add("Rishav");
+        arrayList.add("Mishra");
+        System.out.println((String)arrayList.get(1));
+        
+        /*System.out.println(arrayList.toString());*/
+    }
+    public void add(Object obj){
+        if(array.length-actualSize<=5){
+            increaseLength();
+        }
+        else{
+            array[actualSize++] = obj;
+        }
+    }
+    
+    public void increaseLength(){
+        array = new Object[(array.length)*2];    
+    }
+    
+    /*
+    public String toString(){
+        String returnedString = (String) array[actualSize-1];
+        return returnedString;
+    }*/
+    
+    public Object get(int index){
+        return array[index];
+    }
+    
+    public void remove(Object obj){
+        for(int i=0; i<actualsize-1; i++){
+            if(array[i]==obj){
+                array[i]=null;
+            }
+        }
+    }
+}
 5. 
 Solution:
 import java.util.*;
@@ -105,6 +150,9 @@ public class MyClass {
     }
 }
 Note: length of arraylist is found by mention size(). LinkedList and Vector works exactly same as ArrayList. 
+
+Date 10th November, 2017
+
 
 
 
