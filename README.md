@@ -163,38 +163,55 @@ public class MyArrayList {
         MyArrayList arrayList = new MyArrayList();
         arrayList.add("Rishav");
         arrayList.add("Mishra");
-        System.out.println((String)arrayList.get(1));
-        
-        /*System.out.println(arrayList.toString());*/
+        arrayList.add("Mishra");
+        arrayList.add("Mishra");
+        arrayList.add("Mishra");
+        arrayList.add("Mishra");
+        arrayList.add("Mishra");
+        arrayList.add("Mishra");
+        arrayList.add("Mishra");
+        arrayList.add("Mishra");
+        arrayList.add("Mishra");
+        arrayList.add("Mishra");
+        System.out.println((String)arrayList.get(10));
+        arrayList.remove(10);
+        System.out.println((String)arrayList.get(10));
     }
     public void add(Object obj){
-        if(array.length-actualSize<=5){
+        if(array.length-actualSize==0){
+            /*System.out.println("Increse Size Called");*/
             increaseLength();
+            add(obj);
         }
         else{
+            /*System.out.println("Element added at index "+actualSize);*/
             array[actualSize++] = obj;
         }
     }
     
     public void increaseLength(){
+        Object[] temp = array;
         array = new Object[(array.length)*2];    
+        for(int i=0; i<temp.length; i++){
+            array[i]=temp[i];
+        }
     }
-    
-    /*
-    public String toString(){
-        String returnedString = (String) array[actualSize-1];
-        return returnedString;
-    }*/
     
     public Object get(int index){
         return array[index];
     }
     
-    public void remove(Object obj){
-        for(int i=0; i<actualsize-1; i++){
-            if(array[i]==obj){
-                array[i]=null;
+    public void remove(int index){
+        if(index<actualSize){
+            for(int i=0; i<actualSize-1; i++){
+                if(array[index]==array[i]){
+                    array[index]=null;
+                    break;
+                }
             }
+        }
+        else{
+            System.out.println("Invalid index");
         }
     }
 }
