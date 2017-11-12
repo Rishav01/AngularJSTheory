@@ -216,5 +216,67 @@ public class MyArrayList {
     }
 }
 
+import java.util.*;
+public class MyClass {
+    public static void main(String args[]) {
+        MyClass mc = new MyClass();
+        String input = "AMan";
+        mc.repeatCheck(input);
+    }
+    public void repeatCheck(String input){
+        Map<String, Integer> repeatMap = new HashMap<String, Integer>();
+        for(int i=0; i<input.length(); i++){
+            for(int j=i+1; j<input.length(); j++){
+                String onCheck=input.substring(i,i+1);
+                String checkedWith=input.substring(j, j+1); 
+                if(onCheck.equalsIgnoreCase(checkedWith)){
+                    if(repeatMap.containsKey(onCheck)){
+                        repeatMap.put(onCheck, repeatMap.get(onCheck)+1);
+                    }
+                    else{
+                        repeatMap.put(onCheck, 1);
+                    }
+                }
+            }
+        }
+        Set setview = repeatMap.entrySet();
+        Iterator i = setview.iterator();
+        while(i.hasNext()){
+            System.out.println(i.next());
+        }
+    }
+}
+
+import java.util.*;
+public class MyClass {
+    public static void main(String args[]) {
+        MyClass mc = new MyClass();
+        int[] numbers = {1,2,3,4,5,6};
+        mc.repeatCheck(numbers);
+    }
+    public void repeatCheck(int[] numbers){
+        int max1, max2;
+        if(numbers[0]>numbers[1]){
+                max1=numbers[0];
+                max2=numbers[1];
+            }
+            else{
+                max2=numbers[0];
+                max1=numbers[1];
+            }
+        for(int i=2; i<numbers.length; i++){
+            if(numbers[i]>max1){
+                max2=max1;
+                max1=numbers[i];
+            }
+            else if(numbers[i]>max2){
+                max2=numbers[i];
+            }
+        }
+        System.out.println(max1+" "+max2);
+    }
+}
+
+
 
 
