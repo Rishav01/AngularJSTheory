@@ -5,23 +5,256 @@ It has so many different topics for programming like networking, Garbage collect
 Source 2: http://www.java2novice.com/java-interview-programs/\
 List Of All Interview Programs:
 1.	How to reverse Singly Linked List?
+Done. But Solution missed. 
 2.	Find out duplicate number between 1 to N numbers.
+Done. But Solution missed
 3.	Find out middle index where sum of both ends are equal.
+Done. But Solution missed
 4.	Write a singleton class.
+Done. But Solution missed
 5.	Write a program to create deadlock between two threads.
+Done. But Solution missed
 6.	Write a program to reverse a string using recursive algorithm.
+Same as above 
 7.	Write a program to reverse a number.
 8.	Write a program to convert decimal number to binary format.
 9.	Write a program to find perfect number or not.
 10.	Write a program to implement ArrayList.
+public class MyArrayList {
+    Object[] array;
+    int actualSize=0;
+    public MyArrayList(){
+        array = new Object[10];
+    }
+    public static void main(String args[]) {
+        MyArrayList arrayList = new MyArrayList();
+        arrayList.add("Rishav");
+        arrayList.add("Mishra");
+        arrayList.add("Mishra");
+        arrayList.add("Mishra");
+        arrayList.add("Mishra");
+        arrayList.add("Mishra");
+        arrayList.add("Mishra");
+        arrayList.add("Mishra");
+        arrayList.add("Mishra");
+        arrayList.add("Mishra");
+        arrayList.add("Mishra");
+        arrayList.add("Mishra");
+        System.out.println((String)arrayList.get(10));
+        arrayList.remove(10);
+        System.out.println((String)arrayList.get(10));
+    }
+    public void add(Object obj){
+        if(array.length-actualSize==0){
+            /*System.out.println("Increse Size Called");*/
+            increaseLength();
+            add(obj);
+        }
+        else{
+            /*System.out.println("Element added at index "+actualSize);*/
+            array[actualSize++] = obj;
+        }
+    }
+    
+    public void increaseLength(){
+        Object[] temp = array;
+        array = new Object[(array.length)*2];    
+        for(int i=0; i<temp.length; i++){
+            array[i]=temp[i];
+        }
+    }
+    
+    public Object get(int index){
+        return array[index];
+    }
+    
+    public void remove(int index){
+        if(index<actualSize){
+            for(int i=0; i<actualSize-1; i++){
+                if(array[index]==array[i]){
+                    array[index]=null;
+                    break;
+                }
+            }
+        }
+        else{
+            System.out.println("Invalid index");
+        }
+    }
+}
 11.	Write a program to find maximum repeated words from a file.
+Done. But wasn’t able to perform the sorting of map. 
 12.	Wrie a program to find out duplicate characters in a string.
+import java.util.*;
+public class MyClass {
+    public static void main(String args[]) {
+        MyClass mc = new MyClass();
+        String input = "AMan";
+        mc.repeatCheck(input);
+    }
+    public void repeatCheck(String input){
+        Map<String, Integer> repeatMap = new HashMap<String, Integer>();
+        for(int i=0; i<input.length(); i++){
+            for(int j=i+1; j<input.length(); j++){
+                String onCheck=input.substring(i,i+1);
+                String checkedWith=input.substring(j, j+1); 
+                if(onCheck.equalsIgnoreCase(checkedWith)){
+                    if(repeatMap.containsKey(onCheck)){
+                        repeatMap.put(onCheck, repeatMap.get(onCheck)+1);
+                    }
+                    else{
+                        repeatMap.put(onCheck, 1);
+                    }
+                }
+            }
+        }
+        Set setview = repeatMap.entrySet();
+        Iterator i = setview.iterator();
+        while(i.hasNext()){
+            System.out.println(i.next());
+        }
+    }
+}
 13.	Write a program to find top two maximum numbers in a array.
+import java.util.*;
+public class MyClass {
+    public static void main(String args[]) {
+        MyClass mc = new MyClass();
+        int[] numbers = {1,2,3,4,5,6};
+        mc.repeatCheck(numbers);
+    }
+    public void repeatCheck(int[] numbers){
+        int max1, max2;
+        if(numbers[0]>numbers[1]){
+                max1=numbers[0];
+                max2=numbers[1];
+            }
+            else{
+                max2=numbers[0];
+                max1=numbers[1];
+            }
+        for(int i=2; i<numbers.length; i++){
+            if(numbers[i]>max1){
+                max2=max1;
+                max1=numbers[i];
+            }
+            else if(numbers[i]>max2){
+                max2=numbers[i];
+            }
+        }
+        System.out.println(max1+" "+max2);
+    }
+}
 14.	Write a program to sort a map by value.
+import java.util.*;
+public class MyClass {
+    public static void main(String args[]) {
+        Map<String, Integer> map = new HashMap<String, Integer>();
+        map.put("Rishav", 2);
+        map.put("Mishra", 1);
+        map.put("Satish", 3);
+        
+        Set set = map.entrySet();
+        List<Map.Entry<String, Integer>> list = new ArrayList<Map.Entry<String, Integer>>(set);
+        Collections.sort(list, new Comparator<Map.Entry<String, Integer>>(){
+            @Override
+                public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2){
+                    return (o2.getValue()).compareTo(o1.getValue());
+                }
+            }
+        );
+        /*Iterator i = set.iterator();
+        while(i.hasNext()){
+            System.out.println(i.next());
+        }*/
+        for(Map.Entry<String, Integer> entry:list){
+            System.out.println(entry.getKey()+" ==== "+entry.getValue());
+        }
+    }
+}
 15.	Write a program to find common elements between two arrays.
+import java.util.*;
+public class MyClass {
+    public static void main(String args[]) {
+        MyClass mc = new MyClass();
+        int[] input1 = {8,2,3,4,5,7};
+        int[] input2 = {7,8,3,4};
+        mc.commonElement(input1, input2);
+    }
+    public void commonElement(int[] input1, int[] input2){
+        List<Integer> elementsInCommon = new ArrayList<Integer>(); 
+        int flag=0;
+        for(int i=0; i<input1.length; i++){
+            for(int j=0; j<input2.length; j++){
+                if(input1[i]==input2[j]){
+                    elementsInCommon.add(input1[i]);
+                }
+            }
+        }
+        Iterator i = elementsInCommon.iterator();
+        while(i.hasNext()){
+            System.out.println(i.next());
+        }
+    }
+}
 16.	How to swap two numbers without using temporary variable?
+import java.util.*;
+public class MyClass {
+    public static void main(String args[]) {
+        MyClass mc = new MyClass();
+        int input1=1, input2=2;
+        mc.swapNumbers(input1, input2);
+    }
+    public void swapNumbers(int input1, int input2){
+        input1=input1+input2;
+        input2=input1-input2;
+        input1=input1-input2;
+        System.out.println("input1 = "+input1+" and input2 "+input2);
+    }
+}
 17.	Write a program to print fibonacci series.
+import java.util.*;
+public class MyClass {
+    public static void main(String args[]) {
+        MyClass mc = new MyClass();
+        int feboUntil = 15;
+        mc.printFebo(feboUntil);
+    }
+    public void printFebo(int feboUntil){
+        int secondLast=0, last=1, nextItem=0;
+        System.out.println(secondLast+" \n"+last);
+        for(int i=0; i<feboUntil-2; i++){
+            nextItem=secondLast+last;
+            System.out.println(nextItem);
+            secondLast=last;
+            last=nextItem;
+        }
+    }
+}
 18.	Write a program to find sum of each digit in the given number using recursion.
+import java.util.*;
+public class MyClass {
+    int sum;
+    public static void main(String args[]) {
+        MyClass mc = new MyClass();
+        int number = 456852;
+        int Digitsum = mc.digitsSum(number);
+        System.out.println(Digitsum);
+    }
+    public int digitsSum(int number){
+        int lastDigit=0;
+        lastDigit = number%10;
+        if(number/10>1){
+            number=number/10;
+            sum=sum+lastDigit;
+            digitsSum(number);
+        }   
+        else{
+            sum=sum+number;
+        }
+        return sum;
+    }
+}
 19.	Write a program to check the given number is a prime number or not?
 20.	Write a program to find the given number is Armstrong number or not?
 21.	Write a program to convert binary to decimal number.
