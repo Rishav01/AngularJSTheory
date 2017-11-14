@@ -1,2948 +1,1221 @@
-
-
 Java Programs List main
+Source 1: http://www.geeksforgeeks.org/commonly-asked-java-programming-interview-questions-set-1/
+It has so many different topics for programming like networking, Garbage collection, file handling, multithreading, 	Exception Handling and other. Do check this. 
 
-Source 1:
-http://www.geeksforgeeks.org/commonly-asked-java-programming-interview-questions-set-1/
-
-It has so many different topics for programming like
-networking, Garbage collection, file handling, multithreading,                 Exception Handling and other. Do
-check this. 
-
- 
-
-Source 2:
-http://www.java2novice.com/java-interview-programs/\
-
+Source 2: http://www.java2novice.com/java-interview-programs/\
 List Of All Interview Programs:
-
-1.            How to
-reverse Singly Linked List?
-
+1.	How to reverse Singly Linked List?
 Done. But Solution missed. 
-
-2.            Find out
-duplicate number between 1 to N numbers.
-
+2.	Find out duplicate number between 1 to N numbers.
 Done. But Solution missed
-
-3.            Find out
-middle index where sum of both ends are equal.
-
+3.	Find out middle index where sum of both ends are equal.
 Done. But Solution missed
-
-4.            Write a
-singleton class.
-
+4.	Write a singleton class.
 Done. But Solution missed
-
-5.            Write a
-program to create deadlock between two threads.
-
+5.	Write a program to create deadlock between two threads.
 Done. But Solution missed
-
-6.            Write a
-program to reverse a string using recursive algorithm.
-
+6.	Write a program to reverse a string using recursive algorithm.
 Same as above 
-
-7.            Write a
-program to reverse a number.
-
-8.            Write a
-program to convert decimal number to binary format.
-
-9.            Write a
-program to find perfect number or not.
-
-10.          Write a
-program to implement ArrayList.
-
+7.	Write a program to reverse a number.
+8.	Write a program to convert decimal number to binary format.
+9.	Write a program to find perfect number or not.
+10.	Write a program to implement ArrayList.
 public class MyArrayList {
-
-    Object[] array;
-
-    int actualSize=0;
-
-    public
-MyArrayList(){
-
-        array = new
-Object[10];
-
-    }
-
-    public static void
-main(String args[]) {
-
-        MyArrayList
-arrayList = new MyArrayList();
-
-       
-arrayList.add("Rishav");
-
-       
-arrayList.add("Mishra");
-
-       
-arrayList.add("Mishra");
-
-       
-arrayList.add("Mishra");
-
-       
-arrayList.add("Mishra");
-
-       
-arrayList.add("Mishra");
-
-       
-arrayList.add("Mishra");
-
-       
-arrayList.add("Mishra");
-
-       
-arrayList.add("Mishra");
-
-       
-arrayList.add("Mishra");
-
-       
-arrayList.add("Mishra");
-
-       
-arrayList.add("Mishra");
-
-       
-System.out.println((String)arrayList.get(10));
-
-       
-arrayList.remove(10);
-
-       
-System.out.println((String)arrayList.get(10));
-
-    }
-
-    public void
-add(Object obj){
-
-       
-if(array.length-actualSize==0){
-
-           
-/*System.out.println("Increse Size Called");*/
-
-           
-increaseLength();
-
-            add(obj);
-
-        }
-
-        else{
-
-           
-/*System.out.println("Element added at index "+actualSize);*/
-
-           
-array[actualSize++] = obj;
-
-        }
-
-    }
-
-    
-
-    public void increaseLength(){
-
-        Object[] temp
-= array;
-
-        array = new
-Object[(array.length)*2];    
-
-        for(int i=0;
-i<temp.length; i++){
-
-           
-array[i]=temp[i];
-
-        }
-
-    }
-
-    
-
-    public Object
-get(int index){
-
-        return
-array[index];
-
-    }
-
-    
-
-    public void
-remove(int index){
-
-       
-if(index<actualSize){
-
-            for(int
-i=0; i<actualSize-1; i++){
-
-               
-if(array[index]==array[i]){
-
-                   
-array[index]=null;
-
-                   
-break;
-
-                }
-
-            }
-
-        }
-
-        else{
-
-           
-System.out.println("Invalid index");
-
-        }
-
-    }
-
+    Object[] array;
+    int actualSize=0;
+    public MyArrayList(){
+        array = new Object[10];
+    }
+    public static void main(String args[]) {
+        MyArrayList arrayList = new MyArrayList();
+        arrayList.add("Rishav");
+        arrayList.add("Mishra");
+        arrayList.add("Mishra");
+        arrayList.add("Mishra");
+        arrayList.add("Mishra");
+        arrayList.add("Mishra");
+        arrayList.add("Mishra");
+        arrayList.add("Mishra");
+        arrayList.add("Mishra");
+        arrayList.add("Mishra");
+        arrayList.add("Mishra");
+        arrayList.add("Mishra");
+        System.out.println((String)arrayList.get(10));
+        arrayList.remove(10);
+        System.out.println((String)arrayList.get(10));
+    }
+    public void add(Object obj){
+        if(array.length-actualSize==0){
+            /*System.out.println("Increse Size Called");*/
+            increaseLength();
+            add(obj);
+        }
+        else{
+            /*System.out.println("Element added at index "+actualSize);*/
+            array[actualSize++] = obj;
+        }
+    }
+    
+    public void increaseLength(){
+        Object[] temp = array;
+        array = new Object[(array.length)*2];    
+        for(int i=0; i<temp.length; i++){
+            array[i]=temp[i];
+        }
+    }
+    
+    public Object get(int index){
+        return array[index];
+    }
+    
+    public void remove(int index){
+        if(index<actualSize){
+            for(int i=0; i<actualSize-1; i++){
+                if(array[index]==array[i]){
+                    array[index]=null;
+                    break;
+                }
+            }
+        }
+        else{
+            System.out.println("Invalid index");
+        }
+    }
 }
-
-11.          Write a
-program to find maximum repeated words from a file.
-
+11.	Write a program to find maximum repeated words from a file.
 Done. But wasn’t able to perform the sorting of map. 
-
-12.          Wrie a
-program to find out duplicate characters in a string.
-
+12.	Wrie a program to find out duplicate characters in a string.
 import java.util.*;
-
 public class MyClass {
-
-    public static void
-main(String args[]) {
-
-        MyClass mc =
-new MyClass();
-
-        String input =
-"AMan";
-
-       
-mc.repeatCheck(input);
-
-    }
-
-    public void
-repeatCheck(String input){
-
-        Map<String,
-Integer> repeatMap = new HashMap<String, Integer>();
-
-        for(int i=0;
-i<input.length(); i++){
-
-            for(int
-j=i+1; j<input.length(); j++){
-
-                String
-onCheck=input.substring(i,i+1);
-
-                String
-checkedWith=input.substring(j, j+1); 
-
-               
-if(onCheck.equalsIgnoreCase(checkedWith)){
-
-                   
-if(repeatMap.containsKey(onCheck)){
-
-                       
-repeatMap.put(onCheck, repeatMap.get(onCheck)+1);
-
-                    }
-
-                   
-else{
-
-                       
-repeatMap.put(onCheck, 1);
-
-                    }
-
-                }
-
-            }
-
-        }
-
-        Set setview =
-repeatMap.entrySet();
-
-        Iterator i =
-setview.iterator();
-
-        while(i.hasNext()){
-
-           
-System.out.println(i.next());
-
-        }
-
-    }
-
+    public static void main(String args[]) {
+        MyClass mc = new MyClass();
+        String input = "AMan";
+        mc.repeatCheck(input);
+    }
+    public void repeatCheck(String input){
+        Map<String, Integer> repeatMap = new HashMap<String, Integer>();
+        for(int i=0; i<input.length(); i++){
+            for(int j=i+1; j<input.length(); j++){
+                String onCheck=input.substring(i,i+1);
+                String checkedWith=input.substring(j, j+1); 
+                if(onCheck.equalsIgnoreCase(checkedWith)){
+                    if(repeatMap.containsKey(onCheck)){
+                        repeatMap.put(onCheck, repeatMap.get(onCheck)+1);
+                    }
+                    else{
+                        repeatMap.put(onCheck, 1);
+                    }
+                }
+            }
+        }
+        Set setview = repeatMap.entrySet();
+        Iterator i = setview.iterator();
+        while(i.hasNext()){
+            System.out.println(i.next());
+        }
+    }
 }
-
-13.          Write a
-program to find top two maximum numbers in a array.
-
+13.	Write a program to find top two maximum numbers in a array.
 import java.util.*;
-
 public class MyClass {
-
-    public static void
-main(String args[]) {
-
-        MyClass mc =
-new MyClass();
-
-        int[] numbers
-= {1,2,3,4,5,6};
-
-       
-mc.repeatCheck(numbers);
-
-    }
-
-    public void
-repeatCheck(int[] numbers){
-
-        int max1,
-max2;
-
-       
-if(numbers[0]>numbers[1]){
-
-               
-max1=numbers[0];
-
-                max2=numbers[1];
-
-            }
-
-            else{
-
-               
-max2=numbers[0];
-
-               
-max1=numbers[1];
-
-            }
-
-        for(int i=2;
-i<numbers.length; i++){
-
-           
-if(numbers[i]>max1){
-
-               
-max2=max1;
-
-                max1=numbers[i];
-
-            }
-
-            else
-if(numbers[i]>max2){
-
-               
-max2=numbers[i];
-
-            }
-
-        }
-
-       
-System.out.println(max1+" "+max2);
-
-    }
-
+    public static void main(String args[]) {
+        MyClass mc = new MyClass();
+        int[] numbers = {1,2,3,4,5,6};
+        mc.repeatCheck(numbers);
+    }
+    public void repeatCheck(int[] numbers){
+        int max1, max2;
+        if(numbers[0]>numbers[1]){
+                max1=numbers[0];
+                max2=numbers[1];
+            }
+            else{
+                max2=numbers[0];
+                max1=numbers[1];
+            }
+        for(int i=2; i<numbers.length; i++){
+            if(numbers[i]>max1){
+                max2=max1;
+                max1=numbers[i];
+            }
+            else if(numbers[i]>max2){
+                max2=numbers[i];
+            }
+        }
+        System.out.println(max1+" "+max2);
+    }
 }
-
-14.          Write a
-program to sort a map by value.
-
+14.	Write a program to sort a map by value.
 import java.util.*;
-
 public class MyClass {
-
-    public static void
-main(String args[]) {
-
-        Map<String,
-Integer> map = new HashMap<String, Integer>();
-
-       
-map.put("Rishav", 2);
-
-       
-map.put("Mishra", 1);
-
-       
-map.put("Satish", 3);
-
-        
-
-        Set set = map.entrySet();
-
-       
-List<Map.Entry<String, Integer>> list = new
-ArrayList<Map.Entry<String, Integer>>(set);
-
-       
-Collections.sort(list, new Comparator<Map.Entry<String,
-Integer>>(){
-
-            @Override
-
-                public
-int compare(Map.Entry<String, Integer> o1, Map.Entry<String,
-Integer> o2){
-
-                   
-return (o2.getValue()).compareTo(o1.getValue());
-
-                }
-
-            }
-
-        );
-
-        /*Iterator i =
-set.iterator();
-
-       
-while(i.hasNext()){
-
-           
-System.out.println(i.next());
-
-        }*/
-
-       
-for(Map.Entry<String, Integer> entry:list){
-
-           
-System.out.println(entry.getKey()+" ==== "+entry.getValue());
-
-        }
-
-    }
-
+    public static void main(String args[]) {
+        Map<String, Integer> map = new HashMap<String, Integer>();
+        map.put("Rishav", 2);
+        map.put("Mishra", 1);
+        map.put("Satish", 3);
+        
+        Set set = map.entrySet();
+        List<Map.Entry<String, Integer>> list = new ArrayList<Map.Entry<String, Integer>>(set);
+        Collections.sort(list, new Comparator<Map.Entry<String, Integer>>(){
+            @Override
+                public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2){
+                    return (o2.getValue()).compareTo(o1.getValue());
+                }
+            }
+        );
+        /*Iterator i = set.iterator();
+        while(i.hasNext()){
+            System.out.println(i.next());
+        }*/
+        for(Map.Entry<String, Integer> entry:list){
+            System.out.println(entry.getKey()+" ==== "+entry.getValue());
+        }
+    }
 }
-
-15.          Write a
-program to find common elements between two arrays.
-
+15.	Write a program to find common elements between two arrays.
 import java.util.*;
-
 public class MyClass {
-
-    public static void
-main(String args[]) {
-
-        MyClass mc =
-new MyClass();
-
-        int[] input1 =
-{8,2,3,4,5,7};
-
-        int[] input2 =
-{7,8,3,4};
-
-       
-mc.commonElement(input1, input2);
-
-    }
-
-    public void
-commonElement(int[] input1, int[] input2){
-
-       
-List<Integer> elementsInCommon = new ArrayList<Integer>(); 
-
-        int flag=0;
-
-        for(int i=0;
-i<input1.length; i++){
-
-            for(int
-j=0; j<input2.length; j++){
-
-               
-if(input1[i]==input2[j]){
-
-                    elementsInCommon.add(input1[i]);
-
-                }
-
-            }
-
-        }
-
-        Iterator i =
-elementsInCommon.iterator();
-
-       
-while(i.hasNext()){
-
-           
-System.out.println(i.next());
-
-        }
-
-    }
-
+    public static void main(String args[]) {
+        MyClass mc = new MyClass();
+        int[] input1 = {8,2,3,4,5,7};
+        int[] input2 = {7,8,3,4};
+        mc.commonElement(input1, input2);
+    }
+    public void commonElement(int[] input1, int[] input2){
+        List<Integer> elementsInCommon = new ArrayList<Integer>(); 
+        int flag=0;
+        for(int i=0; i<input1.length; i++){
+            for(int j=0; j<input2.length; j++){
+                if(input1[i]==input2[j]){
+                    elementsInCommon.add(input1[i]);
+                }
+            }
+        }
+        Iterator i = elementsInCommon.iterator();
+        while(i.hasNext()){
+            System.out.println(i.next());
+        }
+    }
 }
-
-16.          How to
-swap two numbers without using temporary variable?
-
+16.	How to swap two numbers without using temporary variable?
 import java.util.*;
-
 public class MyClass {
-
-    public static void
-main(String args[]) {
-
-        MyClass mc =
-new MyClass();
-
-        int input1=1,
-input2=2;
-
-       
-mc.swapNumbers(input1, input2);
-
-    }
-
-    public void
-swapNumbers(int input1, int input2){
-
-       
-input1=input1+input2;
-
-       
-input2=input1-input2;
-
-       
-input1=input1-input2;
-
-       
-System.out.println("input1 = "+input1+" and input2
-"+input2);
-
-    }
-
+    public static void main(String args[]) {
+        MyClass mc = new MyClass();
+        int input1=1, input2=2;
+        mc.swapNumbers(input1, input2);
+    }
+    public void swapNumbers(int input1, int input2){
+        input1=input1+input2;
+        input2=input1-input2;
+        input1=input1-input2;
+        System.out.println("input1 = "+input1+" and input2 "+input2);
+    }
 }
-
-17.          Write a
-program to print fibonacci series.
-
+17.	Write a program to print fibonacci series.
 import java.util.*;
-
 public class MyClass {
-
-    public static void
-main(String args[]) {
-
-        MyClass mc =
-new MyClass();
-
-        int feboUntil
-= 15;
-
-       
-mc.printFebo(feboUntil);
-
-    }
-
-    public void
-printFebo(int feboUntil){
-
-        int
-secondLast=0, last=1, nextItem=0;
-
-       
-System.out.println(secondLast+" \n"+last);
-
-        for(int i=0;
-i<feboUntil-2; i++){
-
-           
-nextItem=secondLast+last;
-
-           
-System.out.println(nextItem);
-
-           
-secondLast=last;
-
-            last=nextItem;
-
-        }
-
-    }
-
+    public static void main(String args[]) {
+        MyClass mc = new MyClass();
+        int feboUntil = 15;
+        mc.printFebo(feboUntil);
+    }
+    public void printFebo(int feboUntil){
+        int secondLast=0, last=1, nextItem=0;
+        System.out.println(secondLast+" \n"+last);
+        for(int i=0; i<feboUntil-2; i++){
+            nextItem=secondLast+last;
+            System.out.println(nextItem);
+            secondLast=last;
+            last=nextItem;
+        }
+    }
 }
-
-18.          Write a
-program to find sum of each digit in the given number using recursion.
-
+18.	Write a program to find sum of each digit in the given number using recursion.
 import java.util.*;
-
 public class MyClass {
-
-    int sum;
-
-    public static void
-main(String args[]) {
-
-        MyClass mc =
-new MyClass();
-
-        int number =
-456852;
-
-        int Digitsum =
-mc.digitsSum(number);
-
-       
-System.out.println(Digitsum);
-
-    }
-
-    public int
-digitsSum(int number){
-
-        int
-lastDigit=0;
-
-        lastDigit =
-number%10;
-
-       
-if(number/10>1){
-
-            number=number/10;
-
-           
-sum=sum+lastDigit;
-
-           
-digitsSum(number);
-
-        }   
-
-        else{
-
-           
-sum=sum+number;
-
-        }
-
-        return sum;
-
-    }
-
+    int sum;
+    public static void main(String args[]) {
+        MyClass mc = new MyClass();
+        int number = 456852;
+        int Digitsum = mc.digitsSum(number);
+        System.out.println(Digitsum);
+    }
+    public int digitsSum(int number){
+        int lastDigit=0;
+        lastDigit = number%10;
+        if(number/10>1){
+            number=number/10;
+            sum=sum+lastDigit;
+            digitsSum(number);
+        }   
+        else{
+            sum=sum+number;
+        }
+        return sum;
+    }
 }
-
-19.          Write a
-program to check the given number is a prime number or not?
-
+19.	Write a program to check the given number is a prime number or not?
 public class MyClass {
-
-    public static void
-main(String args[]) {
-
-        MyClass mc =
-new MyClass();
-
-        int number =
-6;
-
-        mc.primeCheck(number);
-
-    }
-
-    public void
-primeCheck(int number){
-
-        int flag=0;
-
-        for(int i=2;
-i<=number/2; i++){
-
-           
-if(number%i==0){
-
-               
-System.out.println("Number is not prime");
-
-               
-flag=1;
-
-                break;
-
-            }
-
-        }
-
-        if(flag==0){
-
-           
-System.out.println("Number is prime");
-
-        }
-
-        }
-
+    public static void main(String args[]) {
+        MyClass mc = new MyClass();
+        int number = 6;
+        mc.primeCheck(number);
+    }
+    public void primeCheck(int number){
+        int flag=0;
+        for(int i=2; i<=number/2; i++){
+            if(number%i==0){
+                System.out.println("Number is not prime");
+                flag=1;
+                break;
+            }
+        }
+        if(flag==0){
+            System.out.println("Number is prime");
+        }
+        }
 }
-
-20.          Write a
-program to find the given number is Armstrong number or not?
-
+20.	Write a program to find the given number is Armstrong number or not?
 public class MyClass {
-
-    public static void
-main(String args[]) {
-
-        MyClass mc =
-new MyClass();
-
-        int number =
-371;
-
-        mc.armstrongCheck(number);
-
-    }
-
-    public void
-armstrongCheck(int input){
-
-        int number =
-input;
-
-        int
-lastDigit=0, cube=0, sum=0;
-
-       
-while(number>1){
-
-            lastDigit
-= number%10;
-
-           
-cube=lastDigit*lastDigit*lastDigit;
-
-           
-sum=sum+cube;
-
-           
-number=number/10;
-
-        }
-
-       
-if(sum==input){
-
-           
-System.out.println("Number is armstrong");
-
-        }
-
-        else{
-
-           
-System.out.println("Number is not armstrong");
-
-        }
-
-    }
-
+    public static void main(String args[]) {
+        MyClass mc = new MyClass();
+        int number = 371;
+        mc.armstrongCheck(number);
+    }
+    public void armstrongCheck(int input){
+        int number = input;
+        int lastDigit=0, cube=0, sum=0;
+        while(number>1){
+            lastDigit = number%10;
+            cube=lastDigit*lastDigit*lastDigit;
+            sum=sum+cube;
+            number=number/10;
+        }
+        if(sum==input){
+            System.out.println("Number is armstrong");
+        }
+        else{
+            System.out.println("Number is not armstrong");
+        }
+    }
 }
-
-21.          Write a
-program to convert binary to decimal number.
-
+21.	Write a program to convert binary to decimal number.
 public class MyClass {
-
-    public static void
-main(String args[]) {
-
-        MyClass mc =
-new MyClass();
-
-        int[] number =
-{1,1,1};
-
-       
-mc.binaryToDecimal(number);
-
-    }
-
-    public void
-binaryToDecimal(int[] input){
-
-        int
-decimalNumber=0, power=0;
-
-        for(int i=input.length-1; i>=0; i--){
-
-           
-decimalNumber = decimalNumber+input[i]*((int)Math.pow(2, power));
-
-            power++;
-
-        }
-
-       
-System.out.println("The decimal number is "+decimalNumber);
-
-    }
-
+    public static void main(String args[]) {
+        MyClass mc = new MyClass();
+        int[] number = {1,1,1};
+        mc.binaryToDecimal(number);
+    }
+    public void binaryToDecimal(int[] input){
+        int decimalNumber=0, power=0;
+        for(int i=input.length-1; i>=0; i--){
+            decimalNumber = decimalNumber+input[i]*((int)Math.pow(2, power));
+            power++;
+        }
+        System.out.println("The decimal number is "+decimalNumber);
+    }
 }
-
-22.          Write a
-program to check the given number is binary number or not?
-
+22.	Write a program to check the given number is binary number or not?
 public class MyClass {
-
-    public static void
-main(String args[]) {
-
-        MyClass mc =
-new MyClass();
-
-        int[] number =
-{1,1,2};
-
-       
-mc.binaryCheck(number);
-
-    }
-
-    public void
-binaryCheck(int[] input){
-
-        int flag=0;
-
-        for(int i=0;
-i<input.length; i++){
-
-           
-if(input[i]!=1 && input[i]!=0){
-
-               
-System.out.println("Number is not binary");
-
-               
-flag=1;
-
-                break;
-
-            }
-
-        }
-
-        if(flag==0){
-
-           
-System.out.println("Number is binary");
-
-        }
-
-    }
-
+    public static void main(String args[]) {
+        MyClass mc = new MyClass();
+        int[] number = {1,1,2};
+        mc.binaryCheck(number);
+    }
+    public void binaryCheck(int[] input){
+        int flag=0;
+        for(int i=0; i<input.length; i++){
+            if(input[i]!=1 && input[i]!=0){
+                System.out.println("Number is not binary");
+                flag=1;
+                break;
+            }
+        }
+        if(flag==0){
+            System.out.println("Number is binary");
+        }
+    }
 }
-
-23.          Write a
-program for Bubble Sort in java.
-
+23.	Write a program for Bubble Sort in java.
 Note: check the logic again. 
-
 public class MyClass {
-
-    public static void
-main(String args[]) {
-
-        MyClass mc =
-new MyClass();
-
-        int[] number =
-{1,1,2};
-
-       
-mc.bubbleSort(number);
-
-        for(int k=0;
-k<number.length; k++){
-
-           
-System.out.println(number[k]);
-
-        }
-
-    }
-
-    public void
-bubbleSort(int[] input){
-
-        int temp=0;
-
-        for(int i=0;
-i<input.length; i++){
-
-            for(int
-j=1; j<input.length-i; j++){
-
-               
-if(input[i]>input[j]){
-
-                    temp=input[j];
-
-                   
-input[j]=input[i];
-
-                   
-input[i]=temp;
-
-                }
-
-            }
-
-        }
-
-    }
-
+    public static void main(String args[]) {
+        MyClass mc = new MyClass();
+        int[] number = {1,1,2};
+        mc.bubbleSort(number);
+        for(int k=0; k<number.length; k++){
+            System.out.println(number[k]);
+        }
+    }
+    public void bubbleSort(int[] input){
+        int temp=0;
+        for(int i=0; i<input.length; i++){
+            for(int j=1; j<input.length-i; j++){
+                if(input[i]>input[j]){
+                    temp=input[j];
+                    input[j]=input[i];
+                    input[i]=temp;
+                }
+            }
+        }
+    }
 }
-
-24.          Write a
-program for Insertion Sort in java.
-
-Program
-related to algorithms.
-
-25.          Write a
-program to implement hashcode and equals. 
-
-Multiple
-classes.
-
-26.          How to get
-distinct elements from an array by avoiding duplicate elements?
-
-a) int array is given and we only have to print those int
-which are not repeated. Like  {1,1,2,4,5,6,7,6,6,4};
-should give result 2,5,7. 
-
-                import
-java.util.*;
-
+24.	Write a program for Insertion Sort in java.
+Program related to algorithms.
+25.	Write a program to implement hashcode and equals. 
+Multiple classes.
+26.	How to get distinct elements from an array by avoiding duplicate elements?
+a) int array is given and we only have to print those int which are not repeated. Like  {1,1,2,4,5,6,7,6,6,4}; should give result 2,5,7. 
+	import java.util.*;
 public class MyClass {
-
-    public static void
-main(String args[]) {
-
-        MyClass mc =
-new MyClass();
-
-        int[] number =
-{1,1,2,4,5,6,7,6,6,4};
-
-       
-mc.distinctElements(number);
-
-    }
-
-    public void
-distinctElements(int[] input){
-
-       
-List<Integer> indexes = new ArrayList<Integer>();
-
-        for(int i=0;
-i<input.length-1; i++){
-
-            int
-flag=0;
-
-            for(int
-j=i+1; j<input.length; j++){
-
-               
-if(input[i]==input[j]){
-
-                   
-indexes.add(i);
-
-                    indexes.add(j);
-
-                   
-flag=1;
-
-                   
-break;
-
-                }
-
-            }
-
-        }
-
-        for(int k=0;
-k<input.length; k++){
-
-           
-if(!(indexes.contains(k))){
-
-               
-System.out.println(input[k]);
-
-            }
-
-        }
-
-    }
-
+    public static void main(String args[]) {
+        MyClass mc = new MyClass();
+        int[] number = {1,1,2,4,5,6,7,6,6,4};
+        mc.distinctElements(number);
+    }
+    public void distinctElements(int[] input){
+        List<Integer> indexes = new ArrayList<Integer>();
+        for(int i=0; i<input.length-1; i++){
+            int flag=0;
+            for(int j=i+1; j<input.length; j++){
+                if(input[i]==input[j]){
+                    indexes.add(i);
+                    indexes.add(j);
+                    flag=1;
+                    break;
+                }
+            }
+        }
+        for(int k=0; k<input.length; k++){
+            if(!(indexes.contains(k))){
+                System.out.println(input[k]);
+            }
+        }
+    }
 }
-
 b) Other version says it print all the ints except the duplicate once but one occurance of repeated should be printed. Like {5,2,7,2,4,7,8,2,3} result 5 2 7 4 8 3 
-
- 
-
+ 
 import java.util.*;
-
 public class MyClass {
-
-    public static void
-main(String args[]) {
-
-        MyClass mc =
-new MyClass();
-
-        int[] number =
-{1,1,2,4,5,6,7,6,6,4}; //result: 1,2,4,5,6,7
-
-       
-mc.distinctElements(number);
-
-    }
-
-    public void
-distinctElements(int[] input){
-
-       
-List<Integer> indexes = new ArrayList<Integer>();
-
-        for(int i=0;
-i<input.length-1; i++){
-
-            int
-flag=0;
-
-            for(int
-j=i+1; j<input.length; j++){
-
-               
-if(input[i]==input[j]){
-
-                   
-indexes.add(j);
-
-                   
-flag=1;
-
-                   
-break;
-
-                }
-
-            }
-
-        }
-
-        for(int k=0;
-k<input.length; k++){
-
-           
-if(!(indexes.contains(k))){
-
-               
-System.out.println(input[k]);
-
-            }
-
-        }
-
-    }
-
+    public static void main(String args[]) {
+        MyClass mc = new MyClass();	
+        int[] number = {1,1,2,4,5,6,7,6,6,4}; //result: 1,2,4,5,6,7
+        mc.distinctElements(number);
+    }
+    public void distinctElements(int[] input){
+        List<Integer> indexes = new ArrayList<Integer>();
+        for(int i=0; i<input.length-1; i++){
+            int flag=0;
+            for(int j=i+1; j<input.length; j++){
+                if(input[i]==input[j]){
+                    indexes.add(j);
+                    flag=1;
+                    break;
+                }
+            }
+        }
+        for(int k=0; k<input.length; k++){
+            if(!(indexes.contains(k))){
+                System.out.println(input[k]);
+            }
+        }
+    }
 }
-
-27.          Write a
-program to get distinct word list from the given file.
-
-Solutions: Since replication involves files as well. So, I
-as of now only writing the steps of solve.
-
-first connect with the file and get the content
-of file in a line. Then use string tokenizer with delimiter as “ ”.
-So, we will get each word. Sort each new word in map with key as the same
-word and value as 1 wjhile any repeated word increasing the value by 1. Do this for all the word we reach the end of
-line. Print all those words which has value equals 1. 
-
-
-
-
-
-
-
-
-
-28.          Write a
-program to get a line with max word count from the given file.
-
-We can follow all the step as is in above question. Once we
-have a map. Then, we just need to find the max value. 
-
-29.          Write a
-program to convert string to number without using Integer.parseInt() method.
-
-30.          Write a
-program to find two lines with max characters in descending order.
-
-31.          Write a
-program to find the sum of the first 1000 prime numbers.
-
-32.          Find
-longest substring without repeating characters.
-
-33.          Write a
-program to remove duplicates from sorted array.
-
-34.          How to
-sort a Stack using a temporary Stack?
-
- 
+27.	Write a program to get distinct word list from the given file.
+Solutions: Since replication involves files as well. So, I as of now only writing the steps of solve.
+1.	first connect with the file and get the content of file in a line. 
+2.	Then use string tokenizer with delimiter as “ ”. So, we will get each word. 
+3.	Sort each new word in map with key as the same word and value as 1 wjhile any repeated word increasing the value by 1. 
+4.	Do this for all the word we reach the end of line. 
+5.	Print all those words which has value equals 1. 
+28.	Write a program to get a line with max word count from the given file.
+We have assumed a map which has the words of the file and their respective frequency. 
+import java.util.*;
+public class MyClass {
+    public static void main(String args[]) {
+        MyClass mc = new MyClass();
+        Map<String, Integer> wordFrequency = new HashMap<String, Integer>();
+        wordFrequency.put("Rishav", 1);
+        wordFrequency.put("Satish", 2);
+        wordFrequency.put("Mishra", 3);
+        wordFrequency.put("Mishra", 3);
+        wordFrequency.put("ChoteBhai", 6);
+        wordFrequency.put("Harisevak", 6);
+        List words = mc.mostRepeated(wordFrequency);
+        Iterator i = words.iterator();
+        while(i.hasNext()){
+            System.out.println(i.next());
+        }
+    }
+    public List mostRepeated(Map<String, Integer> wordFrequency){
+        List<String> mostRepeatedWords = new ArrayList<String>();
+        Set<Map.Entry<String, Integer>> set = wordFrequency.entrySet();
+        List<Map.Entry<String, Integer>> list = new ArrayList<Map.Entry<String, Integer>>
+        (set);
+        Collections.sort(list, new Comparator<Map.Entry<String, Integer>>(){
+            @Override
+            public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2){
+                return (o2.getValue()).compareTo(o1.getValue());  
+            }
+        }
+        );
+        Map.Entry<String, Integer> entry1 = list.get(0);
+        Integer maxValue = entry1.getValue();
+        for(Map.Entry<String, Integer> entry: list){
+            if(entry.getValue()==maxValue){
+                mostRepeatedWords.add(entry.getKey());
+            }
+        }
+        return mostRepeatedWords;
+}
+}
+29.	Write a program to convert string to number without using Integer.parseInt() method.
+Note: We can do this through Ascii values. Also, remember that ascii of character 0 to 9 are consequent. 
+import java.util.*;
+public class MyClass {
+    public static void main(String args[]) {
+        MyClass mc = new MyClass();
+        String input = "13456";
+        System.out.println(mc.StringToNumber(input));
+    }
+    public int StringToNumber(String input){
+        char[] charArray = input.toCharArray();
+        int zeroAscii = (int) '0';
+        int sum=0;
+        for(char c: charArray){
+            int digitAscii = (int) c;
+            sum=sum*10+digitAscii-zeroAscii;
+        }
+        return sum;
+    }
+}
+30.	Write a program to find two lines with max characters in descending order.
+Related to file. 
+31.	Write a program to find the sum of the first 1000 prime numbers.
+A) print the number sum prime numbers inside 1 to 1000 (inclusive).
+import java.util.*;
+public class MyClass {
+    public static void amain(String args[]) {
+        MyClass mc = new MyClass();
+        int input=100;  //1, 2,3,5,7
+        System.out.println(mc.nPrimeSum(input));
+    }
+    public int nPrimeSum(int number){
+        int sum=1;
+        for(int i=2; i<=number; i++){
+            int flag=0;
+            for(int j=2; j<=i; j++){
+                if(i%j==0 && i!=j){
+                    flag=1;
+                    break;
+                }
+            }
+            if(flag==0){
+                sum=sum+i;
+            }
+        }
+        return sum;
+    }
+}
+B) print the sum of top 1000 prime numbers. 
+32.	Find longest substring without repeating characters.
+33.	Write a program to remove duplicates from sorted array.
+34.	How to sort a Stack using a temporary Stack?
 
 Source 3: http://www.java67.com/2012/08/10-java-coding-interview-questions-and.html
-
-It list down the top 10 asked ava programming interview
-questions. Do check it. 
-
- 
-
-Source 4:
-http://javahungry.blogspot.com/2013/09/core-java-coding-programming-questions-answers-technical-interview-java.html
-
- 
-
-This has so many programs and asking for the result after
-execution.
-
- 
-
-Source 5:
-http://www.instanceofjava.com/2016/03/core-java-interview-programs-freshers.html
-
-Posted by: InstanceOfJava Posted date: Mar 22, 2016 /
-comment : 1
-
-1.            Print
-prime numbers?  
-
-2.            Basic
-Java program to find area and perimeter of circle
-
-3.            Print 1
-to 10 without using loops  
-
-4.            Print
-numbers in pyramid shape?  
-
-5.            Add 2
-Matrices
-
-6.            Basic
-Java Example Program to check even or add
-
-7.            What
-happens if we place return statement in try catch blocks 
-
-8.            Write a
-java program to convert binary to decimal 
-
-9.            Java
-Program to convert Decimal to Binary
-
-10.          Interfaces
-allows constructors? 
-
-11.          Can we
-create private constructor in java
-
-12.          Java
-interview Questions on main() method  
-
-13.          Explain
-java data types with example programs 
-
-14.          Swap two
-numbers without using third variable in java 
-
-15.          Find sum
-of digits in java 
-
-16.          Check Even
-or Odd without using modulus and division 
-
-
-17.          String
-Reverse Without using String API 
-
-18.          Check string
-is palindrome or not?
-
-19.          Reverse a
-number in java?
-
- 
-
- 
-
- 
-
-20.          Fibonacci
-series with Recursive?
-
-21.          Fibonacci
-series without using Recursive?
-
-22.          Sort the
-String using string API?
-
-23.          Sort the
-String without using String API?
-
-24.          How to
-find largest element in an array with index and value ?
-
-25.          Sort
-integer array using bubble sort in java?
-
-26.          Check
-armstrong number or not?
-
-27.          Multiply 2
-Matrices
-
-28.          Explain
-return type in java 
-
-29.          Can we
-call Sub class methods using super class object? 
-
-30.          Can we Override
-private methods ? 
-
- 
-
-Source 6: 
-http://www.instanceofjava.com/p/frequently-asked-java-programs-in.html
-
- 
-
-List of c programs for practice : problems with
-solutions  
-
-  
-
- 
-
-1.            Print
-prime numbers? 
-
-2.            How to
-Subtract Hours from java date time 
-
-3.            How to
-subtract minutes from current time in java 
-
-
-4.            Print
-semicolon without using semicolon in java 
-
-5.            Remove
-whitespace from string javascript  
-
-6.            Java xor
-operator with example programs 
-
-7.            Benefits
-of arraylist in java over arrays 
-
-8.            Format
-text using printf() method in java   
-
-9.            How to
-Sort list of objects by multiple fields in java 
-
-
-10.          Java
-example program to round double to 2 decimal places  
-
-11.          Java
-program to Convert arraylist to array 
-
-12.          Finalize()
-method in java with example program 
-
-13.          5
-Different ways to print arrays in java  
-
-14.          Hibernate
-Criteria Query Language (HCQL)  
-
-15.          How to
-format text using printf() method in java
-
-16.          Final
-method in java with example program
-
-17.          Java
-mutliple choice questions with answers on constructors  
-
-18.          What are
-the advantages and disadvantages of Hibernate over JDBC 
-
- 
-
- 
-
-19.          How to
-generate unique random numbers in java  
-
-20.          Java mcq
-with answers on this keyword  
-
-21.          Quicksort
-algorithm in java with example program 
-
-22.          Implementation
-of selection sort algorithm in java with Example program  
-
-23.          Tower of
-hanoi recursive solution using Java  
-
-24.          Creating
-array of objects in java example program 
-
-25.          Finding
-Factorial of a Number in Java  
-
-26.          Print
-Pascals triangle in java program  
-
-27.          Deep
-copy   vs 
-Shallow copy
-
-28.          8
-different ways to convert int to String in java 
-
-29.          Find top
-two maximum numbers in a array java  
-
-30.          Exception
-handling in method overriding  
-
-31.          How to run
-jsp program in eclipse using tomcat 
-
-32.          Java
-interface programming questions  
-
-33.          Java
-program to remove vowels from string java 
-
-
-34.          Java
-programming interview questions and answers for experienced  
-
-35.          Java
-Program to reverse vowels in a string
-
-36.          Super
-keyword java programs for interview for freshers and experienced  
-
-37.          Java
-programming interview questions on this keyword part 1 
-
-38.          Super
-keyword in  java inheritance
-
-39.          Java
-programming interview questions on this keyword part 2
-
-40.          Java
-programs on this keyword part 3 
-
-41.          Servlets
-interview questions
-
-42.          Find
-shortest palindrome string
-
-43.          Validate
-email using javascript
-
-44.          Java XML
-parsing using  DOM Parser 
-
-45.          Dynamic
-polymorphism in Java 
-
-46.          Find
-missing numbers in an array
-
-47.          Collection
-vs Collections
-
-48.          Custom
-iterator in java 
-
-49.          Unreachable
-Blocks in java
-
-50.          Get table
-cell data using JavaScript
-
-51.          Enum in
-java  
-
-52.          3
-different ways to print exception message in java
-
-53.          Can we
-have try without catch block in java 
-
-54.          toString()
-method in java with example program
-
-55.          Remove
-duplicates from arraylist without using collections
-
-56.          Explain
-Hibernate Configuration file
-
-57.          What
-happens if we place return statement in try catch blocks 
-
-58.          Write a
-java program to convert binary to decimal 
-
-59.          Java
-interview questions on exception handling 
-
-60.          Java
-Program to convert Decimal to Binary
-
-61.          Is it
-possible to print message without using System.out.println()
-
-62.          Java
-program to restrict a class from creating not more than three objects
-
-63.          Java basic
-interview programs on this keyword 
-
-64.          Java
-Program to Sort elements of Java ArrayList Example
-
-65.          Interfaces
-allows constructors? 
-
-66.          Can we
-create static constructor in java 
-
-67.          Super
-keyword interview questions java 
-
-68.          Java
-interview questions on final keyword
-
-69.          Can we
-create private constructor in java
-
-70.          Java
-Program Find Second highest number in an integer array 
-
-71.          Java
-interview programming questions on interfaces 
-
-72.          Top 15
-abstract class interview questions  
-
-73.          Java
-interview Questions on main() method  
-
-74.          Sort
-employee object by id in descending order using comparable and TreesSet
-
-75.          Top 20
-collection framework interview Questions
-
-76.          Java
-Interview Program to find smallest and second smallest number in an array 
-
-77.          Java
-Coding Interview programming Questions : Java Test on HashMap  
-
-78.          Explain
-java data types with example programs 
-
-79.          How to
-check internet connection using java
-
-80.          Constructor
-chaining in java with example programs 
-
-81.          Top 10
-Interview Programs and questions on method overriding in java
-
-82.          Swap two
-numbers without using third variable in java 
-
-83.          Find sum
-of digits in java 
-
-84.          How to
-create immutable class in java 
-
-85.          AtomicInteger
-in java 
-
-86.          Check Even
-or Odd without using modulus and division 
-
-
-87.          String
-Reverse Without using String API 
-
-88.          Find
-Biggest substring in between specified character
-
-89.          Check
-string is palindrome or not?
-
-90.          Reverse a
-number in java?
-
-91.          Fibonacci
-series with Recursive?
-
-92.          Fibonacci
-series without using Recursive?
-
-93.          Sort the
-String using string API?
-
-94.          Sort the
-String without using String API?
-
-95.          what is
-the difference between method overloading and method overriding?
-
-96.          How to
-find largest element in an array with index and value ?
-
-97.          Sort
-integer array using bubble sort in java?
-
-98.          Object
-Cloning in java example?
-
-99.          Method
-Overriding in java?
-
-100.        Program for
-create Singleton class?
-
-101.        Print
-numbers in pyramid shape?
-
-102.        Check
-armstrong number or not?
-
-103.        Producer
-Consumer Problem?
-
-104.        Remove
-duplicate elements from an array
-
-105.        Convert
-Byte Array to String
-
-106.        Print 1 to
-10 without using loops
-
-107.        Add 2
-Matrices
-
-108.        Multiply 2
-Matrices
-
-109.        How to Add
-elements to hash map and Display
-
-110.        Sort
-ArrayList in descending order
-
-111.        Sort Object
-Using Comparator
-
-112.        Count
-Number of Occurrences of character in a String
-
-113.        Can we
-Overload static methods in java
-
-114.        Can we
-Override static methods in java 
-
-115.        Can we call
-super class static methods from sub class 
-
-116.        Explain
-return type in java 
-
-117.        Can we call
-Sub class methods using super class object? 
-
-118.        Can we
-Override private methods ? 
-
-119.        Basic
-Programming Questions to Practice : Test your Skill
-
-120.        Java
-programming interview questions on collections
-
- 
+It list down the top 10 asked ava programming interview questions. Do check it. 
+
+Source 4: http://javahungry.blogspot.com/2013/09/core-java-coding-programming-questions-answers-technical-interview-java.html
+
+This has so many programs and asking for the result after execution.
+
+Source 5: http://www.instanceofjava.com/2016/03/core-java-interview-programs-freshers.html
+Posted by: InstanceOfJava Posted date: Mar 22, 2016 / comment : 1
+1.	Print prime numbers?  
+2.	Basic Java program to find area and perimeter of circle
+3.	Print 1 to 10 without using loops  
+4.	Print numbers in pyramid shape?  
+5.	Add 2 Matrices
+6.	Basic Java Example Program to check even or add
+7.	What happens if we place return statement in try catch blocks 
+8.	Write a java program to convert binary to decimal 
+9.	Java Program to convert Decimal to Binary
+10.	Interfaces allows constructors? 
+11.	Can we create private constructor in java
+12.	Java interview Questions on main() method  
+13.	Explain java data types with example programs 
+14.	Swap two numbers without using third variable in java 
+15.	Find sum of digits in java 
+16.	Check Even or Odd without using modulus and division  
+17.	String Reverse Without using String API 
+18.	Check string is palindrome or not?
+19.	Reverse a number in java?
+
+
+
+20.	Fibonacci series with Recursive?
+21.	Fibonacci series without using Recursive?
+22.	Sort the String using string API?
+23.	Sort the String without using String API?
+24.	How to find largest element in an array with index and value ?
+25.	Sort integer array using bubble sort in java?
+26.	Check armstrong number or not?
+27.	Multiply 2 Matrices
+28.	Explain return type in java 
+29.	Can we call Sub class methods using super class object? 
+30.	Can we Override private methods ? 
+
+Source 6:  http://www.instanceofjava.com/p/frequently-asked-java-programs-in.html
+
+List of c programs for practice : problems with solutions  
+  
+
+1.	Print prime numbers? 
+2.	How to Subtract Hours from java date time 
+3.	How to subtract minutes from current time in java  
+4.	Print semicolon without using semicolon in java 
+5.	Remove whitespace from string javascript  
+6.	Java xor operator with example programs 
+7.	Benefits of arraylist in java over arrays 
+8.	Format text using printf() method in java   
+9.	How to Sort list of objects by multiple fields in java  
+10.	Java example program to round double to 2 decimal places  
+11.	Java program to Convert arraylist to array 
+12.	Finalize() method in java with example program 
+13.	5 Different ways to print arrays in java  
+14.	Hibernate Criteria Query Language (HCQL)  
+15.	How to format text using printf() method in java
+16.	Final method in java with example program
+17.	Java mutliple choice questions with answers on constructors  
+18.	What are the advantages and disadvantages of Hibernate over JDBC 
+
+
+19.	How to generate unique random numbers in java  
+20.	Java mcq with answers on this keyword  
+21.	Quicksort algorithm in java with example program 
+22.	Implementation of selection sort algorithm in java with Example program  
+23.	Tower of hanoi recursive solution using Java  
+24.	Creating array of objects in java example program 
+25.	Finding Factorial of a Number in Java  
+26.	Print Pascals triangle in java program  
+27.	Deep copy   vs  Shallow copy
+28.	8 different ways to convert int to String in java 
+29.	Find top two maximum numbers in a array java  
+30.	Exception handling in method overriding  
+31.	How to run jsp program in eclipse using tomcat 
+32.	Java interface programming questions  
+33.	Java program to remove vowels from string java  
+34.	Java programming interview questions and answers for experienced  
+35.	Java Program to reverse vowels in a string
+36.	Super keyword java programs for interview for freshers and experienced  
+37.	Java programming interview questions on this keyword part 1 
+38.	Super keyword in  java inheritance
+39.	Java programming interview questions on this keyword part 2
+40.	Java programs on this keyword part 3 
+41.	Servlets interview questions
+42.	Find shortest palindrome string
+43.	Validate email using javascript
+44.	Java XML parsing using  DOM Parser 
+45.	Dynamic polymorphism in Java 
+46.	Find missing numbers in an array
+47.	Collection vs Collections
+48.	Custom iterator in java 
+49.	Unreachable Blocks in java
+50.	Get table cell data using JavaScript
+51.	Enum in java  
+52.	3 different ways to print exception message in java
+53.	Can we have try without catch block in java 
+54.	toString() method in java with example program
+55.	Remove duplicates from arraylist without using collections
+56.	Explain Hibernate Configuration file
+57.	What happens if we place return statement in try catch blocks 
+58.	Write a java program to convert binary to decimal 
+59.	Java interview questions on exception handling 
+60.	Java Program to convert Decimal to Binary
+61.	Is it possible to print message without using System.out.println()
+62.	Java program to restrict a class from creating not more than three objects
+63.	Java basic interview programs on this keyword 
+64.	Java Program to Sort elements of Java ArrayList Example
+65.	Interfaces allows constructors? 
+66.	Can we create static constructor in java 
+67.	Super keyword interview questions java 
+68.	Java interview questions on final keyword
+69.	Can we create private constructor in java
+70.	Java Program Find Second highest number in an integer array 
+71.	Java interview programming questions on interfaces 
+72.	Top 15 abstract class interview questions  
+73.	Java interview Questions on main() method  
+74.	Sort employee object by id in descending order using comparable and TreesSet
+75.	Top 20 collection framework interview Questions
+76.	Java Interview Program to find smallest and second smallest number in an array 
+77.	Java Coding Interview programming Questions : Java Test on HashMap  
+78.	Explain java data types with example programs 
+79.	How to check internet connection using java
+80.	Constructor chaining in java with example programs 
+81.	Top 10 Interview Programs and questions on method overriding in java
+82.	Swap two numbers without using third variable in java 
+83.	Find sum of digits in java 
+84.	How to create immutable class in java 
+85.	AtomicInteger in java 
+86.	Check Even or Odd without using modulus and division  
+87.	String Reverse Without using String API 
+88.	Find Biggest substring in between specified character
+89.	Check string is palindrome or not?
+90.	Reverse a number in java?
+91.	Fibonacci series with Recursive?
+92.	Fibonacci series without using Recursive?
+93.	Sort the String using string API?
+94.	Sort the String without using String API?
+95.	what is the difference between method overloading and method overriding?
+96.	How to find largest element in an array with index and value ?
+97.	Sort integer array using bubble sort in java?
+98.	Object Cloning in java example?
+99.	Method Overriding in java?
+100.	Program for create Singleton class?
+101.	Print numbers in pyramid shape?
+102.	Check armstrong number or not?
+103.	Producer Consumer Problem?
+104.	Remove duplicate elements from an array
+105.	Convert Byte Array to String
+106.	Print 1 to 10 without using loops
+107.	Add 2 Matrices
+108.	Multiply 2 Matrices
+109.	How to Add elements to hash map and Display
+110.	Sort ArrayList in descending order
+111.	Sort Object Using Comparator
+112.	Count Number of Occurrences of character in a String
+113.	Can we Overload static methods in java
+114.	Can we Override static methods in java 
+115.	Can we call super class static methods from sub class 
+116.	Explain return type in java 
+117.	Can we call Sub class methods using super class object? 
+118.	Can we Override private methods ? 
+119.	Basic Programming Questions to Practice : Test your Skill
+120.	Java programming interview questions on collections
 
 Source 7: http://www.instanceofjava.com/2016/03/java-collections-interview-questions.html
 
- 
-
 Collection set interface: 
 
- 
 
- 
+1.	Collection Set Interface    
 
-1.            Collection
-Set Interface    
-
- 
-
-Hashset Class in Collection framework: (Java programming
-questions)
-
- 
-
- 
-
-1.            Hashset
-class in java  
-
-2.            Get Size
-of Java HashSet Example 
-
-3.            Remove
-specified element from Java HashSet example
-
-4.            Check if
-a particular element exists in Java HashSet Example 
-
-5.            Java
-program to Copy all elements of Java HashSet to an Object Array 
-
- 
-
-LinkedHashSet Class in Collection framework: (Java
-programming questions)
-
- 
-
- 
-
-1.            Check if
-a particular element exists in Java LinkedHashSet Example
-
-2.            Remove
-specified element from Java LinkedHashSet example 
-
-3.            Remove
-all elements LinkedHashSet example
-
- 
-
-Treeset Class in Collection framework: (Java programming
-questions)
-
-  
-
- 
-
-1.            Java
-Program to convert Treeset to an interger array 
+Hashset Class in Collection framework: (Java programming questions)
 
 
-2.            Get Size
-of Java TreeSet Example
+1.	Hashset class in java  
+2.	Get Size of Java HashSet Example 
+3.	Remove specified element from Java HashSet example
+4.	Check if a particular element exists in Java HashSet Example 
+5.	Java program to Copy all elements of Java HashSet to an Object Array 
 
-3.            Get
-lowest and highest value stored in Java TreeSet example
+LinkedHashSet Class in Collection framework: (Java programming questions)
 
-4.            Sort
-employee object in descending order using comparable and TreesSet 
 
-5.            Basic
-Java program to Remove specified element from TreeSet example
+1.	Check if a particular element exists in Java LinkedHashSet Example
+2.	Remove specified element from Java LinkedHashSet example 
+3.	Remove all elements LinkedHashSet example
 
- 
+Treeset Class in Collection framework: (Java programming questions)
+  
 
- 
+1.	Java Program to convert Treeset to an interger array  
+2.	Get Size of Java TreeSet Example
+3.	Get lowest and highest value stored in Java TreeSet example
+4.	Sort employee object in descending order using comparable and TreesSet 
+5.	Basic Java program to Remove specified element from TreeSet example
 
- 
 
- Collection List
-Interface:
 
- 
+ Collection List Interface:
 
- 
 
-1.            Collection
-List Interface 
+1.	Collection List Interface 
 
- 
+ArrayList Class in Collection framework: (Java programming questions)
 
-ArrayList Class in Collection framework: (Java programming
-questions)
 
- 
-
- 
-
-1.             How to
-Iterate ArrayList using Java ListIterator Example  
-
-2.            Arraylist
-add element at specific index 
-
-3.            Sort
-ArrayList in descending order
-
-4.            Java
-program to insert an element to ArrayList using ListIterator Example  
-
-5.            How to
-sort arraylist of strings alphabetically java 
-
-6.            Java
-Program to Sort elements of Java ArrayList Example
-
-7.            Basic
-Java example program to replace an element at specified index arraylist
-
-8.            Search an
-element of Java ArrayList Example
-
-9.            Java
-Example Program to Remove element from specified index ArrayList 
-
-10.          Remove
-duplicates from arraylist without using collections 
-
-11.          Top 100
-Java Programs asked in Interviews 
-
- 
+1.	 How to Iterate ArrayList using Java ListIterator Example  
+2.	Arraylist add element at specific index 
+3.	Sort ArrayList in descending order
+4.	Java program to insert an element to ArrayList using ListIterator Example  
+5.	How to sort arraylist of strings alphabetically java 
+6.	Java Program to Sort elements of Java ArrayList Example
+7.	Basic Java example program to replace an element at specified index arraylist
+8.	Search an element of Java ArrayList Example
+9.	Java Example Program to Remove element from specified index ArrayList 
+10.	Remove duplicates from arraylist without using collections 
+11.	Top 100 Java Programs asked in Interviews 
 
 Map Interface In java
 
- 
 
- 
+1.	Map interface  
 
-1.            Map
-interface  
+HashMap Class in Collection framework: (Java programming questions)
 
- 
 
-HashMap Class in Collection framework: (Java programming
-questions)
+1.	Basic Java Example program Check if a particular key exists HashMap 
+2.	Check if a particular key exists in Java Hashtable example  
+3.	Java Basic example program to check particular value exists in hashmap
+4.	Java program to remove key value from hashmap
+5.	Convert keys of a map to List 
+6.	Convert Values of a map to List 
+7.	Java Coding Interview programming Questions : Java Test on HashMap
 
- 
+ Hashtable Class in Collection framework: (Java interview programming questions)
 
- 
 
-1.            Basic
-Java Example program Check if a particular key exists HashMap 
-
-2.            Check if
-a particular key exists in Java Hashtable example  
-
-3.            Java
-Basic example program to check particular value exists in hashmap
-
-4.            Java
-program to remove key value from hashmap
-
-5.            Convert
-keys of a map to List 
-
-6.            Convert
-Values of a map to List 
-
-7.            Java
-Coding Interview programming Questions : Java Test on HashMap
-
- 
-
- Hashtable Class in
-Collection framework: (Java interview programming questions)
-
- 
-
- 
-
-1.            Check
-particular value exist in hashtable
-
-2.            Iterate
-through keys of hashtable java
-
-3.            Iterate
-through values of hashtable java 
-
-4.            Remove
-key value pair from hashtable java example
-
-5.            Remove
-all elements from hashtable java example 
-
-6.            Java
-Collections example program Get Set view of Keys from Hashtable example 
-
-7.            Get
-collection values from hashtable example
-
-8.            Top 100
-Java Programs asked in Interviews  
-
- 
+1.	Check particular value exist in hashtable
+2.	Iterate through keys of hashtable java
+3.	Iterate through values of hashtable java 
+4.	Remove key value pair from hashtable java example
+5.	Remove all elements from hashtable java example 
+6.	Java Collections example program Get Set view of Keys from Hashtable example 
+7.	Get collection values from hashtable example
+8.	Top 100 Java Programs asked in Interviews  
 
 Java collections programming interview questions 
 
- 
 
- 
+1.	Top 20 collection framework interview questions for freshers and experienced  
+2.	Collection vs Collections
+3.	Difference between enumeration and iterator and list iterator? 
+4.	Difference between arraylist and vector 
+5.	Differences between HashMap and Hash-table  
+6.	Comparable vs Comparator 
+7.	Custom iterator in java   
+8.	Remove duplicates from arraylist without using collections 
+9.	Top 100 Java Programs asked in Interviews 
 
-1.            Top 20
-collection framework interview questions for freshers and experienced  
+Source 8: http://www.instanceofjava.com/2016/02/java-basic-programming-for-freshers-interview.html
+This has lot of programs asking for the result after execution of the program. 
 
-2.            Collection
-vs Collections
-
-3.            Difference
-between enumeration and iterator and list iterator? 
-
-4.            Difference
-between arraylist and vector 
-
-5.            Differences
-between HashMap and Hash-table  
-
-6.            Comparable
-vs Comparator 
-
-7.            Custom
-iterator in java   
-
-8.            Remove
-duplicates from arraylist without using collections 
-
-9.            Top 100
-Java Programs asked in Interviews 
-
- 
-
-Source 8:
-http://www.instanceofjava.com/2016/02/java-basic-programming-for-freshers-interview.html
-
-This has lot of programs asking for the result after
-execution of the program. 
-
- 
-
-Source 9:
-http://www.instanceofjava.com/2015/09/pattern-program-in-java-displays-pyramid-rhombus-stars.html
-
- 
+Source 9: http://www.instanceofjava.com/2015/09/pattern-program-in-java-displays-pyramid-rhombus-stars.html
 
 #1 Java Program To print Numbers in Below pattern: 
 
- 
-
-              1 
-
-             2 3 
-
-            4 5 6 
-
-           7 8 9 10 
-
-         11 12 13 14
-15            
-
+              1 
+             2 3 
+            4 5 6 
+           7 8 9 10 
+         11 12 13 14 15	
 # Java Program to print Numbers in Below Format:
 
- 
-
 1 
-
 1 2 
-
 1 2 3 
-
 1 2 3 4 
-
 1 2 3 4 5 
-
 1 2 3 4 5 6 
-
 1 2 3 4 5 6 7 
-
 1 2 3 4 5 6 7 8 
-
 1 2 3 4 5 6 7 8 9 
-
 1 2 3 4 5 6 7 8 9 10
-
- 
 
 #3 Java Program to print numbers in below format
 
- 
-
 1 2 3 4 5 6 7 8 9 
-
 1 2 3 4 5 6 7 8 
-
 1 2 3 4 5 6 7 
-
 1 2 3 4 5 6 
-
 1 2 3 4 5 
-
 1 2 3 4 
-
 1 2 3 
-
 1 2 
-
-1              
-
- 
+1 	
 
 #4 Java Program to print Numbers in Below pattern
 
- 
-
 1 2 3 4 5 6 7 8 9 
-
- 1 2 3 4 5 6 7 8 
-
-  1 2 3 4 5 6 7 
-
-   1 2 3 4 5 6 
-
-    1 2 3 4 5 
-
-     1 2 3 4 
-
-      1 2 3 
-
-       1 2 
-
-        1 
-
-    
-
+ 1 2 3 4 5 6 7 8 
+  1 2 3 4 5 6 7 
+   1 2 3 4 5 6 
+    1 2 3 4 5 
+     1 2 3 4 
+      1 2 3 
+       1 2 
+        1 
+    
 #5 Java Program to Print Numbers in Below pattern:
 
- 
-
-        1 
-
-       1 2 
-
-      1 2 3 
-
-     1 2 3 4 
-
-    1 2 3 4 5 
-
-   1 2 3 4 5 6 
-
-  1 2 3 4 5 6 7 
-
- 1 2 3 4 5 6 7 8 
-
+        1 
+       1 2 
+      1 2 3 
+     1 2 3 4 
+    1 2 3 4 5 
+   1 2 3 4 5 6 
+  1 2 3 4 5 6 7 
+ 1 2 3 4 5 6 7 8 
 1 2 3 4 5 6 7 8 9 
-
 1 2 3 4 5 6 7 8 9 10 
 
- 
-
- Program #1:  java program to print pyramid of stars using
-for loop in below format
-
- 
+ Program #1:  java program to print pyramid of stars using for loop in below format
 
 *
-
 **
-
 ***
-
 ****
-
 *****
-
 ******
-
 *******
-
 ********
-
 *********
-
 **********
 
- 
+Program #2: java program to print pyramid of stars using for loop in below format
 
-Program #2: java program to print pyramid of stars using for
-loop in below format
-
- 
-
- 
 
 **********
-
 *********
-
 ********
-
 *******
-
 ******
-
 *****
-
 ****
-
 ***
-
 **
-
 *
 
- 
-
-Program #3 java program to print pyramid of stars using for
-loop in below format
-
- 
+Program #3 java program to print pyramid of stars using for loop in below format
 
 *
-
 **
-
 ***
-
 ****
-
 *****
-
 ******
-
 *******
-
 ********
-
 *********
-
 **********
-
 **********
-
 *********
-
 ********
-
 *******
-
 ******
-
 *****
-
 ****
-
 ***
-
 **
-
 *
 
- 
-
-Source 10:
-http://www.bullraider.com/java/core-java/33-interview-questions
-
+Source 10: http://www.bullraider.com/java/core-java/33-interview-questions
 So many programming question. Just check out.
 
- 
-
-Source 11:
-http://javarevisited.blogspot.in/2017/07/top-50-java-programs-from-coding-Interviews.html
-
- 
+Source 11: http://javarevisited.blogspot.in/2017/07/top-50-java-programs-from-coding-Interviews.html
 
 Top 50 Java Programs from Coding Interviews
-
-Here is a big list of Java programs for Job Interviews. As I
-said it includes questions from problem-solving, linked list, array, string,
-matrix, bitwise operators and other miscellaneous parts of programming. Once
-you gone through these questions, you can handle a good number of questions on
-real Job interviews.
-
- 
+Here is a big list of Java programs for Job Interviews. As I said it includes questions from problem-solving, linked list, array, string, matrix, bitwise operators and other miscellaneous parts of programming. Once you gone through these questions, you can handle a good number of questions on real Job interviews.
 
 1. Fibonacci series (solution)
-
-Write a simple Java program which will print Fibonacci
-series e.g. 1 1 2 3 5 8 13 ... . up to a given number. Be prepare for cross
-questions like using iteration over recursion and how to optimize the solution
-using caching and memoization.
-
- 
+Write a simple Java program which will print Fibonacci series e.g. 1 1 2 3 5 8 13 ... . up to a given number. Be prepare for cross questions like using iteration over recursion and how to optimize the solution using caching and memoization.
 
 2. Prime number (solution)
-
-Write a Java program to check if a given number is prime or
-not. Remember, a prime number is a number which is not divisible by any other
-number e.g. 3, 5, 7, 11, 13, 17 etc. Be prepared for cross e.g. checking till
-the square root of a number etc.
-
- 
+Write a Java program to check if a given number is prime or not. Remember, a prime number is a number which is not divisible by any other number e.g. 3, 5, 7, 11, 13, 17 etc. Be prepared for cross e.g. checking till the square root of a number etc.
 
 3. String Palindrome (solution)
+You need to write a simple Java program to check if a given String is palindrome or not. A Palindrome is a String which is equal to the reverse of itself e.g. "Bob" is a palindrome because of the reverse of "Bob" is also "Bob".  Though be prepared with both recursive and iterative solution of this problem. The interviewer may ask you to solve without using any library method e.g. indexOf() or subString() so be prepared for that.
 
-You need to write a simple Java program to check if a given
-String is palindrome or not. A Palindrome is a String which is equal to the
-reverse of itself e.g. "Bob" is a palindrome because of the reverse
-of "Bob" is also "Bob". 
-Though be prepared with both recursive and iterative solution of this
-problem. The interviewer may ask you to solve without using any library method
-e.g. indexOf() or subString() so be prepared for that.
-
- 
-
- 
 
 4. Integer Palindrome (solution)
-
-This is generally asked as follow-up or alternative of the
-previous program. This time you need to check if given Integer is palindrome or
-not. An integer is called palindrome if its equal to its reverse e.g. 1001 is a
-palindrome but 1234 is not because the reverse of 1234 is 4321 which is not
-equal to 1234. You can use divide by 10 to reduce the number and modulus 10 to
-get the last digit. This trick is used to solve this problem.
-
- 
+This is generally asked as follow-up or alternative of the previous program. This time you need to check if given Integer is palindrome or not. An integer is called palindrome if its equal to its reverse e.g. 1001 is a palindrome but 1234 is not because the reverse of 1234 is 4321 which is not equal to 1234. You can use divide by 10 to reduce the number and modulus 10 to get the last digit. This trick is used to solve this problem.
 
 5. Armstrong number (solution)
+A number is called an Armstrong number if it is equal to the cube of its each digit. for example, 153 is an Armstrong number because 153= 1+ 125+27 which is equal to 1^3+5^3+3^3. You need to write a program to check if given number is Armstrong number or not.
 
-A number is called an Armstrong number if it is equal to the
-cube of its each digit. for example, 153 is an Armstrong number because 153= 1+
-125+27 which is equal to 1^3+5^3+3^3. You need to write a program to check if
-given number is Armstrong number or not.
-
- 
-
- 
 
 6. Avoiding deadlock in Java (solution)
+This is one of the interesting programs from Java Interviews, mostly asked to 2 to 3 years of experienced programmers or higher. Interviewer simply asked you to write code where a resource is accessed by multiple threads. You need to write code in such a way that no deadlock should occur. The trick to solving this problem is acquiring resources in an order and release them in reverse order e.g. first acquire resource R1 and only if you have got R1 go for R2. This way you can avoid deadlock.
 
-This is one of the interesting programs from Java
-Interviews, mostly asked to 2 to 3 years of experienced programmers or higher.
-Interviewer simply asked you to write code where a resource is accessed by
-multiple threads. You need to write code in such a way that no deadlock should
-occur. The trick to solving this problem is acquiring resources in an order and
-release them in reverse order e.g. first acquire resource R1 and only if you
-have got R1 go for R2. This way you can avoid deadlock.
-
- 
-
- 
 
 7. Factorial (solution)
-
-This is one of the simplest programs you can expect on
-interviews. It is generally asked to see if you can code or not. Sometimes
-interviewer may also ask about changing a recursive solution to iterative one
-or vice-versa.
-
- 
+This is one of the simplest programs you can expect on interviews. It is generally asked to see if you can code or not. Sometimes interviewer may also ask about changing a recursive solution to iterative one or vice-versa.
 
 8. Reverse a String (solution)
-
-This problem is similar to the String Palindrome problem we
-have discussed above. If you can solve that problem you can solve this as well.
-You can use indexOf() or substring() to reverse a String or alternatively,
-convert the problem to reverse an array by operating on character array instead
-of String.
-
- 
+This problem is similar to the String Palindrome problem we have discussed above. If you can solve that problem you can solve this as well. You can use indexOf() or substring() to reverse a String or alternatively, convert the problem to reverse an array by operating on character array instead of String.
 
 9. Remove duplicates from array (solution)
-
-Write a program to remove duplicates from an array in Java
-without using the Java Collection API. The array can be an array of String,
-Integer or Character, your solution should be independent of the type of array.
-If you want to practice more array based questions then see this list of top 30
-array interview questions from Java interviews.
-
- 
+Write a program to remove duplicates from an array in Java without using the Java Collection API. The array can be an array of String, Integer or Character, your solution should be independent of the type of array. If you want to practice more array based questions then see this list of top 30 array interview questions from Java interviews.
 
 10. Printing patterns (solutions)
 
- 
-
 11. Print repeated characters of String? (solution)
-
- 
 
 12. GCD of two numbers (solution)
 
- 
-
 13. Square root of number (solution)
-
-You need to write a program to calculate the square root of
-a number without using the Math.sqrt() function of JDK. You need to write your
-logic and method to calculate the square root. You can though use popular
-algorithm e.g. Newton's method.
-
- 
+You need to write a program to calculate the square root of a number without using the Math.sqrt() function of JDK. You need to write your logic and method to calculate the square root. You can though use popular algorithm e.g. Newton's method.
 
 14. Reverse array in place (solution)
 
- 
-
 15. Reverse words of sentence (solution)
-
- 
 
 16. Leap year (solution)
 
- 
-
 17. Binary search (solution)
 
- 
-
 18. String Anagram (solution)
+Write a program to check if two given String is Anagram of each other. Your function should return true if two Strings are Anagram, false otherwise. A string is said to be an anagram if it contains same characters and same length but in different order e.g. army and Mary are anagrams. You can ignore cases for this problem but you should clarify that from your interview.
 
-Write a program to check if two given String is Anagram of
-each other. Your function should return true if two Strings are Anagram, false
-otherwise. A string is said to be an anagram if it contains same characters and
-same length but in different order e.g. army and Mary are anagrams. You can
-ignore cases for this problem but you should clarify that from your interview.
 
- 
-
- 
-
- 
 
 19. Design a Vending Machine (solution)
-
-This one of the popular OOAD (object oriented analysis and
-design) question from Java Interviews. You will be given 3 hours to design and
-code a vending machine satisfying some of the business requirements. You also
-need to write unit tests to prove your code satisfy those requirements. You can
-see this article for more object oriented analysis questions.
-
- 
+This one of the popular OOAD (object oriented analysis and design) question from Java Interviews. You will be given 3 hours to design and code a vending machine satisfying some of the business requirements. You also need to write unit tests to prove your code satisfy those requirements. You can see this article for more object oriented analysis questions.
 
 20. Reverse a number (solution)
 
- 
-
 21. The first non-repeated character of String (solution)
 
- 
-
-22. Finding Middle element of linked list in one pass
-(solution)
-
- 
+22. Finding Middle element of linked list in one pass (solution)
 
 23. Pre-order traversal (solution)
 
- 
-
 24. Pre-order traversal without recursion (solution)
-
- 
 
 25. In order traversal (solution)
 
- 
-
 26. In order traversal without recursion (solution)
-
- 
 
 27. Post-order traversal (solution)
 
- 
-
 28. Post order traversal without recursion (solution)
-
- 
 
 29. Print all leaves of binary tree (solution)
 
- 
-
- 
 
 30. Sort array using quicksort (solution)
+You need to write a Java program to sort an array of integers using quick sort algorithm. You cannot use any library method e.g. JDK or a third party library, which means, you need to first implement the quicksort algorithm and then sort the array.
 
-You need to write a Java program to sort an array of
-integers using quick sort algorithm. You cannot use any library method e.g. JDK
-or a third party library, which means, you need to first implement the
-quicksort algorithm and then sort the array.
-
- 
-
- 
 
 31. Insertion sort (solution)
-
-Write a program to implement the insertion sort algorithm in
-Java. The program should take an unsorted array and sort it using insertion
-sort algorithm Also explain the best case and worst case time and space
-complexity of Insertion sort algorithm.
-
- 
+Write a program to implement the insertion sort algorithm in Java. The program should take an unsorted array and sort it using insertion sort algorithm Also explain the best case and worst case time and space complexity of Insertion sort algorithm.
 
 32. Bubble sort (solution)
-
-Write a program to implement the bubble sort algorithm in
-Java. You can use basic operators and functions but sorting functions from Java
-API is not allowed.
-
- 
+Write a program to implement the bubble sort algorithm in Java. You can use basic operators and functions but sorting functions from Java API is not allowed.
 
 33. Transpose a matrix (solution)
 
- 
-
 34. Print all permutations of String (solution)
+Write a Java program to print all permutations of a given String. For example, if given String is "GOD" then your program should print all 6 permutations of this string e.g. "GOD", "OGD", "DOG", "GDO", "ODG", and "DGO".
+ 
 
-Write a Java program to print all permutations of a given
-String. For example, if given String is "GOD" then your program
-should print all 6 permutations of this string e.g. "GOD",
-"OGD", "DOG", "GDO", "ODG", and
-"DGO".
-
- 
-
- 
-
- 
 
 35. Reverse a String in place (solution)
 
- 
-
 36. Adding two matrices in Java (solution)
-
- 
 
 37. Matrix multiplication (solution)
 
- 
-
 38. Removal all white space from String (solution)
 
- 
-
 39. Reverse a linked list (solution)
+Write a program to reverse a singly linked list in Java. You can use iteration and recursion to solve this problem but you should reverse linked list in place.
+ 
 
-Write a program to reverse a singly linked list in Java. You
-can use iteration and recursion to solve this problem but you should reverse
-linked list in place.
-
- 
-
- 
-
- 
 
 40. Find the length of linked list (solution)
+Just write a program in Java to find the length of a singly linked list in one pass i.e. in just one iteration of singly linked list.
 
-Just write a program in Java to find the length of a singly
-linked list in one pass i.e. in just one iteration of singly linked list.
-
- 
-
- 
 
 41. Check if linked list has loop (solution)
-
-Write a program to check if given linked list has a loop or
-not. Sometimes a linked list get corrupt and two nodes point to the same node,
-which forms the loop or cycle in the linked list.
-
- 
+Write a program to check if given linked list has a loop or not. Sometimes a linked list get corrupt and two nodes point to the same node, which forms the loop or cycle in the linked list.
 
 42. Find the start of loop in linked list (solution)
 
- 
-
 43. Find middle element of linked list (solution)
 
- 
+44. Find the 3rd element from the tail linked list (solution)
+You need to write a program to find the 3rd element from the tail of a singly linked list. You need to solve this problem without iterating twice. If you want more linked list questions you can see the article about frequently asked linked list interview questions.
+ 
 
-44. Find the 3rd element from the tail linked list
-(solution)
 
-You need to write a program to find the 3rd element from the
-tail of a singly linked list. You need to solve this problem without iterating
-twice. If you want more linked list questions you can see the article about
-frequently asked linked list interview questions.
-
- 
-
- 
-
- 
-
- 
 
 44. Convert a linked list to a binary tree (solution)
+It's possible to convert a doubly linked list to a binary tree, you need to write a Java program which takes a doubly linked list and returns a binary tree.
 
-It's possible to convert a doubly linked list to a binary
-tree, you need to write a Java program which takes a doubly linked list and
-returns a binary tree.
-
- 
-
- 
 
 45. Sort a linked list (solution)
+You need to given an unsorted linked list and you need to write a program in Java to sort them in ascending order of the values in each node.
 
-You need to given an unsorted linked list and you need to
-write a program in Java to sort them in ascending order of the values in each
-node.
-
- 
-
- 
 
 46. Iterative Quicksort (solution)
+You need to write a Java program to implement quicksort sorting algorithm without recursion. You can use essential JDK classes and programming constructs, but recursion is not allowed.
 
-You need to write a Java program to implement quicksort
-sorting algorithm without recursion. You can use essential JDK classes and
-programming constructs, but recursion is not allowed.
-
- 
-
- 
 
 46. Bucket sort (solution)
+This program is increasingly getting popular on Java interview because it sorts a given array in linear time. Though there are a lot of prerequisite e.g. you must know the maximum value present in the array, it is a very interesting problem from interview point of view. You need to write a program to implement bucket sort algorithm in Java. If you are not familiar with Bucket sort or any other linear sorting algorithm, I suggest you to first read a good on algorithms e.g. Introduction to Algorithms by Thomas H. Cormen.
+ 
 
-This program is increasingly getting popular on Java
-interview because it sorts a given array in linear time. Though there are a lot
-of prerequisite e.g. you must know the maximum value present in the array, it
-is a very interesting problem from interview point of view. You need to write a
-program to implement bucket sort algorithm in Java. If you are not familiar
-with Bucket sort or any other linear sorting algorithm, I suggest you to first
-read a good on algorithms e.g. Introduction to Algorithms by Thomas H. Cormen.
 
- 
-
- 
-
- 
-
- 
 
 47. Counting sort (solution)
+This is another problem which is similar to the previous one because counting sort is also a linear sorting algorithm. Just remember that bucket sort and counting sort are different algorithms, so it's also good to state how they are different.
 
-This is another problem which is similar to the previous one
-because counting sort is also a linear sorting algorithm. Just remember that
-bucket sort and counting sort are different algorithms, so it's also good to
-state how they are different.
-
- 
-
- 
 
 48. Check if two string rotation of each other
+Write a program which accepts two given String and checks if they are the rotation of each. If they then return true otherwise return false. A String is said to be a rotation of other string if they contain same characters and the sequence is rotated across any character e.g "dabc" is a rotation of "abcd" but "dbac" is not.  If you want to practice more string based questions, you can also see my list of 20 String based algorithm questions from Java interviews.
 
-Write a program which accepts two given String and checks if
-they are the rotation of each. If they then return true otherwise return false.
-A String is said to be a rotation of other string if they contain same
-characters and the sequence is rotated across any character e.g
-"dabc" is a rotation of "abcd" but "dbac" is not.  If you want to practice more string based
-questions, you can also see my list of 20 String based algorithm questions from
-Java interviews.
-
- 
-
- 
 
 49. LRU cache in Java (solution)
+Write a program to implement an LRU cache in Java.  An LRU cache means Least Recently Used Cache which removes the least recently used element if the cache is full. You can use LinkedHashMap to implement LRU cache in Java.
+ 
 
-Write a program to implement an LRU cache in Java.  An LRU cache means Least Recently Used Cache
-which removes the least recently used element if the cache is full. You can use
-LinkedHashMap to implement LRU cache in Java.
 
- 
-
- 
-
- 
-
- 
 
 50. Merge sort
+Implement the merge sort algorithm in Java. You can write a recursive or iterative solution, whichever you like. You also need to explain the time and space complexity for the best, worst, and average case.
+ 
 
-Implement the merge sort algorithm in Java. You can write a
-recursive or iterative solution, whichever you like. You also need to explain
-the time and space complexity for the best, worst, and average case.
 
- 
+That's all about top 50 programs from Java interviews. You can practice these Java programs even if you are not preparing for any Job interview. They not only help you to do well on your programming job interviews but also on learning how to code and developing your programming skill and coding sense.
 
- 
+These small programs touch several important areas e.g. popular data structures like an array, linked list, binary tree, binary search tree, string etc, popular algorithms e.g. sieve of the Eratosthenes algorithm for generating primes, the Euclidean algorithm for calculating LCM and GCF, Fibonacci sequence, printing patterns and so on.
 
- 
-
-That's all about top 50 programs from Java interviews. You
-can practice these Java programs even if you are not preparing for any Job
-interview. They not only help you to do well on your programming job interviews
-but also on learning how to code and developing your programming skill and
-coding sense.
-
- 
-
-These small programs touch several important areas e.g.
-popular data structures like an array, linked list, binary tree, binary search
-tree, string etc, popular algorithms e.g. sieve of the Eratosthenes algorithm
-for generating primes, the Euclidean algorithm for calculating LCM and GCF,
-Fibonacci sequence, printing patterns and so on.
-
- 
-
-These programs also touch base on useful operators like
-bit-shift and bitwise operators, modulus operators and others. Overall, you get
-a good understanding of Java programming world by practicing these Java
-programs from coding interviews.
-
- 
+These programs also touch base on useful operators like bit-shift and bitwise operators, modulus operators and others. Overall, you get a good understanding of Java programming world by practicing these Java programs from coding interviews.
 
 Recommended books for Coding Interviews
-
 The Cracking the Coding Interview - 189 Problems
-
 Algorithms and Data Structures - Part 1 and 2 
-
 The Programming Interview Exposed by Wrox
 
- 
-
-Thanks for reading this article so far, if you like these
-Java programs then please share with your friends and colleagues, if you have
-any question or problem then please drop a comment.
-
-  
-
+Thanks for reading this article so far, if you like these Java programs then please share with your friends and colleagues, if you have any question or problem then please drop a comment.
+  
 by Taboola 
-
 Sponsored Links 
-
 You May Like
-
- 
 
 BOOK A HOME AT GODREJ PRANAGodrej Properties
 
- 
+5 Smart Reasons to Buy Term Life Insurance This YearCoverfox.com
 
-5 Smart Reasons to Buy Term Life Insurance This
-YearCoverfox.com
+10 Best Dating Sites for Singles in PuneOnline Dating Services | Search Links
 
- 
+People In Pune Are Racing To Get These Invisible Hearing AidsHear.com
 
-10 Best Dating Sites for Singles in PuneOnline Dating
-Services | Search Links
+Create the virtual you and join the fun - Play Second life!Second Life
 
- 
+Join To Stream The Bollywood Movie "Meri Pyaari Bindu" Now.Amazon Prime Video
 
-People In Pune Are Racing To Get These Invisible Hearing
-AidsHear.com
-
- 
-
-Create the virtual you and join the fun - Play Second
-life!Second Life
-
- 
-
-Join To Stream The Bollywood Movie "Meri Pyaari
-Bindu" Now.Amazon Prime Video
-
- 
-
-Mumbai’s elite call it home. Apartments starting 12
-Cr*Rustomjee
-
- 
+Mumbai’s elite call it home. Apartments starting 12 Cr*Rustomjee
 
 India's Cheap Hotel FinderSave70.com
-
 You might like:
-
-•             How to
-Compare Two Enum in Java - Equals vs == vs CompareTo
-
-•             Top 20
-String Algorithm Questions from Coding Interviews
-
-•             How to
-reverse String in Java using Iteration and Recursion
-
-•             Top 30
-Array Interview Questions and Answers for Programmers
-
+•	How to Compare Two Enum in Java - Equals vs == vs CompareTo
+•	Top 20 String Algorithm Questions from Coding Interviews
+•	How to reverse String in Java using Iteration and Recursion
+•	Top 30 Array Interview Questions and Answers for Programmers
 Recommended by 
-
-Posted by Javin Paul  
-
-
+Posted by Javin Paul   
 Email This BlogThis! Share to Twitter Share to Facebook 
-
-Labels: Coding Interview Question , core java interview
-question , Programming interview question
-
+Labels: Coding Interview Question , core java interview question , Programming interview question
 1 comment :
-
 Anonymous said...
-
 Nice collection of interview question
-
 October 12, 2017 at 2:12 AM
-
 Post a Comment
-
 Newer PostOlder PostHome
-
 Subscribe to: Post Comments ( Atom )
-
 Follow by Email
-
- 
-
- 
-
- 
+ 
+ 
 
 Interview Questions
-
-•             core java
-interview question (168)
-
-•             Coding
-Interview Question (66)
-
-•             data
-structure and algorithm (58)
-
-•             interview
-questions (45)
-
-•             SQL
-Interview Questions (30)
-
-•             thread
-interview questions (30)
-
-•             design
-patterns (29)
-
-•             object
-oriented programming (28)
-
-•             collections
-interview questions (25)
-
-•             database
-interview questions (17)
-
-•             servlet
-interview questions (16)
-
-•             spring
-interview questions (14)
-
-•             Programming
-interview question (7)
-
-•             hibernate
-interview questions (6)
-
+•	core java interview question (168)
+•	Coding Interview Question (66)
+•	data structure and algorithm (58)
+•	interview questions (45)
+•	SQL Interview Questions (30)
+•	thread interview questions (30)
+•	design patterns (29)
+•	object oriented programming (28)
+•	collections interview questions (25)
+•	database interview questions (17)
+•	servlet interview questions (16)
+•	spring interview questions (14)
+•	Programming interview question (7)
+•	hibernate interview questions (6)
 Best of Javarevisited
-
-•             How
-Spring MVC works internally?
-
-•             How to
-design a vending machine in Java?
-
-•             How HashMap
-works in Java?
-
-•             Why
-String is Immutable in Java?
-
-•             10
-Articles Every Programmer Must Read
-
-•             How to
-convert lambda expression to method reference in Java 8?
-
-•             10 Tips
-to improve Programming Skill
-
-•             10 OOP
-design principles programmer should know
-
-•             How
-Synchronization works in Java?
-
-•             10 tips
-to work fast in Linux
-
-•             5 Books
-to improve Coding Skills
-
+•	How Spring MVC works internally?
+•	How to design a vending machine in Java?
+•	How HashMap works in Java?
+•	Why String is Immutable in Java?
+•	10 Articles Every Programmer Must Read
+•	How to convert lambda expression to method reference in Java 8?
+•	10 Tips to improve Programming Skill
+•	10 OOP design principles programmer should know
+•	How Synchronization works in Java?
+•	10 tips to work fast in Linux
+•	5 Books to improve Coding Skills
 Search This Blog
-
- 
-
- 
-
- 
+ 
+ 
 
 Translate this blog
-
- 
-
-Powered by  Translate
-
+ 
+Powered by  Translate
 Java Tutorials
-
-•             date and
-time tutorial (21)
-
-•             FIX
-protocol tutorial (17)
-
-•             java
-collection tutorial (71)
-
-•             java IO
-tutorial (27)
-
-•             Java JSON
-tutorial (10)
-
-•             Java
-multithreading Tutorials (53)
-
-•             Java
-Programming Tutorials (18)
-
-•             Java xml
-tutorial (17)
-
+•	date and time tutorial (21)
+•	FIX protocol tutorial (17)
+•	java collection tutorial (71)
+•	java IO tutorial (27)
+•	Java JSON tutorial (10)
+•	Java multithreading Tutorials (53)
+•	Java Programming Tutorials (18)
+•	Java xml tutorial (17)
 Subscribe to Download the E-book
-
- 
-
+ 
 Download 
-
-The E-book         Building
-a REST API with Spring 4?
-
-                 
-
- 
+The E-book	Building a REST API with Spring 4?
+	 
 
 Followers
-
 Blog Archive
-
-•             ▼ 
-2017 ( 149 )
-
-o             ► 
-November ( 2 )
-
-o             ► 
-October ( 8 )
-
-o             ► 
-September ( 4 )
-
-o             ► 
-August ( 15 )
-
-o             ▼ 
-July ( 13 )
-
-             Entuware
-or Whizlabs? Which Exam Simulator Should ...
-
-             How to
-sort a Map by keys in Java 8 - Example Tuto...
-
-             How to
-check/uncheck checkbox using jQuery? Exampl...
-
-             Top 50
-Java Programs from Coding Interviews
-
-             Arithmetic
-overflow error converting numeric to da...
-
-             How to
-reload/refresh a page using JavaScript and ...
-
-             Is it
-possible to have an abstract method in a fin...
-
-             Does
-Spring Certification help in Job and Career? ...
-
-             2 Ways to
-check if A String is rotation of other i...
-
-             OCAJP 8
-FAQ - Oracle Certified Associate Java Prog...
-
-             Amazon
-Prime Day, Good opportunity to Buy Books an...
-
-             Top 5
-Books to learn UML (Unified Modeling Languag...
-
-             Top 30
-Linked List Algorithm Questions from Progra...
-
-o             ► 
-June ( 16 )
-
-o             ► 
-May ( 10 )
-
-o             ► 
-April ( 26 )
-
-o             ► 
-March ( 15 )
-
-o             ► 
-February ( 16 )
-
-o             ► 
-January ( 24 )
-
-•             ► 
-2016 ( 166 )
-
-•             ► 
-2015 ( 126 )
-
-•             ► 
-2014 ( 100 )
-
-•             ► 
-2013 ( 127 )
-
-•             ► 
-2012 ( 214 )
-
-•             ► 
-2011 ( 135 )
-
-•             ► 
-2010 ( 30 )
-
+•	▼  2017 ( 149 )
+o	►  November ( 2 )
+o	►  October ( 8 )
+o	►  September ( 4 )
+o	►  August ( 15 )
+o	▼  July ( 13 )
+	Entuware or Whizlabs? Which Exam Simulator Should ...
+	How to sort a Map by keys in Java 8 - Example Tuto...
+	How to check/uncheck checkbox using jQuery? Exampl...
+	Top 50 Java Programs from Coding Interviews
+	Arithmetic overflow error converting numeric to da...
+	How to reload/refresh a page using JavaScript and ...
+	Is it possible to have an abstract method in a fin...
+	Does Spring Certification help in Job and Career? ...
+	2 Ways to check if A String is rotation of other i...
+	OCAJP 8 FAQ - Oracle Certified Associate Java Prog...
+	Amazon Prime Day, Good opportunity to Buy Books an...
+	Top 5 Books to learn UML (Unified Modeling Languag...
+	Top 30 Linked List Algorithm Questions from Progra...
+o	►  June ( 16 )
+o	►  May ( 10 )
+o	►  April ( 26 )
+o	►  March ( 15 )
+o	►  February ( 16 )
+o	►  January ( 24 )
+•	►  2016 ( 166 )
+•	►  2015 ( 126 )
+•	►  2014 ( 100 )
+•	►  2013 ( 127 )
+•	►  2012 ( 214 )
+•	►  2011 ( 135 )
+•	►  2010 ( 30 )
 Pages
-
-•             Privacy
-Policy
-
+•	Privacy Policy
 Copyright by Javin Paul 2010-2017. Powered by Blogger.
 
- 
 
- 
+Read more: http://javarevisited.blogspot.com/2017/07/top-50-java-programs-from-coding-Interviews.html#ixzz4yKVFgb2x
 
-Read more:
-http://javarevisited.blogspot.com/2017/07/top-50-java-programs-from-coding-Interviews.html#ixzz4yKVFgb2x
+Songs Link:
+Sorry: https://www.youtube.com/watch?v=sumrtbYfgzw
+Let me Love you: https://www.youtube.com/watch?v=LtxGHZa83sU
+Faded: https://www.youtube.com/watch?v=dnZItt33cvI
+Turn down for whathttps://www.youtube.com/watch?v=56Y98Ya4qg8
+Closer: https://www.youtube.com/watch?v=kGtjzFObseY
+
 
