@@ -519,9 +519,82 @@ public class MyClass {
     }
 }
 B) print the sum of top 1000 prime numbers. 
+import java.util.*;
+public class MyClass {
+    public static void main(String args[]) {
+        MyClass mc = new MyClass();
+        mc.top10Prime();
+    }
+    public void top10Prime(){
+        int count=0, integer=1, sum=0;
+        while(count<=1000){
+            if(checkPrime(integer)){
+                count++;
+                sum=sum+integer;
+            }
+            integer++;
+        }
+        System.out.println(sum);
+    }
+    public boolean checkPrime(int integer){
+        for(int i=1; i<integer/2; i++){
+            if(integer%i==0 && i!=1){
+                return false;
+            }
+        }
+        return true;
+    }
+} 
+Note: this is including 1 as prime number. But we should not count 1 as prime number because definition of prime says it should have two distinct positive divisors 
 32.	Find longest substring without repeating characters.
+A) if only the length of the string to be sent.
+import java.util.*;
+public class MyClass {
+    public static void main(String args[]) {
+        MyClass mc = new MyClass();
+        String input = "abcaecbb";
+        System.out.println(mc.logestSubstring(input));
+    }
+    public int logestSubstring(String input){
+        int result=0, begin=0;
+        Map<Character, Integer> charsList = new HashMap<Character, Integer>();
+        for(int i=0; i<input.length(); i++){
+            if(charsList.containsKey(input.charAt(i))){
+                begin=Math.max(begin, charsList.get(input.charAt(i))+1);
+            }
+            charsList.put(input.charAt(i), i);
+            result=Math.max(result, i+1-begin);
+        }
+        return result;
+    }
+}
+b) need to return the longest Substring possible. 
+Little hard. So, I will do it a little later.
+
 33.	Write a program to remove duplicates from sorted array.
+import java.util.*;
+public class MyClass {
+    public static void main(String args[]) {
+        MyClass mc = new MyClass();
+        int[] numbersSorted = {1,2,2,3,4,4,5,5,5,6,6,6,6,6,6,6,6,6};
+        mc.removeDuplicates(numbersSorted);
+    }
+    public void removeDuplicates(int[] numbersSorted){
+        List<Integer> withoutDuplicates = new ArrayList<Integer>();
+        for(int i=0; i<numbersSorted.length-1; i++){
+            if(numbersSorted[i+1]==numbersSorted[i]+1){
+                withoutDuplicates.add(numbersSorted[i]);
+            }
+        }
+        withoutDuplicates.add(numbersSorted[numbersSorted.length-1]);
+        Iterator i = withoutDuplicates.iterator();
+        while(i.hasNext()){
+            System.out.println(i.next());
+        }
+    }
+}
 34.	How to sort a Stack using a temporary Stack?
+Related to algorithms
 
 Source 3: http://www.java67.com/2012/08/10-java-coding-interview-questions-and.html
 It list down the top 10 asked ava programming interview questions. Do check it. 
@@ -532,12 +605,99 @@ This has so many programs and asking for the result after execution.
 
 Source 5: http://www.instanceofjava.com/2016/03/core-java-interview-programs-freshers.html
 Posted by: InstanceOfJava Posted date: Mar 22, 2016 / comment : 1
-1.	Print prime numbers?  
-2.	Basic Java program to find area and perimeter of circle
+1.	Print prime numbers? (May be first 100)
+import java.util.*;
+public class MyClass {
+    public static void main(String args[]) {
+        MyClass mc = new MyClass();
+        mc.top10Prime();
+    }
+    public void top10Prime(){
+        int count=0, integer=1;
+        while(count<=10){
+            if(checkPrime(integer)){
+                count++;
+                System.out.println(integer);
+            }
+            integer++;
+        }
+    }
+    public boolean checkPrime(int integer){
+        for(int i=1; i<integer/2; i++){
+            if(integer%i==0 && i!=1){
+                return false;
+            }
+        }
+        return true;
+    }
+} 
+2.	Basic Java program to find area and perimeter of circle (The radius is given.)
+Solution: (pie).r*r, 2(pie)r. pie=3.14. Quite simple. 
 3.	Print 1 to 10 without using loops  
+import java.util.*;
+public class MyClass {
+    public static void main(String args[]) {
+        MyClass mc = new MyClass();
+        int integer=1;
+        mc.printtop10(integer);
+    }
+    public void printtop10(int integer){
+        if(integer<=10){
+            System.out.println(integer);
+            printtop10(integer+1);
+        }
+    }
+}
+Note: we can directly write 10 print statements too. ;-)
 4.	Print numbers in pyramid shape?  
+Pyramids has many shapes to will do it separately. 
 5.	Add 2 Matrices
-6.	Basic Java Example Program to check even or add
+Matrix will be a two dimensional array. How will you add them, that’s the question.	
+import java.util.*;
+public class MyClass {
+    public static void main(String args[]) {
+        MyClass mc = new MyClass();
+        int[][] matrix1 = {{1,2}, {3,4}};
+        int[][] matrix2 = {{5,6}, {7,8}};
+        int[][] sum = mc.addMatrices(matrix1, matrix2);
+    }
+    public int[][] addMatrices(int[][] matrix1, int[][] matrix2){
+        
+        int[][] sum = new int[2][2];
+        for(int i=0; i<2; i++){
+            for(int j=0; j<2; j++){/*
+                sum[i][j]=matrix1[i][j]+matrix2[i][j];*/
+                System.out.println(matrix1[i][j]+matrix2[i][j]);
+            }
+        }
+        return sum;
+    }
+}
+6.	Basic Java Example Program to check even or add (without %).
+public class EvenOddWithoutOperator {
+      
+       public static void main(String [] args)
+       {
+              int a = 2;
+              int b = 3;
+              if((a & 1)==0)
+              {
+                     System.out.println("Even");
+              }
+              else
+              {
+                     System.out.println("odd");
+              }
+       }
+      
+       /*
+       * below is for without conditional statement
+       * int number = 10;
+       * String[] trick = {"Even", "odd"};
+       * System.out.println("The number is "trick[number%2]);
+       * */
+}
+
 7.	What happens if we place return statement in try catch blocks 
 8.	Write a java program to convert binary to decimal 
 9.	Java Program to convert Decimal to Binary
@@ -1217,5 +1377,6 @@ Let me Love you: https://www.youtube.com/watch?v=LtxGHZa83sU
 Faded: https://www.youtube.com/watch?v=dnZItt33cvI
 Turn down for whathttps://www.youtube.com/watch?v=56Y98Ya4qg8
 Closer: https://www.youtube.com/watch?v=kGtjzFObseY
+Shape of you: https://www.youtube.com/watch?v=q_nJ0rSdTkA
 
 
