@@ -1,0 +1,10 @@
+Java 7 Feature
+1.	String in Switch statements
+2.	Binary Literals – Can express any literals (int, long, short, byte) using binary code with a prefix 0b/0B.
+3.	Underscore in Literals – For better readability and grouping the digits in java.
+4.	Diamond Operator – This is for DRY coding. Removes the effort for repeating type. 
+5.	Multi-Catch Exception – Shorten the traditional coding practice. Writes from specific to generic exception.
+6.	Try-With-Resource – Resource should get closed after the cursor reaches to the last line. Closable resource should be kept as parameter for try block. 
+
+Java 8 Feature
+1.	ForEach() -   
