@@ -7,4 +7,23 @@ Java 7 Feature
 6.	Try-With-Resource – Resource should get closed after the cursor reaches to the last line. Closable resource should be kept as parameter for try block. 
 
 Java 8 Feature
-1.	ForEach() -   
+1.	ForEach() - Consumer and game class. We need to make a annonymous class by overriding the accept method. 
+Example: 
+import java.util.*;
+import java.util.function.Consumer;
+public class MyClass {
+    public static void main(String args[]) {
+        Set<Integer> s = new HashSet<Integer>();
+        s.add(1);
+        s.add(2);
+        s.forEach(new Consumer<Integer>(){
+           @Override
+           public void accept(Integer i){
+               System.out.println(i);
+           }
+        });
+    }
+}
+Note: all you need to care about is the type of th data need for the collection and iteration. 
+
+2. 
