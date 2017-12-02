@@ -699,21 +699,165 @@ public class EvenOddWithoutOperator {
 }
 
 7.	What happens if we place return statement in try catch blocks 
+If we write the return statement only in either try or catch block then we will get compilation error because we need to keep one at last of the method. We must not have any statement after the last return statement because that statement will not be reachable. 
 8.	Write a java program to convert binary to decimal 
+import java.util.*;
+
+public class Class1 {
+	public static void main(String[] args){
+		Class1 c = new Class1();
+		int binaryNumber = 111;
+		c.BinaryToInt(binaryNumber);
+	}
+	public void BinaryToInt(int binaryNumber){
+		int digit = 0, power=0;
+		while(binaryNumber>=1){
+			digit = digit + (int)((binaryNumber%10)*(Math.pow(2, power)));
+			binaryNumber = binaryNumber/10;
+			power++;
+		}
+		System.out.println(digit);
+	}
+}
+
+Note: We can simple use Java API for converting binary to int like “Integer.parseInt(“binaryString”, base)”. 
 9.	Java Program to convert Decimal to Binary
+import java.util.*;
+
+public class Class1 {
+	public static void main(String[] args){
+		Class1 c = new Class1();
+		int intNumber = 4;
+		c.inttoBinary(intNumber);
+	}
+	public void inttoBinary(int intNumber){
+		List l = new ArrayList();
+		while(intNumber>=1){
+			l.add(intNumber%2);
+			intNumber = intNumber/2;
+		}
+		ListIterator li = l.listIterator(l.size());
+		while(li.hasPrevious()){
+			System.out.println(li.previous());
+		}
+	}
+}
 10.	Interfaces allows constructors? 
+Interface cannot have interface. We do not need to instantiate them. 
 11.	Can we create private constructor in java
+Yes, a class can have private constructors. Also, we cannot have a same arguments public or private constructor. 
 12.	Java interview Questions on main() method  
+We can make main method as final and we can synchronized it too. 
 13.	Explain java data types with example programs 
-14.	Swap two numbers without using third variable in java 
+Some difficult java date related programs: http://www.guideforschool.com/category/date-related-programs/
+Program to print date and time in java. 
+public class Class1 {
+	public static void main(String[] args){
+		Date date = new Date();
+		System.out.println(date.toString());
+	}	
+}
+Program to format date in common format.
+import java.text.DateFormat;
+import java.util.*;
+
+public class Class1 {
+	public static void main(String[] args){
+		Date date = new Date();
+		DateFormat df = DateFormat.getDateInstance();
+		DateFormat df1 = DateFormat.getDateInstance(DateFormat.SHORT);
+		DateFormat df2 = DateFormat.getDateInstance(DateFormat.LONG);
+		DateFormat df3 = DateFormat.getDateInstance(DateFormat.MEDIUM);
+		DateFormat df4 = DateFormat.getDateInstance(DateFormat.FULL);
+		String StringDate = df4.format(date);
+		System.out.println(StringDate);
+	}	
+}
+14.	Swap two numbers without using third variable in java – Already Done
 15.	Find sum of digits in java 
+public class Class1 {
+	public static void main(String[] args){
+		Class1 c = new Class1();
+		int number = 115;
+		c.SumDigits(number);
+	}	
+	public void SumDigits(int number){
+		int digit, sum=0;
+		while(number>=1){
+			digit=number%10;
+			sum = sum + digit;
+			number=number/10;
+		}
+		System.out.println(sum);
+	}
+}
 16.	Check Even or Odd without using modulus and division  
+We can use the bitwise operator. 
+if((number & 1)==0){
+			System.out.println("Even");
+		}
+		else{
+			System.out.println("False");
+		}
 17.	String Reverse Without using String API 
+public class Class1 {
+	public static void main(String[] args){
+		Class1 c = new Class1();
+		String input = "Rishav";
+		c.reverseString(input);
+	}	
+	public void reverseString(String input){
+		int inputLength = input.length();
+		String reverseString="";
+		for(int i=inputLength-1; i>=0; i--){
+			reverseString = reverseString + input.substring(i, i+1);
+		}
+		System.out.println(reverseString);
+	}
+}
 18.	Check string is palindrome or not?
+public class Class1 {
+	public static void main(String[] args){
+		Class1 c = new Class1();
+		String input = "ababtbaba";
+		c.PlaindromeCheck(input);
+	}	
+	public void PlaindromeCheck(String input){
+		int inputLength = input.length(), flag=0;
+		for(int i=0; i<input.length(); i++){
+			if(!(input.substring(i, i+1).equals(
+					input.substring(inputLength-1, inputLength)))){
+				flag=1;
+				break;
+			}
+			inputLength--;
+		}
+		if(flag==0){
+			System.out.println("Number is palindrome");
+		}
+		else{
+			System.out.println("Number is not palidrome");
+		}
+	}
+}
+
 19.	Reverse a number in java?
-
-
-
+public class Class1 {
+	public static void main(String[] args){
+		Class1 c = new Class1();
+		int input = 10023;
+		c.reverseInt(input);
+	}	
+	public void reverseInt(int input){
+		int reversedNumber=0, digit, count=0;
+		while(input>=1){
+			digit = input%10;
+			reversedNumber =  digit + (reversedNumber*10);
+			input=input/10;
+		}
+		System.out.println(reversedNumber);
+	}
+}	
 20.	Fibonacci series with Recursive?
 21.	Fibonacci series without using Recursive?
 22.	Sort the String using string API?
