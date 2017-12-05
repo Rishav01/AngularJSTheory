@@ -1,0 +1,5 @@
+Creation:
+1. Creating Database: Create database Customer;
+2. Creating Table: Create table CustDetails (CustID number(10), CustName varchar(40), CustLocation varChar(20) CONSTRAINTS CustomerPK
+ PRIMARY KEY CustID);
+ 
