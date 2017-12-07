@@ -534,3 +534,22 @@ where a.EMPLOYEE_ID=b.EMPLOYEE_REF_ID group by FIRST_NAME
 84. What is SQL Injection ?
 
 SQL Injection is one of the the techniques uses by hackers to hack a website by injecting SQL commands in data fields.
+
+Source 2: https://www.codeproject.com/Articles/25622/Sql-Queries-most-asked-in-job-interviews
+1. Finding the nth highest salary of emp.
+Solution:
+a) finding the highest salary: Select max(Salary) from employeeDetails;
+b) finding the nth highest Salary: Select min(Salary) from employeeDetails where salary in (Select distinct top n salary from employee);
+
+2. Selecting top X record of particular group
+Lets Say columnN can make group. So, you can apply group by on columnN and then want to have top X records of each group. 
+Solution: It is related to rank() and partition. We will do it later.       
+
+3. How to remove duolicate data(row) from table.
+Solution: We have two ways for removing duplicate data, 1. using temp table and 2. without using temp table.
+a) using temp table: 1. Create a temp table "Select top 0 * into Table_temp from table". 2. then, insert the rows from original table 
+to temp table by doing group by using all the columns. 3. Truncate the original table. 4. Now move the data from temp to original table.
+b) Using parition. will do it later. 
+
+Source 3: (Only for Join) http://www.interviewquestionspdf.com/2014/07/join-sql-join-queries-interview.html
+
