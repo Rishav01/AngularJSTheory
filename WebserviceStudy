@@ -1,0 +1,137 @@
+RestFul Web Services
+(Source: Video Tutorial)
+Introduction
+
+What do we mean by Web Services?
+Web services are the piece of software/applications that makes it available over internet to be used by other software and applications.
+Many applications use any third party application for which they include the jar of that application and can make use of it. This way all the code exist in the single machine. However, to make use of third party API’s without taking the jar files to your class path, the concept of web application came and API’s are made available over web. This means that the third party application must provide their API over internet through web services. Famous examples for application that provide web services are twitter and facebook. 
+Web Service Type
+    1. REST Web services
+    2. SOAP Web Services
+Some general characteristic of web services
+    1. As the name says, it is web service so all the communication happens over web i.e. HTTP. Client sent the HTTP request and gets HTTP response. 
+    2. Request and response are nothing but the messages that client and server communicates through. So, it is very essential that both are must understand the message sent by other. So, the format of the message should be same. In web services terminology, the client and server should use a protocol to understand each other message. Like, SOAP web services use SOAP specific protocol. However, REST web services has not specified any protocol and this mean they can use any protocol like XML, JSON, text etc.
+    3. As the request and response is sent over HTTP so we have a wide range of methods which are available for sending message. In REST web service, there is not standard method that should be used for sending the messages but have certain guidelines which choose the best method for a purpose. 
+    4. Think of coding in java and you are trying to print the message of one method of different class then you have to know about that method like its return type, set arguments it accepts etc. Similarly, when we make use of an application API made available through web service then we should know about that API. That information in web service is called as service definition. In SOAP, the service definition is typically called WSDL. WSDL is made available to all the clients consuming that particular API. However, REST does not have anything like service definition. We will check later as why REST does not have it.       
+Note: 
+    1. Client and server applications in web service can be written in different language and can have completely different software specifications.
+    2. As we have seen. REST web service generally does not specified any rules like which protocol to use, service definition, no standard for HTTP methods etc. On the other side, SOAP web services has strictly define its specification. This is because SAOP specification is available which is made by SOAP committee. However, REST web service does not have specification but jkust a guideline to build web services. REST is representational state transfer which is more about architecture for building applications.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+JAX-RS Example Jersey
+We can create JAX-RS example by jersey implementation. To do so, you need to load jersey jar files or use maven framework.
+In this example, we are using jersey jar files for using jersey example for JAX-RS.
+
+Click me to download jersey jar files.
+
+There are created 4 files for hello world JAX-RS example:
+    1. Hello.java
+    2. web.xml
+    3. index.html
+    4. HelloWorldClient.java
+The first 3 files are created for server side and 1 application for client side.
+
+JAX-RS Server Code
+File: Hello.java
+    1. package com.javatpoint.rest;  
+    2. import javax.ws.rs.GET;  
+    3. import javax.ws.rs.Path;  
+    4. import javax.ws.rs.Produces;  
+    5. import javax.ws.rs.core.MediaType;  
+    6. @Path("/hello")  
+    7. public class Hello {  
+    8.   // This method is called if HTML and XML is not requested  
+    9.   @GET  
+    10.   @Produces(MediaType.TEXT_PLAIN)  
+    11.   public String sayPlainTextHello() {  
+    12.     return "Hello Jersey Plain";  
+    13.   }  
+    14.   // This method is called if XML is requested  
+    15.   @GET  
+    16.   @Produces(MediaType.TEXT_XML)  
+    17.   public String sayXMLHello() {  
+    18.     return "<?xml version=\"1.0\"?>" + "<hello> Hello Jersey" + "</hello>";  
+    19.   }  
+    20.   
+    21.   // This method is called if HTML is requested  
+    22.   @GET  
+    23.   @Produces(MediaType.TEXT_HTML)  
+    24.   public String sayHtmlHello() {  
+    25.     return "<html> " + "<title>" + "Hello Jersey" + "</title>"  
+    26.         + "<body><h1>" + "Hello Jersey HTML" + "</h1></body>" + "</html> ";  
+    27.   }  
+    28. }   
+File: web.xml
+    1. <?xml version="1.0" encoding="UTF-8"?>  
+    2. <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   
+    3. xmlns="http://java.sun.com/xml/ns/javaee"   
+    4. xsi:schemaLocation="http://java.sun.com/xml/ns/javaee   
+    5. http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"   
+    6. id="WebApp_ID" version="3.0">  
+    7.  <servlet>  
+    8.     <servlet-name>Jersey REST Service</servlet-name>  
+    9.     <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>  
+    10.     <init-param>  
+    11.         <param-name>jersey.config.server.provider.packages</param-name>  
+    12.         <param-value>com.javatpoint.rest</param-value>  
+    13.     </init-param>  
+    14.     <load-on-startup>1</load-on-startup>  
+    15.   </servlet>  
+    16.   <servlet-mapping>  
+    17.     <servlet-name>Jersey REST Service</servlet-name>  
+    18.     <url-pattern>/rest/*</url-pattern>  
+    19.   </servlet-mapping>  
+    20. </web-app>   
+File: index.html
+    1. <a href="rest/hello">Click Here</a>  
+Now run this application on server. Here we are using Tomcat server on port 4444. The project name is restfuljersey.
+After running the project, you will see the following output:
+
+
+JAX-RS Client Code
+The ClientTest.java file is created inside the server application. But you can run client code by other application also by having service interface and jersey jar file.
+File: ClientTest.java
+    1. package com.javatpoint.restclient;  
+    2. import java.net.URI;  
+    3. import javax.ws.rs.client.Client;  
+    4. import javax.ws.rs.client.ClientBuilder;  
+    5. import javax.ws.rs.client.WebTarget;  
+    6. import javax.ws.rs.core.MediaType;  
+    7. import javax.ws.rs.core.UriBuilder;  
+    8. import org.glassfish.jersey.client.ClientConfig;  
+    9. public class ClientTest {  
+    10.   public static void main(String[] args) {  
+    11.     ClientConfig config = new ClientConfig();  
+    12.     Client client = ClientBuilder.newClient(config);  
+    13.     WebTarget target = client.target(getBaseURI());  
+    14.     //Now printing the server code of different media type  
+    15.     System.out.println(target.path("rest").path("hello").request().accept(MediaType.TEXT_PLAIN).get(String.class));  
+    16.     System.out.println(target.path("rest").path("hello").request().accept(MediaType.TEXT_XML).get(String.class));  
+    17.     System.out.println(target.path("rest").path("hello").request().accept(MediaType.TEXT_HTML).get(String.class));  
+    18.   }  
+    19.   private static URI getBaseURI() {  
+    20.     //here server is running on 4444 port number and project name is restfuljersey  
+    21.     return UriBuilder.fromUri("http://localhost:4444/restfuljersey").build();  
+    22.   }  
+    23. }   
+Output:
+Hello Jersey Plain
+<?xml version="1.0"?><hello> Hello Jersey</hello>
+<html> <title>Hello Jersey</title><body><h1>Hello Jersey HTML</h1></body></html> 
+
