@@ -446,32 +446,43 @@ We can develop SOAP based web service with two different types of approaches suc
 In my point of view, the first approach that is the contract-first approach is more feasible as compared to the second one but still it depends on other factors too.
 20) Is there any special application required to access web service?
 No, you don’t need to install any special application to access web service. You can access web service from any application that supports XML based object request and response.
-21) Can you name few free and commercial implementations for web services?
+21) Can you name few free and commercial implementations for web services?AAA
 The implementations I know are Apache SOAP, JAX-WS Reference Implementation, JAX-RS Reference Implementation, Metro, Apache CXF, MS.NET and Java 6.
-22) Name browser that allows access to web service?
+
+Jeresy is an open source framework to develope REST web services. 
+
+22) Name browser that allows access to web service?RRR
 JavaScript XmlHttpRequest object is required to access web service via browsers. The browsers that support this object are Internet Explorer, Safari and Mozilla-based browsers like FireFox.
 23) What is REST?
 REST stands for Representational State Transfer. REST itself is not a standard, while it uses various standards such as HTTP, URL, XML/HTML/GIF/JPEG (Resource Representations) and text/xml, text/html, image/gif, image/jpeg, etc (MIME Types).
-24) How one can provide API to users?
+24) How one can provide API to users?RRR
 To provide an API to the users, one can easily do this with an “open table”. All you need to do is to write open table which is basically an XML schema that point to a web service.
-25) Name the various communication channels in web service?
+25) Name the various communication channels in web service?RRR
 Web service is integrated with three protocols such as HTTP/POST, HTTP/GET, and SOAP. It provides three different communication channels to clients. Client can choose any communication method as per requirements.
-26) How can you document web service?
+26) How can you document web service?AAA
 Web services are contemplated as self-documenting because they provide entire information regarding the available methods and parameters used for XML based standard, known as WSDL. One can also provide more information to explain web services via their own WebService and WebMethod attributes.
+
+SOAP web service has WSDL for documenting about the web service however REST web service does not have anything. THis is for the reason
+that REST web service should ideally use only HTTP GET, PUT, POST or DELETE methods. Therefore, we have just have 4 methods on the resource
+so we do not really need any WSDL.
+
 27) What are the situations, when we need ASP.NET web services?
 ASP.NET web services are used when one need to implement three tier architecture in a web service. It allows handy ways to use middle tier components through internet. The main advantage of .NET Web services is that they are capable enough to communicate across firewalls because they use SOAP as transport protocol.
 28) What are distributed technologies?
 The increasing ratio of distributed applications has raised demand for distributed technologies. It allows segmenting of application units and transferring them to different computers on different networks.
-29) Differentiate between web services, CORBA and DCOM?
+29) Differentiate between web services, CORBA and DCOM?RRR
 Web services transfer/receive messages to/from application respectively, via HTTP protocol. It uses XML to encode data.
 
 
 CORBA and DCOM transfer/receive messages to/from application respectively, via non-standard protocols such as IIOP and RPC.
 30) Can you tell few benefits of web services?
 The biggest advantage of web service is that is supported by wide variety of platforms. Moreover, in near future, web services may spread its boundary and enhance new methods that will provide ease to clients. The enhancement will not affect the clients, even if they offer old methods and parameters.
-31) Can you name some standards used in web services?
+31) Can you name some standards used in web services?AAA
 The standards used in web services are WSDL (used to create interface definition), SOAP (used to structure data), HTTP (communication channels), DISCO (used to create discovery documents) and UDDI (used to create business registries).
-32) Explain in brief, what DISCO is?
+
+This hold good for SOAP web service. This has standard like SOAP protocol, WSDL, XML content type, DISCO, UDDI.
+
+32) Explain in brief, what DISCO is?RRR
 DISCO means discovery. It groups the list of interrelated web services. The organization that provides web services, issues a DISCO file on its server and that file contains the links of all the provided web services. This standard is good when client knows the company already. Also it can be used within a local network as well.
 33) Explain in brief, what UDDI is?
 UDDI (Universal Description, Discovery, and Integration) provides consolidated directory for web services on the internet. Clients use UDDI to find web services as per their business needs. It basically hosts the web services from various companies. In order to share web services, you need to publish it in UDDI.
@@ -481,11 +492,11 @@ UDDI (Universal Description, Discovery, and Integration) provides consolidated d
 ASP.NET uses a test page routinely, when one calls for the URL of .asmx file in any browser. This page shows complete information regarding web services.
 36) How a .NET web service is consumed?
 Since we know that web services are constructed on XML standards. Therefore, clients need to have complete understanding of XML-based messages to interchange messages. Clients can communicate with web services through .NET framework that offers proxy mechanisms. These proxy mechanisms have detailed information regarding data sharing within web services that can be easily used by the clients.
-37) Can you name the two Microsoft solutions for distributed applications?
+37) Can you name the two Microsoft solutions for distributed applications?RRR
 The two Microsoft solutions for distributed applications are .NET Web Services and .NET Remoting.
 38) Differentiate between .NET Web Services and .NET Remoting?
 As far as protocol is concerned, .NET Web Service uses HTTP, while, .NET Remoting uses any protocol i.e. TCP/HTTP/SMTP. When it comes to performance, .NET Remoting is comparatively, faster than.NET Web Service. Also, as .NET Web Services are hosted via IIS, therefore, it is far more reliable than the .NET Remoting.
-39) Name the components to be published while deploying a Web Service?
+39) Name the components to be published while deploying a Web Service?RRR
 The components that need to be published during a web service deployment are Web Application Directory, Webservice.asmx File, Webservice.Disco File, Web.Config File and Bin Directory.
 40) What are the steps performed by the client to access a web service?
 First of all a web reference to the web service is created by the client in his application. Then a proxy class is generated. After that an object of the proxy class is created and at last, the web service is accessed via that proxy object.
@@ -590,6 +601,509 @@ There are two types of messaging models for JAXM synchronous and asynchronous
     • UDDI: It means Universal Description, Discovery and I It is the directory that is used to publish and discover public web services
     • DISCO: It is commonly known as discovery. It clubs common services together and exposes schemas document of the web services
     • WSDL: It stands for web service description language (WSDL). It is used to describe web services.  The description includes URL of web services, properties and methods supported by web services, data type it supports and protocol detail it supports
+
+Source 4: http://www.softwaretestinghelp.com/restful-web-services-interview-question/
+Q #1) What is your understanding of what are RESTful web services?
+
+Just like SOAP (Simple Object Access Protocol), which is used to develop web services by XML method, RESTful web services use web protocol i.e. HTTP protocol method. They have the feature like scalability, maintainability, help multiple application communication built on various programming languages etc.
+
+RESTful web service implementation defines the method of accessing various resources which are required by the client and he has sent the request to the server through the web browser. The important aspects of this implementation include:
+
+Resources
+Request Headers
+Request Body
+Response Body
+Status codes
+Q #2) Name the protocol which is used by RESTful web services.
+
+RESTful web services use a famous web protocol i.e. HTTP protocol. This serves as a medium of data communication between client and server. HTTP standard methods are used to access resources in RESTful web service architecture.
+
+Q #3) Explain the term ‘Addressing’ with respect to RESTful WEB service.
+
+Just like we require address with postal code to reach any person, in the same way, ‘Addressing’ locates resources that are present on the server for the purpose of hosting web services. This is usually done with URI i.e. Unified Resource Identifier.
+
+Q #4) Enlist features of RESTful web services.
+
+Every RESTful web services should have following features and characteristics that are enlisted below:
+
+Based on the Client Server representation.
+Use of HTTP protocol for performing functions like fetching data from the web service, retrieving resources, execution of any query, etc.
+The communication between the server and client is performed through the medium known as ‘messaging’.
+Addressing of resources available on the server through URIs.
+Based on the concept of statelessness where every client request and the response is independent of the other with complete assurance of providing required information.
+Uses the concept of caching.
+Works on Uniform interface.
+Q #5) Explain messaging technique.
+
+Messages are the mode of exchanging data for any type of communication to take place. In the same way, HTTP protocol plays the role of message communication between the client and server through HTTP Request and Response methods. HTTP request is sent by the client who contains information about the data and in turn, receives HTTP Response from the server.
+
+Messages are the collection of information about the data i.e. Metadata.
+
+Q #6) What are the core components of HTTP request and HTTP response?
+
+The core components that come under HTTP Request are:
+
+Verb: Includes methods like GET, PUT, POST, etc.
+Uniform Resource Identifier for identifying the resources available on the server.
+HTTP Version for specifying the HTTP version.
+HTTP Request header for containing the information about the data.
+HTTP Request body that contains the representation of the resources in use.
+The core components that come under HTTP Response are:
+
+Request Code: This contains various codes which determine the status of the server response.
+HTTP Version for specifying the HTTP version.
+HTTP Response header for containing the information about the data.
+HTTP Response body that contains the representation of the resources in use.
+Q #7) Explain the term ‘Statelessness’ with respect to RESTful WEB service.
+
+In REST, ST itself defines State Transfer and Statelessness means complete isolation. This means, the state of the client’s application is never stored on the server and is passed on. In this process, the clients send all the information that is required for the server to fulfill the HTTP request that has been sent. Thus every client request and the response is independent of the other with complete assurance of providing required information.
+
+Every client passes a ‘session identifier’ which also acts as an identifier for each session.
+
+Q #8) Enlist advantages and disadvantages of ‘Statelessness’.
+
+In the above question, we have understood the meaning of statelessness with respect to the client-server communication. Now, let us see some of its advantages and disadvantages.
+
+Advantages:
+
+Every method required for communication is identified as an independent method i.e. there are no dependencies to other methods.
+Any previous communication with the client and server is not maintained and thus the whole process is very much simplified.
+If any information or metadata used earlier in required in another method, then the client sends again that information with HTTP request.
+HTTP protocol and REST web service, both shares the feature of statelessness.
+Disadvantages:
+
+In every HTTP request from the client, the availability of some information regarding the client state is required by the web service.
+Q #9) Enlist some important constraints for RESTful web services.
+
+Every constraint has positive as well as negative impacts and to produce an overall architecture, there should be the balance between both of them. Below mentioned are some important constraints for RESTful web service:
+
+
+
+ 
+There should be separate concerns for each server and client which will help to maintain the modularity within the application. This will also reduce the complexity and increase the scalability.
+The client-server communication should be stateless, which means no previous information is used and the complete execution is done in isolation. In cases of failure, it also helps the client to recover.
+In client-server communication, the HTTP response should be cacheable so that when required cached copy can be used which in turn enhances the scalability and performance of the server.
+The fourth constraint is the uniform interface which allows client-server interaction to be easily understood. This constraint is further divided into four sub-constraints as:
+Resource Identification
+Resource manipulation
+Each message is easily understood and is self-descriptive.
+Hypermedia, which is defined as the text with hyperlinks and when clicked it moves to another application state.
+Client-server communication should be done on a layered system and thus the client should only have knowledge about the intermediate level with which communication is being done,
+Q #10) What is a ‘Resource’?
+
+Just like the ‘Object’ instance, we have learned in object orient programming Language, in the same way, ‘Resource’ is defined as an object of a type which can be an image, HTML file, text data, and any type of dynamic data. There are varieties of representation formats available in order to represent a resource.
+
+Some most common are enlisted below:
+
+JSON
+YAML
+XML
+HTML
+Q #11) Why proper representation of Resource is required?
+
+Representation is very important because it determines the easy identification of resources. With proper representations of resource in the proper format, allows the client to easily understand the format.
+
+Q #12) Enlist some important points that should be kept in mind while designing Resources representation for RESTful web services.
+
+As there are no restrictions on the format in which the resource representation is done but just that the main requirement is the format of the representation should be as per the client requirement. A good resource representation is designed by considering the following main points:
+
+The resource representation format should be easily understood by the client and server.
+The representation should be complete regardless of its format structure, which may be complex or simple.
+In the case of the link of the resources to other resources, such cases should also be considered and handled.
+Q #13) What is Caching?
+
+Caching is the process in which server response is stored so that a cached copy can be used when required and there is no need of generating the same response again. This process not only reduces the server load but in turn increase the scalability and performance of the server. Only the client is able to cache the response and that too for a limited period of time.
+
+Mentioned below are the header of the resources and their brief description so that they can be identified for the caching process:
+
+Time and Date of resource creation
+Time and date of resource modification that usually stores the last detail.
+Cache control header
+Time and date at which the cached resource will expire.
+The age which determines the time from when the resource has been fetched.
+Q #14) Explain Cache-control header.
+
+A standard Cache control header can help in attaining cache ability. Enlisted below is the brief description of various cache control header:
+
+Public: Resources that are marked as the public can be cached by any intermediate components between the client and server.
+Private: Resources that are marked as private can only be cached by the client.
+No cache means that particular resource cannot be cached and thus the whole process is stopped.
+Q #15) What are the best practices that are to be followed while designing RESTful web services?
+
+To design a secure RESTful web service, there are some best practices or say points that should be considered. These are explained as follows:
+
+Every input on the server should be validated.
+Input should be well formed.
+Never pass any sensitive data through URL.
+For any session, the user should be authenticated.
+Only HTTP error messages should be used for indicating any fault.
+Use message format that is easily understood and is required by the client.
+Unified Resource Identifier should be descriptive and easily understood.
+Q #16) What is Payload?
+
+The request data which is present in the body part of every HTTP message is referred as ‘Payload’.  In Restful web service, the payload can only be passed to the recipient through POST method.
+
+There is no limit of sending data as payload through POST method but the only concern is that more data with consuming more time and bandwidth. This may consume much of user’s time also.
+
+Q #17) Enlist some of the HTTP methods with description.
+
+Mentioned below is the list of HTTP methods with their descriptions:
+
+GET: This is a read only operation which fetches the list of users on the server.
+PUT: This operation is used for the creation of any new resource on the server.
+POST: This operation is used for updating an old resource or for creating a new resource.
+DELETE: As the name suggests, this operation is used for deleting any resource on the server.
+OPTIONS: This operation fetches the list of any supported options of resources that are available on the server.
+Q #18) What is the difference between PUT method and POST method?
+
+The major difference between the PUT and POST method is that the result generated with PUT method is always same no matter how many times the operation is performed. On the other hand, the result generated by POST operation is always different every time.
+
+Q #19) What is your understanding about JAX-RS?
+
+JAX-RS is defined as the Java API for RESTful web service. Among multiple libraries and framework, this is considered as the most suitable Java programming language based API which supports RESTful web service.
+
+Some of the implementations of JAX-RS are:
+
+Jersey
+RESTEasy
+Apache CFX
+Play
+Among these, Jersey is the most popular framework.
+
+Q #20) What are HTTP status codes? Enlist few with meaning.
+
+HTTP status codes basically are the representation of the status of the task that has been performed on the server, with the mode of some codes. Every code has their own meaning.
+
+Some of the HTTP status codes with their meaning are as follows:
+
+Code 200: This indicates success.
+Code 201: This indicates resource has been successfully created.
+Code 204: This indicates that there is no content in the response body.
+Code 404: This indicates that there is no method available.
+There are few more such codes that indicate the status.
+
+Conclusion:
+
+This article will help you prepare for the RESTful web services interview and help you to understand the concept in the simple and easy way. I have tried to cover all the areas which are very necessary for having the complete knowledge about RESTful Web services.
+
+Just remember, it may be possible that you are not able to answer all questions in the interview but whatever you answer should be accurate. Your basic concept should be strong and your confidence level should be high.
+
+
+Source 5:https://career.guru99.com/rest-api-interview/
+15 Rest API Interview Question & Answers	
+
+
+ 
+1) Explain what is REST and RESTFUL?
+
+REST represents REpresentational  State Transfer; it is a relatively new aspect of writing web API.
+
+RESTFUL is referred for web services written by applying REST architectural concept are called RESTful services, it focuses on system resources and how state of resource should be transported over HTTP protocol to different clients written in different language.  In RESTFUL web service HTTP methods like GET, POST, PUT and DELETE can be used to perform CRUD operations.
+
+2) Explain the architectural style for creating web API?
+
+The architectural style for creating web api are
+
+HTTP for client server communication
+XML/JSON as formatting language
+Simple URI as the address for the services
+Stateless communication
+3) Mention what tools are required to test your web API?
+
+SOAPUI tool for SOAP WS and Firefox “poster” plugin for RESTFUL services.
+
+4) Mention what are the HTTP methods supported by REST?
+
+HTTP methods supported by REST are:
+
+GET: It requests a resource at the request URL. It should not contain a request body as it will be discarded. Maybe it can be cached locally or on the server.
+POST: It submits information to the service for processing; it should typically return the modified or new resource
+PUT: At the request URL it update the resource
+DELETE: At the request URL it removes the resource
+OPTIONS: It indicates which techniques are supported
+HEAD: About the request URL it returns meta information
+5) Mention whether you can use GET request instead of PUT to create a resource?
+
+No, you are not supposed to use POST or GET.  GET operations should only have view rights
+
+12-23-2014 12-07-18 PM
+
+6) Mention what are resources in a REST architecture?
+
+Resources are identified by logical URLs; it is the key element of a RESTful design.  Unlike, SOAP web services in REST, you view the product data as a resource and this resource should contain all the required information.
+
+7) Mention what is the difference between AJAX and REST?
+
+
+ 
+                                AJAX	                                REST
+In Ajax, the request are sent to the server by using XMLHttpRequest objects. The response is used by the JavaScript code to dynamically alter the current page
+Ajax is a set of technology; it is a technique of dynamically updating parts of UI without having to reload the page
+Ajax eliminates the interaction between the customer and server asynchronously
+REST requires the interaction between the customer and server
+ REST have a URL structure and a request/response pattern the revolve around the use of resources
+REST is a type of software architecture and a method for users to request data or information from servers
+REST requires the interaction between the customer and server
+7) Mention some key characteristics of REST?
+
+Some key characteristics of REST includes
+
+REST is stateless, therefore the SERVER has no state (or session data)
+With a well-applied REST API, the server could be restarted between two calls as every data is passed to the server
+Web service mostly uses POST method to make operations, whereas REST uses GET to access resources
+8) Mention what are the different application integration styles?
+
+The different integration styles include
+
+Shared database
+Batch file transfer
+Invoking remote procedure (RPC)
+Swapping asynchronous messages over a message oriented middle-ware (MOM)
+9) Explain how JAXB related to RESTful web API?
+
+
+ 
+JAXB stands for java arch for XML binding.
+
+10) Mention what is the difference between PUT and POST?
+
+“PUT” puts a file or resource at a particular URI and exactly at that URI.  If there is already a file or resource at that URI, PUT changes that file or resource.  If there is no resource or file there, PUT makes one
+
+POST sends data to a particular URI and expects the resource at that URI to deal with the request.  The web server at this point can decide what to do with the data in the context of specified resource
+
+PUT is idempotent meaning, invoking it any number of times will not have an impact on resources.
+
+However, POST is not idempotent, meaning if you invoke POST multiple times it keeps creating more resources
+
+11) Mention which markup language can be used in restful web api?
+
+JSON and XML are the two markup language that can be used in restful web api
+
+12) Mention what is the difference between RPC or document style web services? How you determine to which one to choose?
+
+In document style web services, we can transport an XML message as part of SOAP request which is not possible in RPC style web service.  Document style web service is most appropriate in some application where XML message behaves as document and content of that document can alter and intention of web service does not rely on the content of XML message.
+
+13) Mention what is JAX-WS and JAX-RS?
+
+Both JAX-WS and JAX-RS are libraries (APIs) for doing communication in various ways in Java.  JAX-WS is a library that can be used to do SOAP communication in JAVA, and JAX-RS lets you do the REST communication in JAVA.
+
+14) List out the tools or API for developing or testing web api?
+
+Testing tools for web services for REST APIs includes
+
+Spring REST web service using MVC
+Jersey API
+CFX
+Axis
+Restlet,
+15) Mention what is the difference between SOAP and REST?
+
+SOAP	REST
+SOAP is a protocol through which two computer communicates by sharing XML document
+SOAP permits only XML
+SOAP based reads cannot be cached
+SOAP is like custom desktop application, closely connected to the server
+SOAP is slower than REST
+It runs on HTTP but envelopes the message
+ Rest is a service architecture and design for network-based software architectures
+REST supports many different data formats
+REST reads can be cached
+A REST client is more like a browser; it knows how to standardized methods and an application has to fit inside it
+REST is faster than SOAP
+It uses the HTTP headers to hold meta information
+
+source 6: http://www.java67.com/2015/09/top-10-restful-web-service-interview-questions-answers.html
+
+Top 10 RESTful Web Service Interview Questions for Java Developers
+
+ 
+REST is an architectural style of developing web services which have become immensely popular in the last couple of years and consequently gained a lot of importance in core Java and Java EE interviews. If you are a Java web developer then you are most likely see a couple of questions from web services every time you go for a Java web developer interview. One of the most frequent one is difference between REST and SOAP web services, which I have recently answered there, but there are lot many other good questions I have collected from friends and my readers, which I have not yet published. In this article, I am sharing those questions, mainly based on REST-style web services for your practice and preparation. 
+
+Some of them are easy to answer and you will find them either in my blog or by doing Google but a couple of them is really interesting and challenging and required real solid experience in Java web service domain to answer. I leave it to you guys for now and will probably update this post with answers in near future. 
+
+If you don't find answer of any REST interview question then I suggest you to take a look at these two resources, Java Programming Interview Exposed and RESTful Web Services, you will most likely find your answer there.
+
+
+
+RESTful Web Services Interview Questions 
+Here is my list of RESTful web services questions for senior Java developers who have a couple of years of experience developing both SOAP and REST based web services. This is actually the second part of my series of Java web services based question, in the earlier article, I have shared some SOAP web services based questions. If you have not looked already, you may want to take a look.
+
+
+
+ 
+
+
+Question 1 : What is REST?
+Answer : REST is an architectural style of developing web services which take advantage of ubiquity of HTTP protocol and leverages HTTP method to define actions. REST stands for REpresntational State Transfer.
+
+
+Question 2 : What is RESTFul Web Service?
+Answer : There are two popular way to develop web services, using SOAP (Simple Object Access Protocol) which is XML based way to expose web services and second REST based web services which uses HTTP protocol. Web services developed using REST style is also known as RESTful Web Services.
+
+
+Question 3 : What is HTTP Basic Authentication and how it works?
+
+
+Question 4 : Can you tell me which API can be used to develop RESTFul web service in Java?
+Answer : There are many framework and libraries out there which helps to develop RESTful web services in Java including JAX-RS which is standard way to develop REST web services. Jersey is one of the popular implementation of JAX-RS which also offers more than specification recommends. Then you also have RESTEasy, RESTlet and Apache CFX. If you like Scala then you can also use Play framework to develop RESTful web services.
+
+
+Question 5 : How do you configure RESTFul web service?
+
+Question 6 : How you apply security in RESTFul web services?
+
+Question 7 : Have you used securing RESTful APIs with HTTP Basic Authentication
+
+Question 8 : How you maintain session in RESTful services?
+
+
+Question 9 : Have you used Jersey API to develop RESTful services in Java?
+Answer : Jersey is one of the most popular framework and API to develop REST based web services in Java. Since many organization uses Jersey they check if candidate has used it before or not. It's simple to answer, say Yes if you have really used and No, if you have not. In case of No, you should also mention which framework you have used for developing RESTful web services e.g. Apache CFX, Play or Restlet.
+
+
+Question 10 : How you test RESTful web services?
+
+Question 11 : What is WADL in RESTFul?
+
+
+Question 12 : What do you understand by payload in RESTFul?
+Answer : Payload means data which passed inside request body also payload is not request parameters. So only you can do payload in POST  and not in GET and DELTE method
+
+
+Question 13 : Can you do payload in GET method?
+Answer : No, payload can only be passed using POST method.
+
+
+Question 14 : Can you do payload in HTTP DELETE?
+Answer : This is again similar to previous REST interview question, answer is No. You can only pass payload using HTTP POST method.
+
+
+Question 15 : How much maximum pay load you could do in POST method?
+Answer : If you remember difference between GET and POST request then you know that unlike GET which passes data on URL and thus limited by maximum URL length, POST has no such limit. So, theoretically you can pass unlimited data as payload to POST method but you need to take practical things into account e.g. sending POST with large payload will consume more bandwidth, take more time and present performance challenge to your server.
+
+
+Question 16 : What is difference between SOAP and RESTFul web services?
+Answer : There are many difference between these two style of web services e.g. SOAP take more bandwidth because of heavy weight XML based protocol but REST takes less bandwidth because of popular use of JSON as message protocol and leveraging HTTP method to define action. This also means that REST is faster than SOAP based web services. You can derive many differences between SOAP and RESTful with the fact that its HTTP based e.g. REST URLs can be cached or bookmarked. Here are few more differences between them :
+
+RESTFul web services interview questions answers
+
+
+Question 17 : If you have to develop web services which one you will choose SOAP OR RESTful and why?
+Answer : You can answer this question based upon your experience but the key here is if you know difference between them than you can answer this question in more detail. For example, its easy to develop RESTful web services than SOAP based web services but later comes with some in-built security features.
+
+
+Question 18 :  What framework you had used to develop RESTFul services?
+Answer : This is really experience based question. If you have used Jersey to develop RESTFul web services then answer as Jersey but expect some follow-up question on Jersey. Similarly if you have used Apache CFX or Restlet then answer them accordingly.
+
+
+Read more: http://www.java67.com/2015/09/top-10-restful-web-service-interview-questions-answers.html#ixzz512CBZ8o5
+
+
+Source 7: http://javarevisited.blogspot.in/2012/01/rest-web-services-framework-interview.html
+1) What is REST and RESTful web services ?
+this is the first REST interview question on most of interviews as not everybody familiar with REST and also
+start discussion based on candidates response. Anyway REST stands for REpresentational State Transfer (REST) its a relatively new concept of writing web services which enforces a stateless client server design where web services are treated as resource and can be accessed and identified by there URL unlike SOAP web services which were defined by WSDL.
+
+Web services written by apply REST Architectural concept are called RESTful web services which focus on System resources and how state of Resource should be transferred over http protocol to a different clients written in different languages. In RESTful web services http methods like GET, PUT, POST and DELETE can can be used to perform CRUD operations.
+
+2) What is differences between RESTful web services and SOAP web services ?
+Though both RESTful Web Services and SOAP web service can operate cross platform they are architecturally different to each other, here is some of differences between REST and SOAP:
+
+1) REST is more simple and easy to use than SOAP
+2) REST uses HTTP protocol for producing or consuming web services while SOAP uses XML.
+3) REST is lightweight as compared to SOAP and preferred choice in mobile devices and PDA's.
+4) REST supports different format like text, JSON and XML while SOAP only support XML.
+5) REST web services call can be cached to improve performance.REST Web Services Framework Interview Questions
+
+
+3) What is Restlet framework ?
+Restlet is leading RESTful web framework for Java applications is used to build RESTFul web services it has two part Restlet API and a Restlet implementation much like Servlet specification. There are many implementation of Restlet framework available you just need to add there jar in your classpath to use them. By using Restlet web framework you can write client and server.
+
+4) What is Resource in REST framework ?
+it represent a "resource" in REST architecture. on RESTLET API it has life cycle methods like init(), handle() and release() and contains a Context, Request and Response corresponding to specific target resource. This is now deprecated over ServerResource class and you should use that. see Restlet documentation for more details.
+
+5) Can you use Restlet without any web-container ?
+Yes, Restlet framework provide default server which can be used to handle service request in web container is not available.
+
+6) What is difference between Restlets and Jersey ?
+This REST web service interview questions is open for you all, post you answer in comment section.
+
+7) What is RESTEasy ?
+RESTEasy is another REST framework introduced in JBoss Application Server. This was rather easy REST interview questions. you can answer in detail only if you have used this or working in JBoss.
+
+8) What are the tools used for creating RESTFull web services ?
+You can use AJAX(Asynchronous JavaScript with XAML) and Direct Web Removing to consume web serives in web application. Both Eclipse and NetBeans also supported development of RESTFul services.
+
+9) How to display custom error pages using RestFull web services ?
+In order to customize error you need to extend StatusService and implement getRepresentation(Status, Request, Response) method with your custom code now assign instance of your CustomStatusService to appropriate "statusService property".
+
+10) Which HTTP methods are supported by RestFull web services ?
+Another common REST interview question regarding RESTFul web service each Resource supports GET, POST, PUT and DELETE http methods.GET is mapped to represent(), POST - acceptRepresentation(), PUT- storeRepresentation and DELET for rmeoveRepresentation.
+
+11) What is difference between top-down and bottom-up approach of developing web services ?
+In top-down approach first WSDL document is created and than Java classes are developed based on WSDL contract, so if WSDL contract changes you got to change your Java classes while in case of bottom up approach of web service development you first create Java code and then use annotations like @WebService to specify contract or interface and WSDL field will be automatically generated from your build.
+
+12) What happens if RestFull resources are accessed by multiple clients ? do you need to make it thread-safe?
+Since a new Resource instance is created for every incoming Request there is no need to make it thread-safe or add synchronization. multiple client can safely access RestFull resources concurrently.
+
+REST Web Service interview questions and Answers J2EEThat’s all on REST interview questions , I will add couple of  more REST Interview questions whenever I got them from my friend circle.
+
+Source 8: https://dzone.com/articles/rest-web-service-interview
+1) What is a web service?
+
+2) Can I use GET request instead of PUT to create resources?AAA
+
+Yes, we can do this. However, we should not create it neither through get nor through put method as both are idempotent while use POST
+method for this purpose. Also, we can use any method for any purpose however we should better stick to suggestion of making the use of
+method the way they are. 
+
+3) What is the difference between a RESTful web service (on HTTP) and a HTTP Servlet both of which perform the same function?AAA
+
+REST is completely a architectural pattern while the HTTP servlet is an implementation. 
+
+4) How will you migrate from SOAP web service to RESTfull web service?
+
+We can create proxy class/adaptor which can convert the SAOP to REST request. Its slightly complicated. 
+
+5) What is the difference between HTTP POST and PUT requests?
+
+6) What all kind of output formats can one generate using RESTful web service?
+
+7) What all tools have you used to write RESTful web service?
+
+8) Can my web browser be a client to RESTful web service? If yes then how will you generate DELETE request from web browser?
+
+9) What is meant by JAX-WS and JAX-RS?
+
+10) How is JAXB related to RESTful web services?
+
+11) How will you handle synchronization issues when multiple clients try to consume web service simultaneously?
+
+12) Can you describe any one RESTful web service you have written?
+
+13) What will you do when an error code has to be returned to the client
+
+OR
+
+How will you handle application error scenarios in RESTful web service
+
+14) Is it mandatory to use HTTP protocol for performing CRUD operations by a REST based web service?
+
+15) What are the pros and cons of using the RESTLET framework than CXF for writing RESTful web service?
+
+16) Can one RESTful web service be a client to another RESTful web service for performing business operations? Describe with example?
+
+17) Can you generate HTML output from a RESTful web service? How?
+
+18) Can a RESTful web service generate output in various formats based on some parameter received from the client.
+
+19) With a RESTful web service, whose state is getting transferred and how?
+
+20) Who owns the specification for REST web services and how does it get updated to newer versions?
+
+Read more: http://javarevisited.blogspot.com/2012/01/rest-web-services-framework-interview.html#ixzz512CnXDDh
+
+
 Webservices Quiz
 Start
 Refer our Web Service Tutorials for an extra edge in your interview.
