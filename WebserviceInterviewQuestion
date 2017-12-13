@@ -1000,13 +1000,15 @@ Read more: http://www.java67.com/2015/09/top-10-restful-web-service-interview-qu
 
 
 Source 7: http://javarevisited.blogspot.in/2012/01/rest-web-services-framework-interview.html
-1) What is REST and RESTful web services ?
+1) What is REST and RESTful web services ?AAA
 this is the first REST interview question on most of interviews as not everybody familiar with REST and also
 start discussion based on candidates response. Anyway REST stands for REpresentational State Transfer (REST) its a relatively new concept of writing web services which enforces a stateless client server design where web services are treated as resource and can be accessed and identified by there URL unlike SOAP web services which were defined by WSDL.
 
 Web services written by apply REST Architectural concept are called RESTful web services which focus on System resources and how state of Resource should be transferred over http protocol to a different clients written in different languages. In RESTful web services http methods like GET, PUT, POST and DELETE can can be used to perform CRUD operations.
 
-2) What is differences between RESTful web services and SOAP web services ?
+In short, REST is a architechtural concept while RESTful is an implementation which uses the REST architecture. 
+
+2) What is differences between RESTful web services and SOAP web services ?RRR
 Though both RESTful Web Services and SOAP web service can operate cross platform they are architecturally different to each other, here is some of differences between REST and SOAP:
 
 1) REST is more simple and easy to use than SOAP
@@ -1025,7 +1027,7 @@ it represent a "resource" in REST architecture. on RESTLET API it has life cycle
 5) Can you use Restlet without any web-container ?
 Yes, Restlet framework provide default server which can be used to handle service request in web container is not available.
 
-6) What is difference between Restlets and Jersey ?
+6) What is difference between Restlets and Jersey ?RRR
 This REST web service interview questions is open for you all, post you answer in comment section.
 
 7) What is RESTEasy ?
@@ -1034,13 +1036,13 @@ RESTEasy is another REST framework introduced in JBoss Application Server. This 
 8) What are the tools used for creating RESTFull web services ?
 You can use AJAX(Asynchronous JavaScript with XAML) and Direct Web Removing to consume web serives in web application. Both Eclipse and NetBeans also supported development of RESTFul services.
 
-9) How to display custom error pages using RestFull web services ?
+9) How to display custom error pages using RestFull web services ?RRR
 In order to customize error you need to extend StatusService and implement getRepresentation(Status, Request, Response) method with your custom code now assign instance of your CustomStatusService to appropriate "statusService property".
 
 10) Which HTTP methods are supported by RestFull web services ?
 Another common REST interview question regarding RESTFul web service each Resource supports GET, POST, PUT and DELETE http methods.GET is mapped to represent(), POST - acceptRepresentation(), PUT- storeRepresentation and DELET for rmeoveRepresentation.
 
-11) What is difference between top-down and bottom-up approach of developing web services ?
+11) What is difference between top-down and bottom-up approach of developing web services ?RRR
 In top-down approach first WSDL document is created and than Java classes are developed based on WSDL contract, so if WSDL contract changes you got to change your Java classes while in case of bottom up approach of web service development you first create Java code and then use annotations like @WebService to specify contract or interface and WSDL field will be automatically generated from your build.
 
 12) What happens if RestFull resources are accessed by multiple clients ? do you need to make it thread-safe?
@@ -1059,33 +1061,65 @@ method the way they are.
 
 3) What is the difference between a RESTful web service (on HTTP) and a HTTP Servlet both of which perform the same function?AAA
 
-REST is completely a architectural pattern while the HTTP servlet is an implementation. 
+REST is completely a architectural pattern while the HTTP servlet is an implementation. Now, RESTful webservices if speak about only in
+java can be like Servlet. We can create a webservice using jeresy framework which itself is built on top of servlets. However, Restful 
+webservice is a vast topic. 
 
 4) How will you migrate from SOAP web service to RESTfull web service?
+
+We can do this creating the proxy class. In fact, we have tools available for this. One good tool is apigee Edge which creates the 
+REST api based on the WSDL of SOAP WS. 
 
 We can create proxy class/adaptor which can convert the SAOP to REST request. Its slightly complicated. 
 
 5) What is the difference between HTTP POST and PUT requests?
 
+In simple term, Post request to send data to an specified URI while PUT places a resource only at a specified URI. To carefully under-
+stand, POST just sends the data to a given URI and then it depends furthur on the web server as what to do with the data. It might redirect
+the received data to a different URI. However, in case of put request, web server cannot re direct the resource and if done so then the 
+status code returned would be 301 (Permanently moved).
+
 6) What all kind of output formats can one generate using RESTful web service?
 
-7) What all tools have you used to write RESTful web service?
+I think this can produce any kind of format until the client understand. 
 
-8) Can my web browser be a client to RESTful web service? If yes then how will you generate DELETE request from web browser?
+7) What all tools have you used to write RESTful web service?RRR
+
+Jeresy and Restlets franework check karo. 
+
+8) Can my web browser be a client to RESTful web service? If yes then how will you generate DELETE request from web browser?RRR
 
 9) What is meant by JAX-WS and JAX-RS?
 
+It is java reference implementation for JSX_WS and JAX-RS for SOAP and REST webservices. 
+
 10) How is JAXB related to RESTful web services?
 
-11) How will you handle synchronization issues when multiple clients try to consume web service simultaneously?
+JAXB is a plugin for marshelling java object to XML and un marshalling back to java object.
 
-12) Can you describe any one RESTful web service you have written?
+11) How will you handle synchronization issues when multiple clients try to consume web service simultaneously?AAA
+
+Well, no web service developer can assure that web service cannot get concurrent client request. Thus, the best for handling such 
+situation is to create a pool where the object has a certain threshold of object that can be created and beyond which the request 
+should be kept on hold until we recover any object back. Ideally, each request to web service run by a sperate thread. 
+
+12) Can you describe any one RESTful web service you have written?RRR
+
+Jeresy and restlets implementation. 
 
 13) What will you do when an error code has to be returned to the client
 
 OR
 
 How will you handle application error scenarios in RESTful web service
+
+Important link: http://archive.oreilly.com/pub/post/restful_error_handling.html
+According to the above link, we can handle the error in web services by four ways. 1) stick to standard HTTP errors, 2) give blank 
+xml set, 3) pass extra information in response headers as X-DAS-status: 403 for example while giving standard HTTP error. For this 
+we need to check the resposne header explicitly and 4) we can send an xml document with the error message. last option seems of be the 
+best one. 
+
+Check what we do in jeresy and restlets frameworks. 
 
 14) Is it mandatory to use HTTP protocol for performing CRUD operations by a REST based web service?
 
@@ -1121,4 +1155,12 @@ Name *  Email *  
 Bottom of Form
 Popular
 Recent
+
+Important Frameworks for developing RESTful web services
+0. JAX-RX (part of jdk, a reference implementation using REST specification, compatible with spring)
+1. RESTlets (open source, framework supporting JAX-RX API and more features)
+2. Jeresy (open source, framework supporting JAX-RX API and more features. Less features in RestLets, compatible with spring)
+3. RestEasy (Jboss application server)
+Note: Restlets and Jeresy also supports the JAX-RS annotations. All we need to do is just to add the respective jars of a framework and 
+can build the RESTful web service.
 
