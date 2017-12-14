@@ -135,3 +135,8 @@ Hello Jersey Plain
 <?xml version="1.0"?><hello> Hello Jersey</hello>
 <html> <title>Hello Jersey</title><body><h1>Hello Jersey HTML</h1></body></html> 
 
+Links:
+1. Spring Rest Example: https://java2blog.com/spring-restful-web-services-json-example/
+2. Restlets Rest Example: https://dzone.com/articles/restlet-framework-hello-world
+3. JAX-rs Rest Example: https://www.youtube.com/watch?v=dmMdLW92hBA
+4. Integrating Spring with Jeresy: http://www.mkyong.com/webservices/jax-rs/jersey-spring-integration-example/
