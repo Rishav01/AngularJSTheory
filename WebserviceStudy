@@ -137,6 +137,114 @@ Hello Jersey Plain
 
 Links:
 1. Spring Rest Example: https://java2blog.com/spring-restful-web-services-json-example/
+In this topic, we will see how do we write RESTful web service using spring framework. Firstly, we will look at the dependency perspective.
+we need to add JAXB and Jackson jars dependecies in the POM.xml. These plugins will take care of XML to java and JSON to java conversion 
+respectively. 
+Now, we will look into the coding section. Just like a normal spring project, we will have bean class, dao class for database connection,
+service class for implementing business logic and controller class for handling the requests. We will mainly look at controller class while
+leaving the other class coding for later. Below is the code for controller class.
+
+@RestController
+@RequestMapping(value="Alien")
+public class AlienController {
+	
+	@RequestMapping(value="Aliens", method=RequestMethod.GET, header="Accept="
+			+ "Application/JSON")
+	public List<Alien> getAliens(){
+		repo.getAliens();
+	}
+	
+	@RequestMapping(value="Alien/{id}", method=RequestMethod.Get, header="Accept="
+			+ "Application/JSON")
+	public Alien getAlien(@PathVariable int id){
+		repo.getAlien(id);
+	}
+}
+
+Here, we make use of @RestController to identify the class as Rest Controller class. Thus, whenever request will come then the path of 
+the class will be checked. @RequestMapping annotation is used to give the path, method type of the request that a method support and can
+set header parameters. 
+********************************************************************************************************************************
+
 2. Restlets Rest Example: https://dzone.com/articles/restlet-framework-hello-world
+
+********************************************************************************************************************************
+
 3. JAX-rs Rest Example: https://www.youtube.com/watch?v=dmMdLW92hBA
+We have simply created a web dynamic project. We will create a normal class and by extending a javax package class "Application" we can make 
+that normal class a web service. We have to make use of @ApplicationPath("/somepath") and path("/someotherpath") for mentioning the path of
+our application and class respectively. We can make use of @GET annotation to show a HTTP GET request and @Path annotation for mentioning 
+the path of the method. Then, we can create other methods for POST, PUT and DELETE in the same way we did in Jeresy. In this example, we have
+used @queryParam annotation instead of @PathParam annotation. "https://localHost:8080/resource/101" we should use path param annotation
+where id will the path param while "https://localhost:8080/resource?id=101" we should use query param annotation where query variable will
+be id. 
+
+Below is the code with GET request method. 
+@Path("PathforClass")
+@ApplicationPath("webservice")
+public class EmployeeWebService {
+	@Get
+	@Path("methodPath") /*not necessary*/
+	@Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+	public Employee getEmployee(){
+		repo.getEmployee();
+	}
+}
+
+Apart from the annotation we have used, below are some more services. 
+a. @HEAD: 
+b. @QueryParam: Used in the same way as PathParam. 
+c. @MatrixParam, @headerParam, @CookiesParam, @FormParam, @Context. 
+*********************************************************************************************************************************
+
 4. Integrating Spring with Jeresy: http://www.mkyong.com/webservices/jax-rs/jersey-spring-integration-example/
+
+In the integration part, we place the jeresy dependencies in POM.xml. 
+
+**********************************************************************************************************************************
+5. Jeresy Rest Example: Youtube Navin Reddy videos
+Implementation:
+@path("aliens")
+public class AlienResource {
+	AlienRepository ar = new AlienRepository();
+	
+	//GET method to get all the aliens
+	@GET
+	@Produces(MediaType.APPLICATION_XML)
+	public List<Alien> getAlien(){
+		return ar.getAliens();
+	}
+	
+	@GET
+	@Path("alien/{id}")
+	@Produces(MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON)
+	public Alien getAlien(@PathParam("id") int id){
+		return ar.getAlien(id);
+	}
+	
+	@POST
+	@Path("alien")
+	@Produces(MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON)
+	public Alien createAlien(Alien a1){
+		ar.createAlien(a1);
+		return a1;
+	}
+	
+	@PUT
+	@Path("alien/{id}")
+	@Consumes(MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON)
+	public void updateAlien(@PathParam("id") int id){
+		ar.updateAlien(id);
+	}
+	
+	@DELETE
+	@Path("alien")
+	@Consumes(MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON)
+	public void deleteAlien(@PathParam("id") int id){
+		ar.deleteAlient(id);
+	}
+}
+
+In the bean class, we also need to mention the xml document root element through annotation @XmlRootElement. 
+
+*******************************************************************************************************************************
