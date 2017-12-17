@@ -267,7 +267,7 @@ XmlRootElement annotation is used by JAXB to transform java object to XML and vi
 For setting HTTP status code other than 200, we have to use javax.ws.rs.core.Response class for response. Below are some of the sample return statements showing it’s usage.
 return Response.status(422).entity(exception).build();
 return Response.ok(response).build(); //200
-Source: https://www.javatpoint.com/web-services-interview-questions
+Source 2: https://www.javatpoint.com/web-services-interview-questions
 There is given frequently asked Web Services interview questions and answers that has been asked in many companies. Let's see the list of top Web Services interview questions.
 1) What is Web Service?
 Web Service is a software system for communicating two devices over the network. More details...
@@ -1065,7 +1065,7 @@ REST is completely a architectural pattern while the HTTP servlet is an implemen
 java can be like Servlet. We can create a webservice using jeresy framework which itself is built on top of servlets. However, Restful 
 webservice is a vast topic. 
 
-4) How will you migrate from SOAP web service to RESTfull web service?
+4) How will you migrate from SOAP web service to RESTfull web service?RRR
 
 We can do this creating the proxy class. In fact, we have tools available for this. One good tool is apigee Edge which creates the 
 REST api based on the WSDL of SOAP WS. 
@@ -1087,7 +1087,8 @@ I think this can produce any kind of format until the client understand.
 
 Jeresy and Restlets franework check karo. 
 
-8) Can my web browser be a client to RESTful web service? If yes then how will you generate DELETE request from web browser?RRR
+8) Can my web browser be a client to RESTful web service? If yes then how will you generate DELETE request from web browser?AAA
+NO. It can be client for GET request. We either create our own client or we use tools like PostMap or Poster. 
 
 9) What is meant by JAX-WS and JAX-RS?
 
@@ -1107,7 +1108,7 @@ should be kept on hold until we recover any object back. Ideally, each request t
 
 Jeresy and restlets implementation. 
 
-13) What will you do when an error code has to be returned to the client
+13) What will you do when an error code has to be returned to the clientRRR
 
 OR
 
@@ -1121,19 +1122,31 @@ best one.
 
 Check what we do in jeresy and restlets frameworks. 
 
-14) Is it mandatory to use HTTP protocol for performing CRUD operations by a REST based web service?
+14) Is it mandatory to use HTTP protocol for performing CRUD operations by a REST based web service?AAA
+Actually, i never heard of using any other protocol for performing CRUD or even anything else except HTTP methods like GET< PUT< POST
+and DELETE. 
 
-15) What are the pros and cons of using the RESTLET framework than CXF for writing RESTful web service?
+15) What are the pros and cons of using the RESTLET framework than CXF for writing RESTful web service?AAA
+CXF is actually created by Apache, has the capability to support various protocols like SMTP, FTP and other. One more advantage of using ApacheCXF is that it makes it easy to produce both a JAX-RS and JAX-WS (SOAP) endpoint from the exact same data model and service interface at the same time. So if that is something which matters to you, this may be the way to go
 
-16) Can one RESTful web service be a client to another RESTful web service for performing business operations? Describe with example?
+Read more: http://javarevisited.blogspot.com/2017/02/difference-between-jax-rs-restlet-jersey-apache-cfx-RESTEasy.html#ixzz51WhZtSAO
 
-17) Can you generate HTML output from a RESTful web service? How?
+Read more: http://javarevisited.blogspot.com/2017/02/difference-between-jax-rs-restlet-jersey-apache-cfx-RESTEasy.html#ixzz51WhOuHo2
+
+16) Can one RESTful web service be a client to another RESTful web service for performing business operations? Describe with example?AAA
+Yes. For sure. In fact, not necessarily to be a RESTful. For example, you may have an API which aggregates the data from Twitter and instagram. This you provide to the user of your API.
+
+17) Can you generate HTML output from a RESTful web service? How?Yes. We can mention @produces(MediaType.APPLICATION_HTML). 
 
 18) Can a RESTful web service generate output in various formats based on some parameter received from the client.
+Yes. In request header, we should receive accept as some particular type. This instruct the output type.
 
 19) With a RESTful web service, whose state is getting transferred and how?
+State of application (service) gets transferred through the request and response we see. 
 
-20) Who owns the specification for REST web services and how does it get updated to newer versions?
+20) Who owns the specification for REST web services and how does it get updated to newer versions?AAA
+Not really sure, but i think this is managed by W3c. World wide web consortium. 
+
 
 Read more: http://javarevisited.blogspot.com/2012/01/rest-web-services-framework-interview.html#ixzz512CnXDDh
 
